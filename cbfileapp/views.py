@@ -811,16 +811,30 @@ def verify_otp(request):
 
 
 
+import os
+from subprocess import run, CalledProcessError
+from django.conf import settings
+
 def map_network_drive():
     """
-    Function to map the network drive without authentication.
+    Function to map the network drive with authentication.
     """
     network_drive = settings.NETWORK_DRIVE
+    username = network_drive.get("username")
+    password = network_drive.get("password")
+    drive_letter = network_drive["drive_letter"]
+    network_path = network_drive["network_path"]
+    
     try:
-        # Run the 'net use' command without user authentication
+        # Check if the network drive is already mapped
+        result = run(["net", "use"], capture_output=True, text=True)
+        if drive_letter in result.stdout:
+            # Unmount the drive if already mapped
+            run(["net", "use", drive_letter, "/delete", "/y"], check=True)
+        
+        # Map the network drive with authentication
         run([
-            "net", "use", network_drive["drive_letter"], network_drive["network_path"],
-            "/persistent:yes"
+            "net", "use", drive_letter, network_path, password, "/user:" + username, "/persistent:yes"
         ], check=True)
     except CalledProcessError as e:
         print(f"Error mapping network drive: {e}")
@@ -828,12 +842,15 @@ def map_network_drive():
 
 
 
+
+
 # Define the Network Drive Path
-NETWORK_DRIVE_PATH = r"Z:\\"  # Update this if needed
+NETWORK_DRIVE_PATH =  r"\\172.16.127.120\shared_folder"  # Update this if needed
 
 # Allowed file types
 IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp")
 VIDEO_EXTENSIONS = (".mp4", ".avi", ".mov", ".mkv", ".flv")
+
 PDF_EXTENSION = ".pdf"
 
 def list_network_files(request):
@@ -900,6 +917,8 @@ def serve_folder_file(request, filename, folder_code):
     response["Content-Disposition"] = f'inline; filename="{filename}"'  # Inline viewing
     return response
 
+TEXT_EXTENSION = ".txt"
+
 def view_folder_s(request, folder_code):
     """ Faculty view of folder with file listing. """
     student_id = request.session.get("student_id")
@@ -913,6 +932,7 @@ def view_folder_s(request, folder_code):
     shared_files = FilesShared.objects.filter(folder_code=folder_code)
 
     files = {
+        "texts": [],
         "pdfs": [],
         "images": [],
         "videos": []
@@ -938,6 +958,8 @@ def view_folder_s(request, folder_code):
                 files["images"].append(file_info)
             elif file.lower().endswith(VIDEO_EXTENSIONS):
                 files["videos"].append(file_info)
+            elif file.lower().endswith(TEXT_EXTENSION):
+                files["texts"].append(file_info)
 
 
     if request.method == "POST":
@@ -1007,6 +1029,7 @@ def view_folder_f(request, folder_code):
     files = {
         "pdfs": [],
         "images": [],
+        "texts": [],
         "videos": []
     }
 
@@ -1030,6 +1053,8 @@ def view_folder_f(request, folder_code):
                 files["images"].append(file_info)
             elif file.lower().endswith(VIDEO_EXTENSIONS):
                 files["videos"].append(file_info)
+            elif file.lower().endswith(TEXT_EXTENSION):
+                files["texts"].append(file_info)
 
 
     if request.method == "POST":

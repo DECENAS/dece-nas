@@ -137,6 +137,22 @@
                       </div>
                   {% endfor %}
 
+                  {% for text in files.texts %}
+                      <div class="col-md-6 col-xl-6 file-item" >
+                          <div class="card mb-3">
+                              <div class="card-body">
+                                  <h5 class="card-title file-name">Name: {{ text.file_name }}</h5>
+                                  <p class="card-text file-description">Description: {{ text.file_description }}</p>
+                                  
+                                  <object data="{% url 'f_serve_file' folder_code=folder_code filename=text.file_link  %}" style="width: 100%;" height="400"></object>
+
+                              <hr>
+                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=text.file_link  %}" class="btn btn-success" target="_blank" download>Download</a>
+
+                              </div>
+                          </div>
+                      </div>
+                  {% endfor %}
                 
                   {% for pdf in files.videos %}
                       <div class="col-md-6 col-xl-6 file-item" >
