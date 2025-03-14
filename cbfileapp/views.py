@@ -1145,6 +1145,8 @@ def serve_folder_file(request, filename, folder_code):
         content_type = "image/jpeg"  # Generic image type
     elif filename.endswith(VIDEO_EXTENSIONS):
         content_type = "video/mp4"  # Generic video type
+    elif filename.endswith(TEXT_EXTENSION):
+        content_type = "text/plain"
     else:
         raise Http404("Unsupported file type")
 

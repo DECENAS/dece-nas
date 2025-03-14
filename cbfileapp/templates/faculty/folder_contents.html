@@ -143,7 +143,8 @@
                               <div class="card-body">
                                   <h5 class="card-title file-name">Name: {{ text.file_name }}</h5>
                                   <p class="card-text file-description">Description: {{ text.file_description }}</p>
-                                  
+                                   <hr>
+
                                   <object data="{% url 'f_serve_file' folder_code=folder_code filename=text.file_link  %}" style="width: 100%;" height="400"></object>
 
                               <hr>
