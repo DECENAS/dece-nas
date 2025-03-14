@@ -93,9 +93,9 @@
             <label class="form-label">Description</label>
             <textarea name="description" class="form-control" placeholder="Enter description" required></textarea>
           </div>
-          <div class="mb-3">
-            <label class="form-label">API Code</label>
-            <input type="text" name="apicode" class="form-control" placeholder="Enter API code" required />
+          <div class="mb-3" style="display: none;">
+            <label class="form-label">Api Code</label>
+            <input type="text" name="apicode" value="mm" class="form-control" placeholder="Enter API code"  />
           </div>
         </div>
         <div class="modal-footer">
@@ -165,7 +165,6 @@
                         <p>
                           Unique Code:  {{ unique_code }}
                           <br>
-                          TRUENAS API: {{ folder.apicode }}
                         </p>
                         <p class="mb-0">
                           {{ folder.description }}
@@ -244,7 +243,6 @@
                         <p>
                           Unique Code:  {{ folder.unique_code }}
                           <br>
-                          TRUENAS API: {{ folder.apicode }}
                         </p>
                         <p class="mb-0">
                           {{ folder.description }}

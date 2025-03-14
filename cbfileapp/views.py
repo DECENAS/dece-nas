@@ -369,12 +369,85 @@ def read_html(request):
     # If there is no faculty_id in the session, redirect to the admin login page
     if not admin_id:
         return redirect(reverse('admin_login'))  # 'faculty_login' should be the name of your login URL
+        
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = 0
+
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            total_size_bytes += os.path.getsize(file_path)  # Get file size
+
+            # Get file modification time
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+            if file_mod_time == today:
+                files_today += 1
+            if file_mod_time >= start_of_week:
+                files_this_week += 1
+            if file_mod_time >= start_of_month:
+                files_this_month += 1
+    
+    latest_files = []
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_size = os.path.getsize(file_path)  # File size in bytes
+            file_ext = os.path.splitext(file)[1]  # Get file extension
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
+
+            total_size_bytes += file_size
+
+            # Count files uploaded today, this week, and this month
+            file_mod_date = file_mod_time.date()
+            if file_mod_date == today:
+                files_today += 1
+            if file_mod_date >= start_of_week:
+                files_this_week += 1
+            if file_mod_date >= start_of_month:
+                files_this_month += 1
+
+            # Store latest files with details
+            latest_files.append({
+                "name": file,
+                "extension": file_ext,
+                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
+                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
+            })
+
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
 
 
     # Pass the session data to the template
     context = {
         'admin_id': admin_id,
-        'full_name': full_name
+        'full_name': full_name,
+        "total_files": total_files,
+        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": files_today,
+        "files_this_week": files_this_week,
+        "files_this_month": files_this_month,
+        "latest_files": latest_files,
       
     }
 
@@ -384,13 +457,88 @@ def read_html_f(request):
    
     faculty_id = request.session.get('faculty_id', None)
     full_name = request.session.get('a_fullname', None)
+        
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = 0
+
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            total_size_bytes += os.path.getsize(file_path)  # Get file size
+
+            # Get file modification time
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+            if file_mod_time == today:
+                files_today += 1
+            if file_mod_time >= start_of_week:
+                files_this_week += 1
+            if file_mod_time >= start_of_month:
+                files_this_month += 1
+    
+    latest_files = []
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_size = os.path.getsize(file_path)  # File size in bytes
+            file_ext = os.path.splitext(file)[1]  # Get file extension
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
+
+            total_size_bytes += file_size
+
+            # Count files uploaded today, this week, and this month
+            file_mod_date = file_mod_time.date()
+            if file_mod_date == today:
+                files_today += 1
+            if file_mod_date >= start_of_week:
+                files_this_week += 1
+            if file_mod_date >= start_of_month:
+                files_this_month += 1
+
+            # Store latest files with details
+            latest_files.append({
+                "name": file,
+                "extension": file_ext,
+                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
+                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
+            })
+
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+
 
     # Pass the session data to the template
     context = {
         'faculty_id': faculty_id,
-        'full_name': full_name
+        'full_name': full_name,
+        "total_files": total_files,
+        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": files_today,
+        "files_this_week": files_this_week,
+        "files_this_month": files_this_month,
+        "latest_files": latest_files,
       
     }
+    
 
     return render(request, 'faculty/index.html', context)
 
@@ -402,11 +550,88 @@ def read_html_s(request):
     if not student_id:
         return redirect(reverse('student_login'))  # 'admin_login' should be the name of your login URL
 
+        
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = 0
+
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            total_size_bytes += os.path.getsize(file_path)  # Get file size
+
+            # Get file modification time
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+            if file_mod_time == today:
+                files_today += 1
+            if file_mod_time >= start_of_week:
+                files_this_week += 1
+            if file_mod_time >= start_of_month:
+                files_this_month += 1
+    
+    latest_files = []
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_size = os.path.getsize(file_path)  # File size in bytes
+            file_ext = os.path.splitext(file)[1]  # Get file extension
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
+
+            total_size_bytes += file_size
+
+            # Count files uploaded today, this week, and this month
+            file_mod_date = file_mod_time.date()
+            if file_mod_date == today:
+                files_today += 1
+            if file_mod_date >= start_of_week:
+                files_this_week += 1
+            if file_mod_date >= start_of_month:
+                files_this_month += 1
+
+            # Store latest files with details
+            latest_files.append({
+                "name": file,
+                "extension": file_ext,
+                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
+                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
+            })
+
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+
+
     # Pass the session data to the template
     context = {
-        'faculty_id': student_id,
+        'student_id': student_id,
         'full_name': full_name,
+        "total_files": total_files,
+        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": files_today,
+        "files_this_week": files_this_week,
+        "files_this_month": files_this_month,
+        "latest_files": latest_files,
+      
     }
+ 
 
     return render(request, 'student/index.html', context)
 
@@ -548,11 +773,12 @@ def login_student(request):
     return render(request, 'student/s-login.html', context)
 
 
+
+
 def reg_student(request):
     form = MyForm(request.POST or None)
 
     if request.method == 'POST':
-        # Validate CAPTCHA first
         if form.is_valid():
             first_name = request.POST.get("first_name")
             middle_name = request.POST.get("middle_name")
@@ -560,37 +786,46 @@ def reg_student(request):
             sr_code = request.POST.get("sr_code")
             username = request.POST.get("username")
             password = request.POST.get("password")
-            
-            hashed_password = encrypt(password, passwordUnique) # Hash the password before storing
+
+            hashed_password = encrypt(password, passwordUnique)  # Hash the password before storing
+            student_email = f"{sr_code}@g.batstate-u.edu.ph"
 
             try:
                 with connection.cursor() as cursor:
-                    # Insert into student_info table
-                    cursor.execute(
-                        "INSERT INTO student_info (sr_code, g_email, first_name, middle_name, last_name) VALUES (%s, %s, %s, %s, %s)",
-                        (sr_code, f"{sr_code}@g.batstate-u.edu.ph", first_name, middle_name, last_name),
-                    )
+                    # Check if the student already exists in student_info
+                    cursor.execute("SELECT COUNT(*) FROM student_info WHERE sr_code = %s", [sr_code])
+                    student_exists = cursor.fetchone()[0] > 0
 
-                    # Insert into user_account table
-                    cursor.execute(
-                        "INSERT INTO user_account (username, hashed_password, student_id, email_verified) VALUES (%s, %s, %s, %s)",
-                        (f"{sr_code}@g.batstate-u.edu.ph", hashed_password, sr_code, 'no'),
-                    )
-                    
-                request.session['student_email'] = f"{sr_code}@g.batstate-u.edu.ph"  
+                    # Check if the user already exists in user_account
+                    cursor.execute("SELECT COUNT(*) FROM user_account WHERE username = %s", [student_email])
+                    user_exists = cursor.fetchone()[0] > 0
+
+                    if not student_exists:
+                        # Insert into student_info if not exists
+                        cursor.execute(
+                            "INSERT INTO student_info (sr_code, g_email, first_name, middle_name, last_name) VALUES (%s, %s, %s, %s, %s)",
+                            (sr_code, student_email, first_name, middle_name, last_name),
+                        )
+
+                    if not user_exists:
+                        # Insert into user_account if not exists
+                        cursor.execute(
+                            "INSERT INTO user_account (username, hashed_password, student_id, email_verified) VALUES (%s, %s, %s, %s)",
+                            (student_email, hashed_password, sr_code, 'no'),
+                        )
+
+                request.session['student_email'] = student_email
                 request.session['student_srcode'] = sr_code
                 log_action('student', sr_code, 'Registered to the system', request)
 
                 messages.success(request, "Registration successful! Please verify your email.")
-                return redirect("student_everif")  # Redirect to login page after successful registration
+                return redirect("student_everif")  # Redirect to email verification page
 
             except Exception as e:
                 messages.error(request, f"Error: {e}")
-                
+
     context = {'form': form}
-
     return render(request, "student/s-register.html", context)
-
 
 
 def admin_folders(request):
@@ -651,7 +886,7 @@ def faculty_folders(request):
                 folder_name=folder_name,
                 description=description,
                 unique_code=unique_code,
-                apicode=apicode,
+                apicode=unique_code,
                 faculty_id=faculty_id
             )
 
