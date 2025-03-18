@@ -11,6 +11,7 @@ from django.urls import reverse  # URL handling
 from django.core.mail import send_mail  # Sending emails
 from django.utils.timezone import now  # Handling timezone-aware datetime
 from django.utils.crypto import get_random_string  # Generating secure random strings
+from django.http import Http404
 
 import os
 from django.conf import settings
@@ -1123,6 +1124,8 @@ def serve_file(request, filename):
         content_type = "image/jpeg"  # Generic image type
     elif filename.endswith(VIDEO_EXTENSIONS):
         content_type = "video/mp4"  # Generic video type
+    elif filename.endswith(TEXT_EXTENSION):
+        content_type = "text/plain"  # Generic video type
     else:
         raise Http404("Unsupported file type")
 
