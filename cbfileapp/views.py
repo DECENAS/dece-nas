@@ -1089,26 +1089,69 @@ VIDEO_EXTENSIONS = (".mp4", ".avi", ".mov", ".mkv", ".flv")
 
 PDF_EXTENSION = ".pdf"
 
+
 def list_network_files(request):
-    """ List all PDFs, images, and videos in the network drive. """
-    files = {
+    """ List all folders and files in the network drive, categorizing files by type. """
+    
+    admin_id = request.session.get('admin_id', None)
+    full_name = request.session.get('a_fullname', None)
+
+    # If there is no faculty_id in the session, redirect to the admin login page
+    if not admin_id:
+        return redirect(reverse('admin_login'))  # 'faculty_login' should be the name of your login URL
+        
+    
+    data = {
+        "folders": {},  # Dictionary to hold folders and their respective files
         "pdfs": [],
+        "texts": [],
         "images": [],
         "videos": []
     }
 
     if os.path.exists(NETWORK_DRIVE_PATH):
-        all_files = os.listdir(NETWORK_DRIVE_PATH)
+        all_entries = os.listdir(NETWORK_DRIVE_PATH)
 
-        for file in all_files:
-            if file.endswith(PDF_EXTENSION):
-                files["pdfs"].append(file)
-            elif file.endswith(IMAGE_EXTENSIONS):
-                files["images"].append(file)
-            elif file.endswith(VIDEO_EXTENSIONS):
-                files["videos"].append(file)
+        for entry in all_entries:
+            full_path = os.path.join(NETWORK_DRIVE_PATH, entry)
 
-    return render(request, "list_files.html", {"files": files})
+            if os.path.isdir(full_path):  # If it's a folder
+                folder_files = {
+                    "pdfs": [],
+                    "texts": [],
+                    "images": [],
+                    "videos": []
+                }
+
+                for file in os.listdir(full_path):
+                    file_path = os.path.join(full_path, file)
+
+                    if os.path.isfile(file_path):  # Ensure it's a file, not a subfolder
+                        file_lower = file.lower()
+                        if file_lower.endswith(PDF_EXTENSION):
+                            folder_files["pdfs"].append(file)
+                        elif file_lower.endswith(IMAGE_EXTENSIONS):
+                            folder_files["images"].append(file)
+                        elif file_lower.endswith(VIDEO_EXTENSIONS):
+                            folder_files["videos"].append(file)
+                        elif file_lower.endswith(TEXT_EXTENSION):
+                            folder_files["texts"].append(file)
+
+                data["folders"][entry] = folder_files  # Store folder and its categorized files
+
+            elif os.path.isfile(full_path):  # If it's a file in the root directory
+                entry_lower = entry.lower()
+                if entry_lower.endswith(PDF_EXTENSION):
+                    data["pdfs"].append(entry)
+                elif entry_lower.endswith(IMAGE_EXTENSIONS):
+                    data["images"].append(entry)
+                elif entry_lower.endswith(VIDEO_EXTENSIONS):
+                    data["videos"].append(entry)
+                elif entry_lower.endswith(TEXT_EXTENSION):
+                    data["texts"].append(entry)
+
+    return render(request, "list_files.html", {"data": data})
+
 
 def serve_file(request, filename):
     """ Serve PDF, image, or video from the network drive. """
