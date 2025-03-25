@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>DECE NAS- Forgot Password</title>
+    <title>DECE NAS- Verify OTP</title>
 
     <meta name="description" content="" />
 
@@ -61,47 +61,24 @@
           <!-- Register -->
           <div class="card">
             <div class="card-body">
-               <div class="row">
-                <div class="col-md-6">
-                
               <!-- Logo -->
              <img src="{% static 'assets/img/favicon/BatStateU-NEU-Logo.png' %}" style="width: 80%; margin: 40px;">
-            </div>
-             <div class="col-md-6">
               <!-- /Logo -->
-              <h4 class="mb-2">Verification Successful!</h4>
-              <p class="mb-4">Change Your Password Here</p>
+              <h4 class="mb-2">Enter Your One-Time Password </h4>
 
-              <form id="formAuthentication" class="mb-3" method="POST"  action="{% url 'change_password' %}">
+              <form id="formAuthentication" class="mb-3" method="POST"  action="{% url 'enter_otp' %}">
                 {% csrf_token %}
-                <div class="mb-3">
-                  <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Password</label>
-                   
-                  </div>
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="password"
-                      class="form-control"
-                      name="password"
-                      placeholder="••••••••"
-                      required
-                    />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                  </div>
-                </div>
+                
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Confirm Password</label>
-                   
+                    <label class="form-label" for="password">Enter OTP sent to your email:</label>
+                    
                   </div>
                   <div class="input-group input-group-merge">
                     <input
-                      type="password"
-                      id="confirm_password"
+                      type="test"
                       class="form-control"
-                      id="confirm_password" name="confirm_password" 
+                       id="otp" name="otp"
                       placeholder="••••••••"
                       required
                     />
@@ -112,7 +89,7 @@
                 {% csrf_token %}
             
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Reset Password</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit">Verify OTP</button>
                 </div>
               </form>
               {% if messages %}
@@ -124,11 +101,8 @@
 {% endif %}
 
 
-</div>
-</div>
-
-</div>
-</div>
+            </div>
+          </div>
           <!-- /Register -->
         </div>
       </div>
@@ -169,4 +143,3 @@
     
   </body>
 </html>
-
