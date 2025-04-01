@@ -117,6 +117,30 @@ def send_otp_pass(request):
 
 
 
+def enter_otp_online(request):
+    otp = request.session.get('otp', None)
+    if not otp:
+        return redirect(reverse('home'))  
+
+    """Allow the user to enter OTP for verification"""
+    if request.method == "POST":
+        entered_otp = request.POST.get("otp")
+        session_otp = request.session.get("otp")
+        otp_expiry = request.session.get("otp_expiry")
+        user_id = request.session.get("user_id")
+
+        if not session_otp or datetime.datetime.now() > datetime.datetime.fromisoformat(otp_expiry):
+            messages.error(request, "OTP has expired or is invalid.")
+            return redirect("send_otp")  # Redirect to the OTP send page
+
+        if str(entered_otp) == str(session_otp):
+            return redirect("change_password_true")
+        else:
+            messages.error(request, "Invalid OTP.")
+            return redirect("enter_otp")  # Redirect back to the OTP verification page
+
+    return render(request, "enter_otp.html")  # Render OTP input page
+
 def send_otp_pass_online(request):
     """Send OTP to the user's email for password reset"""
     if request.method == "POST":
@@ -133,13 +157,15 @@ def send_otp_pass_online(request):
             # Send the OTP to the user's email
             send_email(otp, email)
             messages.success(request, "An OTP has been sent to your email.")
-            return redirect("enter_otp")
+            return redirect("enter_otp_online")
 
         except UserAccount.DoesNotExist:
             messages.error(request, "No account found with this email address.")
-            return redirect("send_otp")  # Redirect back to the OTP request page
+            return redirect("change_password_online")  # Redirect back to the OTP request page
 
-    return render(request, "change_password.html")  # Render the OTP request page 
+    return render(request, "change_password_online.html")  # Render the OTP request page 
+
+
 
 def enter_otp(request):
     otp = request.session.get('otp', None)
