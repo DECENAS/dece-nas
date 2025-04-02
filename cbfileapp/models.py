@@ -116,6 +116,7 @@ class FolderFile(models.Model):
     file_id = models.AutoField(primary_key=True)
     folder_code = models.CharField(max_length=255)
     file_name = models.CharField(max_length=255)
+    file_guide = models.CharField(max_length=255)           
     file_description = models.TextField(null=True, blank=True)
     file_link = models.CharField(max_length=255)
     uploader_id = models.CharField(max_length=255)

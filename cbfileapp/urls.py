@@ -16,8 +16,12 @@ urlpatterns = [
     path('admin_reg/', views.reg_admin, name='admin_reg'),
     path('student_login/', views.login_student, name='student_login'),
     path('student_reg/', views.reg_student, name='student_reg'),
+    path('faculty_reg/', views.reg_faculty, name='faculty_reg'),
     path('student_everif/', views.student_everif, name='student_everif'),
-    path("verify/otp/", views.verify_otp, name="verify_otp"),
+    path('faculty_everif/', views.faculty_everif, name='faculty_everif'),
+    
+    path("verify/otp/", views.verify_otp_f, name="verify_otp_f"),
+    path("verify_f/otp/", views.verify_otp, name="verify_otp"),
     path('admin_folder/', views.admin_folders, name='admin_folder'),
     path('student_folder/', views.student_folders, name='student_folder'),
     path('student/join-folder/', views.join_folder, name='join_folder'),

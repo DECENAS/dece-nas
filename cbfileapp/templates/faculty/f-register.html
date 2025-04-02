@@ -1,5 +1,4 @@
 {% load static %}
-
 <html>
   <head>
     <meta charset="utf-8" />
@@ -8,8 +7,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>DECE NAS- Administrator Login</title>
-
+    <title>DECE NAS- Faculty Register</title>
 
     <meta name="description" content="" />
 
@@ -28,7 +26,7 @@
     <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}"  class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css" />
     <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
 
@@ -54,120 +52,93 @@
   </head>
 
   <body>
- 
+    <!-- Content -->
+
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
-          <!-- Register -->
+          <!-- Register Card -->
           <div class="card">
             <div class="card-body">
-              <!-- Logo -->
               <div class="row">
-                <div class="col-md-6">
-                  <a href="{% url 'home' %}" class="btn btn-danger "><i class="bx bx-left-arrow-circle" style="font-size: 25px"></i> &nbsp; Back to Home Page</a>
-                  <img src="{% static 'assets/img/favicon/BatStateU-NEU-Logo.png' %}" style="width: 100%;"><!-- /Logo -->
-               </div>
-               <div class="col-md-6  text-left">
-                <h2 class="mb-3 mt-3">LOGIN NOW TO NASTECH DRIVE </h2>
-                     <i class="bx bxs-user-circle" style="font-size: 120px;  color: #b00404;"></i>
-                     <h4 class="mb-2">Welcome  Administrator </h4>
-                <p class="mb-4">Please sign-in to your account and start managing your files</p>
-  
-              <form id="formAuthentication" class="mb-3" method="POST">
+              <div class="col-md-6">
+             
+              <!-- Logo -->
+    <a href="{% url 'home' %}" class="btn btn-danger "><i class="bx bx-left-arrow-circle" style="font-size: 25px"></i> &nbsp; Back to Home Page</a>
+              <img src="{% static 'assets/img/favicon/BatStateU-NEU-Logo.png' %}" style="width: 100%; ">
+              </div>
+              <!-- /Logo -->
+              <div class="col-md-6">
+                <h4 class="mb-2">Register now: NAStech Drive: Faculty</h4>
+              <hr>
+
+              <form id="formAuthentication" class="mb-3" action="{% url 'faculty_reg' %}" method="POST">
                 {% csrf_token %}
+                
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email or Username</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="email"
-                    name="email-username"
-                    placeholder="Enter your email or username"
-                    required
-                  />
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-control" name="first_name" required placeholder="Enter your first name" />
                 </div>
+              
+                <div class="mb-3">
+                  <label class="form-label">Middle Name</label>
+                  <input type="text" class="form-control" name="middle_name" placeholder="Enter your middle name" />
+                </div>
+              
+                <div class="mb-3">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-control" name="last_name" required placeholder="Enter your last name" />
+                </div>
+              
+                <div class="mb-3">
+                  <label class="form-label">Gsuite Account</label>
+                  <input type="text" class="form-control" name="gsuite" required placeholder="Enter your GSuite email" />
+                </div>
+              
                 <div class="mb-3 form-password-toggle">
-                  <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Password</label>
-                    <a href="{% url 'send_otp' %}">
-                      <small>Forgot Password?</small>
-                    </a>
-                  </div>
+                  <label class="form-label">Password</label>
                   <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="password"
-                      class="form-control"
-                      name="password"
-                      placeholder="••••••••"
-                      required
-                    />
+                    <input type="password" class="form-control" name="password" required placeholder="********" />
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-              
-               <hr>
+                <hr>
                 {% csrf_token %}
-                {{ form.as_p }}  <!-- This will include the CAPTCHA image -->
+                {{ form.as_p }}  
             
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" id="loginBtn" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit">Sign up</button>
                 </div>
               </form>
-              {% if messages %}
-    <div class="alert alert-danger">
-        {% for message in messages %}
-            <p>{{ message }}</p>
-        {% endfor %}
-    </div>
-{% endif %}
-
+              
 
               <p class="text-center">
-                <span>New on our platform? {{locked_out}}</span>
-                <a href="{% url 'student_reg' %}">
-                  <span>Create an account</span>
+                <span>Already have an account?</span>
+                <a href="auth-login-basic.html">
+                  <span>Sign in instead</span>
                 </a>
               </p>
             </div>
           </div>
-          <!-- /Register -->
-        </div>
-      </div>
+          <!-- Register Card -->
         </div>
       </div>
     </div>
-
-
+  </div>
+</div>
     <!-- / Content -->
 
  
-    {% if locked_out %}
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            disableInputs();
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const srCodeInput = document.getElementById("sr-code");
+    const gsuiteInput = document.getElementById("gsuite");
 
-            // Re-enable inputs after 5 minutes
-            setTimeout(() => {
-                enableInputs();
-            }, 300000); // 5 minutes (300000 ms)
-        });
-
-        function disableInputs() {
-            document.getElementById('email').disabled = true;
-            document.getElementById('password').disabled = true;
-            document.getElementById('loginBtn').disabled = true;
-        }
-
-        function enableInputs() {
-            document.getElementById('email').disabled = false;
-            document.getElementById('password').disabled = false;
-            document.getElementById('loginBtn').disabled = false;
-        }
-    </script>
-{% endif %}
-
-
+    srCodeInput.addEventListener("input", function () {
+        gsuiteInput.value = srCodeInput.value + "@g.batstate-u.edu.ph";
+    });
+});
+</script> 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
@@ -196,5 +167,6 @@
         }
     });
   </script>
+    
   </body>
 </html>

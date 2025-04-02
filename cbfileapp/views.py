@@ -828,6 +828,116 @@ def login_student(request):
 
 
 
+def verify_otp_f(request):
+    """Verify user input OTP"""
+    if request.method == "POST":
+        entered_otp = request.POST.get("otp")
+        session_otp = request.session.get("otp")
+        expiry = request.session.get("otp_expiry")
+
+        if not session_otp or not expiry:
+            messages.error(request, "OTP expired. Please request a new one.")
+            return redirect("faculty_everif")
+
+        if now() > datetime.datetime.fromisoformat(expiry):
+            messages.error(request, "OTP has expired. Request a new one.")
+            return redirect("faculty_everif")
+
+        if entered_otp == session_otp:
+            # Mark email as verified in DB
+            user = UserAccount.objects.filter(faculty_id=request.session["faculty_id"]).first()
+            if user:
+                user.email_verified = "yes"
+                user.save()
+            
+            messages.success(request, "Email verified successfully!")
+            return redirect("faculty_login")
+
+        else:
+            messages.error(request, "Invalid OTP. Try again.")
+            return redirect("faculty_everif")
+
+
+def faculty_everif(request):
+    """Handle OTP verification"""
+    faculty_gsuite = request.session.get("faculty_gsuite", None)
+    faculty_id = request.session.get("faculty_id", None)
+
+    if not faculty_gsuite:
+        return redirect("faculty_reg")  # Redirect if no email in session
+
+    # Generate OTP and store in session
+    otp = generate_otp()
+    request.session["otp"] = otp
+    request.session["otp_expiry"] = (now() + datetime.timedelta(minutes=5)).isoformat()
+
+    send_email(otp, faculty_gsuite)
+    messages.success(request, "An OTP has been sent to your email.")
+
+    return render(request, "faculty/f-everif.html", {"faculty_gsuite": faculty_gsuite, "faculty_id": faculty_id})
+
+
+
+def reg_faculty(request):
+    form = MyForm(request.POST or None)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            first_name = request.POST.get("first_name")
+            middle_name = request.POST.get("middle_name")
+            last_name = request.POST.get("last_name")
+            gsuite = request.POST.get("gsuite")
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+
+            hashed_password = encrypt(password, passwordUnique)  # Hash the password before storing
+
+            try:
+                with connection.cursor() as cursor:
+                    # Check if the faculty already exists in faculty_info
+                    cursor.execute("SELECT COUNT(*) FROM faculty_info WHERE gsuite = %s", [gsuite])
+                    faculty_exists = cursor.fetchone()[0] > 0
+
+                    # Check if the user already exists in user_account
+                    cursor.execute("SELECT COUNT(*) FROM user_account WHERE username = %s", [gsuite])
+                    user_exists = cursor.fetchone()[0] > 0
+
+                    if not faculty_exists:
+                        # Insert into faculty_info if not exists
+                        cursor.execute(
+                            "INSERT INTO faculty_info (gsuite, first_name, middle_name, last_name) VALUES (%s, %s, %s, %s)",
+                            (gsuite, first_name, middle_name, last_name),
+                        )
+                        
+                        # Retrieve the inserted faculty ID
+                        cursor.execute("SELECT id FROM faculty_info WHERE gsuite = %s", [gsuite])
+                        faculty_id = cursor.fetchone()[0]
+                    else:
+                        cursor.execute("SELECT id FROM faculty_info WHERE gsuite = %s", [gsuite])
+                        faculty_id = cursor.fetchone()[0]
+
+                    if not user_exists:
+                        # Insert into user_account if not exists
+                        cursor.execute(
+                            "INSERT INTO user_account (username, hashed_password, faculty_id, email_verified) VALUES (%s, %s, %s, %s)",
+                            (gsuite, hashed_password, faculty_id, 'no'),
+                        )
+
+                request.session['faculty_gsuite'] = gsuite
+                request.session['faculty_id'] = faculty_id
+                log_action('faculty', faculty_id, 'Registered to the system', request)
+
+                messages.success(request, "Registration successful! Please verify your email.")
+                return redirect("faculty_everif")  # Redirect to email verification page
+
+            except Exception as e:
+                messages.error(request, f"Error: {e}")
+
+    context = {'form': form}
+    return render(request, "faculty/f-register.html", context)
+
+
+
 def reg_student(request):
     form = MyForm(request.POST or None)
 
@@ -1257,12 +1367,12 @@ TEXT_EXTENSION = ".txt"
 def view_folder_s(request, folder_code):
     """ Faculty view of folder with file listing. """
     student_id = request.session.get("student_id")
-    full_name = request.session.get("a_fullname")
+    full_name = request.session.get("s_fullname")
 
     if not student_id:
         return redirect(reverse("student_login"))
 
-    folder_files = FolderFile.objects.filter(folder_code=folder_code)
+    folder_files = FolderFile.objects.filter(folder_code=folder_code, uploader_id=student_id)
     students = StudentAccount.objects.all()
     shared_files = FilesShared.objects.filter(folder_code=folder_code)
 
@@ -1280,9 +1390,10 @@ def view_folder_s(request, folder_code):
         all_files = os.listdir(folder_path)
 
         for file in all_files:
+
             file_record = folder_files.filter(file_name=file).first()  # Get file info if exists in DB
             file_info = {
-                "file_name": file,
+                "file_name": file_record.file_guide  if file_record else "No name",
                 "file_description": file_record.file_description if file_record else "No description",
                 "file_link": file,
             }
@@ -1311,6 +1422,7 @@ def view_folder_s(request, folder_code):
 
             file = request.FILES["file_link"]
             file_description = request.POST.get("file_description", "")
+            file_guide = request.POST.get("file_name", "")
             folder_code = request.POST.get("folder_code", folder_code)  # Ensure folder_code is provided
 
             # Define the folder path in the network drive
@@ -1325,6 +1437,7 @@ def view_folder_s(request, folder_code):
             FolderFile.objects.create(
                 folder_code=folder_code,
                 file_name=file_name,
+                file_guide=file_guide,
                 file_description=file_description,
                 file_link=os.path.join(folder_code, file_name).replace("\\", "/"),
                 uploader_id=student_id,
@@ -1347,6 +1460,7 @@ def view_folder_s(request, folder_code):
         "files": files
     }
     return render(request, "student/folder_contents.html", context)
+
 
 import os
 from django.shortcuts import render, redirect
@@ -1383,7 +1497,7 @@ def view_folder_f(request, folder_code):
         for file in all_files:
             file_record = folder_files.filter(file_name=file).first()  # Get file info if exists in DB
             file_info = {
-                "file_name": file,
+                "file_name": file_record.file_guide  if file_record else "No name",
                 "file_description": file_record.file_description if file_record else "No description",
                 "file_link": file,
             }
@@ -1427,6 +1541,7 @@ def view_folder_f(request, folder_code):
 
                 file = request.FILES["file_link"]
                 file_description = request.POST.get("file_description", "")
+                file_guide = request.POST.get("file_name", "")
                 folder_code = request.POST.get("folder_code", folder_code)
 
                 os.makedirs(folder_path, exist_ok=True)  # Ensure the folder exists
@@ -1439,6 +1554,7 @@ def view_folder_f(request, folder_code):
                 FolderFile.objects.create(
                     folder_code=folder_code,
                     file_name=file_name,
+                    file_guide=file_guide,
                     file_description=file_description,
                     file_link=os.path.join(folder_code, file_name).replace("\\", "/"),
                     uploader_id=faculty_id,
@@ -1459,6 +1575,9 @@ def view_folder_f(request, folder_code):
         "files": files
     }
     return render(request, "faculty/folder_contents.html", context)
+
+
+
 
 
 
