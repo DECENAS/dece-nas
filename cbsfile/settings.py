@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-gk=384+%=505y0dx3s8#9sg#ozm@clq41t4-xug6u)p1k7x5q^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = [
+    "https://decenas.net",
+]
+
+ALLOWED_HOSTS = ["decenas.net", "www.decenas.net"]
+
 
 
 # Application definition
