@@ -111,6 +111,61 @@ class StudentAccount(models.Model):
         db_table = 'student_accounts'
 
 
+class FileOfStudents(models.Model):
+    EMAIL_VERIFIED_CHOICES = [
+        ('no', 'No'),
+        ('yes', 'Yes'),
+    ]
+
+    u_id = models.IntegerField(default=0)
+    username = models.CharField(max_length=50)
+    hashed_password = models.CharField(max_length=255)
+    student_id = models.CharField(max_length=10)
+    email_verified = models.CharField(max_length=3, choices=EMAIL_VERIFIED_CHOICES, default='no')
+    first_name = models.CharField(max_length=50, null=True, blank=True)
+    middle_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
+    file_id = models.IntegerField(default=0)
+    folder_code = models.CharField(max_length=255)
+    file_name = models.CharField(max_length=255)
+    file_guide = models.CharField(max_length=200)
+    file_description = models.TextField(null=True, blank=True)
+    file_link = models.CharField(max_length=255)
+    uploader_id = models.CharField(max_length=11)
+
+    class Meta:
+        db_table = 'file_of_students'  # The table name in MySQL
+        managed = False  # Set to False if you don't want Django to manage the database table
+
+    def __str__(self):
+        return self.file_name
+
+class FacultyFiles(models.Model):
+    u_id = models.IntegerField(default=0)
+    username = models.CharField(max_length=50)
+    hashed_password = models.CharField(max_length=255)
+    faculty_id = models.IntegerField(default=0)
+    gsuite = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=50, null=True, blank=True)
+    middle_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
+    file_id = models.IntegerField(default=0)
+    folder_code = models.CharField(max_length=255)
+    file_name = models.CharField(max_length=255)
+    file_guide = models.CharField(max_length=200)
+    file_description = models.TextField(null=True, blank=True)
+    file_link = models.CharField(max_length=255)
+    uploader_id = models.CharField(max_length=20)
+
+    class Meta:
+        db_table = 'files_of_faculty'  # The table name in MySQL
+        managed = False  # Set to False if you don't want Django to manage the database table
+
+    def __str__(self):
+        return f"{self.file_name} ({self.username})"
+
+
+
 
 class FolderFile(models.Model):
     file_id = models.AutoField(primary_key=True)

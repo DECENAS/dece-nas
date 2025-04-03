@@ -1038,26 +1038,32 @@ def faculty_folders(request):
 
     # Handle Folder Creation
     if request.method == "POST":
-        folder_name = request.POST.get('folder_name', '').strip()
-        description = request.POST.get('description', '').strip()
-        apicode = request.POST.get('apicode', '').strip()
+        if "create" in request.POST:
+            folder_name = request.POST.get('folder_name', '').strip()
+            description = request.POST.get('description', '').strip()
+            apicode = request.POST.get('apicode', '').strip()
 
-        if folder_name and description and apicode:
-            unique_code = get_random_string(10)  # Generate a unique code
+            if folder_name and description and apicode:
+                unique_code = get_random_string(10)  # Generate a unique code
 
-            FolderTns.objects.create(
-                folder_name=folder_name,
-                description=description,
-                unique_code=unique_code,
-                apicode=unique_code,
-                faculty_id=faculty_id
-            )
+                FolderTns.objects.create(
+                    folder_name=folder_name,
+                    description=description,
+                    unique_code=unique_code,
+                    apicode=unique_code,
+                    faculty_id=faculty_id
+                )
 
-            messages.success(request, "Folder created successfully!")
-            return redirect('faculty_folders')  # Redirect to refresh the page
+                messages.success(request, "Folder created successfully!")
+                return redirect('faculty_folders')  # Redirect to refresh the page
 
+            else:
+                messages.error(request, "All fields are required!")
         else:
-            messages.error(request, "All fields are required!")
+            if "folder_code_delete" in request.POST:
+                folder_code = request.POST.get("folder_code_delete")
+                folder_whole = FolderTns.objects.filter(unique_code=folder_code).first()
+                folder_whole.delete()
 
     # Fetch folders linked to students
     student_folders = StudentFolderView.objects.filter(faculty_id=faculty_id).values(
@@ -1463,12 +1469,15 @@ def view_folder_s(request, folder_code):
     return render(request, "student/folder_contents.html", context)
 
 
+
+
+
 import os
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
-from .models import FolderFile, StudentAccount, FilesShared
+from .models import FolderFile, StudentAccount, FilesShared, FileOfStudents, FacultyFiles
 
 
 def view_folder_f(request, folder_code):
@@ -1479,9 +1488,13 @@ def view_folder_f(request, folder_code):
     if not faculty_id:
         return redirect(reverse("faculty_login"))
 
-    folder_files = FolderFile.objects.filter(folder_code=folder_code)
+    folder_files1 = FileOfStudents.objects.filter(folder_code=folder_code)
+    folder_files2 = FacultyFiles.objects.filter(folder_code=folder_code)
     students = StudentAccount.objects.all()
     shared_files = FilesShared.objects.filter(folder_code=folder_code)
+
+    # Combine both folder files into one queryset
+    all_folder_files = list(folder_files1) + list(folder_files2)
 
     files = {
         "pdfs": [],
@@ -1497,14 +1510,18 @@ def view_folder_f(request, folder_code):
         all_files = os.listdir(folder_path)
 
         for file in all_files:
-            file_record = folder_files.filter(file_name=file).first()  # Get file info if exists in DB
+            # Check if the file exists in either folder_files1 or folder_files2
+            file_record = next((f for f in all_folder_files if f.file_name == file), None)
+
             file_info = {
-                "file_id": file_record.file_id  if file_record else "No name",
-                "file_name": file_record.file_guide  if file_record else "No name",
+                "file_id": file_record.file_id if file_record else "No ID",
+                "user_name": f"{file_record.first_name} {file_record.middle_name} {file_record.last_name}" if file_record else "No name",
+                "file_name": file_record.file_guide if file_record else "No name",
                 "file_description": file_record.file_description if file_record else "No description",
                 "file_link": file,
             }
 
+            # Sort files into categories
             if file.lower().endswith(PDF_EXTENSION):
                 files["pdfs"].append(file_info)
             elif file.lower().endswith(IMAGE_EXTENSIONS):
@@ -1573,13 +1590,11 @@ def view_folder_f(request, folder_code):
     context = {
         "faculty_id": faculty_id,
         "full_name": full_name,
-        "folder_files": folder_files,
+        "folder_files": folder_files1,
         "folder_code": folder_code,
         "students": students,
         "shared_files": shared_files,
         "files": files
     }
     return render(request, "faculty/folder_contents.html", context)
-
-
 
