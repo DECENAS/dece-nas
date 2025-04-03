@@ -371,7 +371,7 @@ def login_faculty(request):
                 cursor.execute("""
                     SELECT u_id, username, hashed_password, first_name, last_name, middle_name, faculty_id  
                     FROM faculty_accounts 
-                    WHERE username = %s OR gsuite = %s
+                    WHERE (username = %s OR gsuite = %s) AND email_verified = 'yes'
                 """, [username_or_email, username_or_email])
                 faculty = cursor.fetchone()
 
@@ -1469,6 +1469,7 @@ from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from .models import FolderFile, StudentAccount, FilesShared
 
+
 def view_folder_f(request, folder_code):
     """ Faculty view of folder with file listing. """
     faculty_id = request.session.get("faculty_id")
@@ -1497,6 +1498,7 @@ def view_folder_f(request, folder_code):
         for file in all_files:
             file_record = folder_files.filter(file_name=file).first()  # Get file info if exists in DB
             file_info = {
+                "file_id": file_record.file_id  if file_record else "0",
                 "file_name": file_record.file_guide  if file_record else "No name",
                 "file_description": file_record.file_description if file_record else "No description",
                 "file_link": file,
@@ -1516,7 +1518,7 @@ def view_folder_f(request, folder_code):
             if "delete_file" in request.POST:
                 file_name = request.POST.get("file_name")
                 print(f"{file_name} s")
-                file_record = FolderFile.objects.filter(folder_code=folder_code, file_name=file_name).first()
+                file_record = FolderFile.objects.filter(folder_code=folder_code, file_id=file_name).first()
                 
                 if file_record:
                     file_path = os.path.join(folder_path, file_name)
@@ -1528,7 +1530,7 @@ def view_folder_f(request, folder_code):
                     
                     # Remove record from database
                     file_record.delete()
-                    print(f"Deleted record from database: {file_name}")
+                    messages.success(request, f"File Deleted successfully")
                     
                     
                     return redirect("view_folder_f", folder_code=folder_code)
@@ -1560,6 +1562,7 @@ def view_folder_f(request, folder_code):
                     uploader_id=faculty_id,
             )
 
+            messages.success(request, f"File Uploaded successfully")
             return redirect("view_folder_f", folder_code=folder_code)
         
         except Exception as e:
@@ -1575,10 +1578,6 @@ def view_folder_f(request, folder_code):
         "files": files
     }
     return render(request, "faculty/folder_contents.html", context)
-
-
-
-
 
 
 
