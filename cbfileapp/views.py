@@ -1499,7 +1499,7 @@ def view_folder_f(request, folder_code):
         for file in all_files:
             file_record = folder_files.filter(file_name=file).first()  # Get file info if exists in DB
             file_info = {
-                "file_id": file_record.file_id  if file_record else "0",
+                "file_id": file_record.file_id  if file_record else "No name",
                 "file_name": file_record.file_guide  if file_record else "No name",
                 "file_description": file_record.file_description if file_record else "No description",
                 "file_link": file,
@@ -1518,8 +1518,9 @@ def view_folder_f(request, folder_code):
         try:
             if "delete_file" in request.POST:
                 file_name = request.POST.get("file_name")
+                file_id = request.POST.get("file_id") 
                 print(f"{file_name} s")
-                file_record = FolderFile.objects.filter(folder_code=folder_code, file_id=file_name).first()
+                file_record = FolderFile.objects.filter(folder_code=folder_code, file_id=file_id).first()
                 
                 if file_record:
                     file_path = os.path.join(folder_path, file_name)

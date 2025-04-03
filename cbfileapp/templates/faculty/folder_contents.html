@@ -71,6 +71,8 @@
           {% endif %}
               <div class="row mb-5">
               <div class="col-md-6">
+             
+            
 <!-- Button trigger modal -->
 <button
   href="#basicModal"
@@ -145,7 +147,8 @@
                               <form method="post" onsubmit="return confirmDelete()">              
   {% csrf_token %}
 
-                                <input type="text" value="{{ pdf.file_id }}" name="file_name" style="display: none;">
+                                <input type="text" value="{{ pdf.file_link }}" name="file_name" style="display: none;">
+                                <input type="text" value="{{ pdf.file_id }}" name="file_id" style="display: none;">
                                 <button type="submit" class="btn btn-danger" name="delete_file">Delete</button>
                             </form>
                             
@@ -183,7 +186,9 @@
                               <form method="post" onsubmit="return confirmDelete()">              
   {% csrf_token %}
 
-                                <input type="text" value="{{ text.file_id }}" name="file_name" style="display: none;">
+                                <input type="text" value="{{ text.file_link }}" name="file_name" style="display: none;">
+                                <input type="text" value="{{ text.file_id }}" name="file_id" style="display: none;">
+
                                 <button type="submit" class="btn btn-danger" name="delete_file">Delete</button>
                             </form>
                             
@@ -200,27 +205,29 @@
                       </div>
                   {% endfor %}
                 
-                  {% for pdf in files.videos %}
+                  {% for video in files.videos %}
                       <div class="col-md-6 col-xl-6 file-item" >
                           <div class="card mb-3">
                               <div class="card-body">
-                                  <h5 class="card-title file-name">Name: {{ pdf.file_name }}</h5>
-                                  <p class="card-text file-description">Description: {{ pdf.file_description }}</p>
+                                  <h5 class="card-title file-name">Name: {{ video.file_name }}</h5>
+                                  <p class="card-text file-description">Description: {{ video.file_description }}</p>
                                   
-                                  <video width="600" controls>
-                                    <source src="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" type="video/mp4">
+                                  <video width="450" controls>
+                                    <source src="{% url 'f_serve_file'  folder_code=folder_code filename=video.file_link  %}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                               <hr>
                               <div class="row">
                                 <div class="col-md-3">
-                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" class="btn btn-success" target="_blank" download>Download</a>
+                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=video.file_link  %}" class="btn btn-success" target="_blank" download>Download</a>
                               </div>
                               <div class="col-md-3">
                               <form method="post" onsubmit="return confirmDelete()">              
   {% csrf_token %}
 
-                                <input type="text" value="{{ pdf.file_id }}" name="file_name" style="display: none;">
+                                <input type="text" value="{{ video.file_link }}" name="file_name" style="display: none;">
+                                <input type="text" value="{{ video.file_id }}" name="file_id" style="display: none;">
+
                                 <button type="submit" class="btn btn-danger" name="delete_file">Delete</button>
                             </form>
                             
@@ -236,25 +243,27 @@
                       </div>
                   {% endfor %}
                  
-                  {% for pdf in files.images %}
+                  {% for image in files.images %}
                       <div class="col-md-6 col-xl-6 file-item" >
                           <div class="card mb-3">
                               <div class="card-body">
-                                  <h5 class="card-title file-name">Name: {{ pdf.file_name }}</h5>
-                                  <p class="card-text file-description">Description: {{ pdf.file_description }}</p>
+                                  <h5 class="card-title file-name">Name: {{ image.file_name }}</h5>
+                                  <p class="card-text file-description">Description: {{ image.file_description }}</p>
                                   
-                                  <img style="width: 100%;"  src="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" width="300" alt="Image Preview">
+                                  <img style="width: 100%;"  src="{% url 'f_serve_file'  folder_code=folder_code filename=image.file_link  %}" width="300" alt="Image Preview">
 
                               <hr>
                               <div class="row">
                                 <div class="col-md-3">
-                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" class="btn btn-success" target="_blank" download>Download</a>
+                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=image.file_link  %}" class="btn btn-success" target="_blank" download>Download</a>
                               </div>
                               <div class="col-md-3">
                               <form method="post" onsubmit="return confirmDelete()">              
   {% csrf_token %}
 
-                                <input type="text" value="{{ pdf.file_id }}" name="file_name" style="display: none;">
+                                <input type="text" value="{{ image.file_link }}" name="file_name" style="display: none;">
+                                <input type="text" value="{{ image.file_id }}" name="file_id" style="display: none;">
+
                                 <button type="submit" class="btn btn-danger" name="delete_file">Delete</button>
                             </form>
                             

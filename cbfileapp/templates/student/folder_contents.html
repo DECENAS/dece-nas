@@ -187,7 +187,7 @@
                                   <h5 class="card-title file-name">Name: {{ pdf.file_name }}</h5>
                                   <p class="card-text file-description">Description: {{ pdf.file_description }}</p>
                                   
-                                  <video width="600" controls>
+                                  <video width="450" controls>
                                     <source src="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
