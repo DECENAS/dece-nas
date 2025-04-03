@@ -1443,6 +1443,7 @@ def view_folder_s(request, folder_code):
                 uploader_id=student_id,
             )
 
+            messages.success(request, f"File Uploaded successfully")
             return redirect("view_folder_s", folder_code=folder_code)
 
 

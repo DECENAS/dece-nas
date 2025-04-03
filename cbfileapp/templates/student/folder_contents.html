@@ -75,6 +75,13 @@
                 </div>
               </div>
               <h4 class="fw-bold py-3 mb-2">Folder Contents</h4>
+              {% if messages %}
+              <div class="alert alert-danger">
+                  {% for message in messages %}
+                      <p>{{ message }}</p>
+                  {% endfor %}
+              </div>
+          {% endif %}
               <div class="row mb-5">
               <div class="col-md-6">
 <!-- Button trigger modal -->
