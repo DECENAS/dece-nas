@@ -337,7 +337,7 @@ def login_admin(request):
 
             # Lock the account after 3 failed attempts
             if attempts >= 3:
-                lockout_time = now() + timedelta(minutes=5)
+                lockout_time = now() + datetime.datetime.timedelta(minutes=5)
                 request.session['admin_lockout_time'] = lockout_time.isoformat()
                 messages.error(request, "Too many failed attempts. Try again in 5 minutes.")
 
@@ -386,7 +386,7 @@ def login_faculty(request):
                     log_action('admin', u_id, 'Logged In', request)
 
                     
-                    return redirect('f_dashboard')  
+                    return redirect('faculty_folders')  
                 else:
                     messages.error(request, "Invalid password!")
             else:
@@ -802,7 +802,7 @@ def login_student(request):
                     log_action('student', student_id, 'Logged in', request)
 
                     
-                    return redirect('s_dashboard')
+                    return redirect('student_folder')
                 else:
                     messages.error(request, "Invalid password!")
             else:
@@ -1036,6 +1036,71 @@ def faculty_folders(request):
     if not faculty_id:
         return redirect(reverse('faculty_login'))  
 
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = 0
+
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            total_size_bytes += os.path.getsize(file_path)  # Get file size
+
+            # Get file modification time
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+            if file_mod_time == today:
+                files_today += 1
+            if file_mod_time >= start_of_week:
+                files_this_week += 1
+            if file_mod_time >= start_of_month:
+                files_this_month += 1
+    
+    latest_files = []
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_size = os.path.getsize(file_path)  # File size in bytes
+            file_ext = os.path.splitext(file)[1]  # Get file extension
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
+
+            total_size_bytes += file_size
+
+            # Count files uploaded today, this week, and this month
+            file_mod_date = file_mod_time.date()
+            if file_mod_date == today:
+                files_today += 1
+            if file_mod_date >= start_of_week:
+                files_this_week += 1
+            if file_mod_date >= start_of_month:
+                files_this_month += 1
+
+            # Store latest files with details
+            latest_files.append({
+                "name": file,
+                "extension": file_ext,
+                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
+                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
+            })
+
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+        
     # Handle Folder Creation
     if request.method == "POST":
         if "create" in request.POST:
@@ -1103,6 +1168,14 @@ def faculty_folders(request):
         'full_name': full_name,
         'grouped_folders': grouped_folders,
         'empty_folders': empty_folders,  # Pass folders without students
+        "total_files": total_files,
+        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": files_today,
+        "files_this_week": files_this_week,
+        "files_this_month": files_this_month,
+        "latest_files": latest_files,
     }
 
     return render(request, 'faculty/folders.html', context)
@@ -1117,6 +1190,70 @@ def student_folders(request):
     # If there is no student_id in the session, redirect to the student login page
     if not student_id:
         return redirect(reverse('student_login'))
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = 0
+
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            total_size_bytes += os.path.getsize(file_path)  # Get file size
+
+            # Get file modification time
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+            if file_mod_time == today:
+                files_today += 1
+            if file_mod_time >= start_of_week:
+                files_this_week += 1
+            if file_mod_time >= start_of_month:
+                files_this_month += 1
+    
+    latest_files = []
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_size = os.path.getsize(file_path)  # File size in bytes
+            file_ext = os.path.splitext(file)[1]  # Get file extension
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
+
+            total_size_bytes += file_size
+
+            # Count files uploaded today, this week, and this month
+            file_mod_date = file_mod_time.date()
+            if file_mod_date == today:
+                files_today += 1
+            if file_mod_date >= start_of_week:
+                files_this_week += 1
+            if file_mod_date >= start_of_month:
+                files_this_month += 1
+
+            # Store latest files with details
+            latest_files.append({
+                "name": file,
+                "extension": file_ext,
+                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
+                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
+            })
+
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
 
     # Get folders that the student has joined (for viewing)
     student_folders = StudentFolder.objects.filter(student_id=student_id) \
@@ -1136,7 +1273,15 @@ def student_folders(request):
     context = {
         'student_id': student_id,
         'full_name': full_name,
-        'grouped_folders': grouped_folders
+        'grouped_folders': grouped_folders,
+        "total_files": total_files,
+        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": files_today,
+        "files_this_week": files_this_week,
+        "files_this_month": files_this_month,
+        "latest_files": latest_files,
     }
 
     return render(request, 'student/folders.html', context)
@@ -1370,14 +1515,80 @@ def serve_folder_file(request, filename, folder_code):
 
 TEXT_EXTENSION = ".txt"
 
+
 def view_folder_s(request, folder_code):
     """ Faculty view of folder with file listing. """
     student_id = request.session.get("student_id")
-    full_name = request.session.get("s_fullname")
+    full_name = request.session.get("a_fullname")
 
     if not student_id:
         return redirect(reverse("student_login"))
 
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = 0
+
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            total_size_bytes += os.path.getsize(file_path)  # Get file size
+
+            # Get file modification time
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+            if file_mod_time == today:
+                files_today += 1
+            if file_mod_time >= start_of_week:
+                files_this_week += 1
+            if file_mod_time >= start_of_month:
+                files_this_month += 1
+    
+    latest_files = []
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_size = os.path.getsize(file_path)  # File size in bytes
+            file_ext = os.path.splitext(file)[1]  # Get file extension
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
+
+            total_size_bytes += file_size
+
+            # Count files uploaded today, this week, and this month
+            file_mod_date = file_mod_time.date()
+            if file_mod_date == today:
+                files_today += 1
+            if file_mod_date >= start_of_week:
+                files_this_week += 1
+            if file_mod_date >= start_of_month:
+                files_this_month += 1
+
+            # Store latest files with details
+            latest_files.append({
+                "name": file,
+                "extension": file_ext,
+                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
+                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
+            })
+
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+        
     folder_files = FolderFile.objects.filter(folder_code=folder_code, uploader_id=student_id)
     students = StudentAccount.objects.all()
     shared_files = FilesShared.objects.filter(folder_code=folder_code)
@@ -1396,60 +1607,61 @@ def view_folder_s(request, folder_code):
         all_files = os.listdir(folder_path)
 
         for file in all_files:
+            file_path = os.path.join(folder_path, file)
+            uploaded_timestamp = os.path.getmtime(file_path)
+            uploaded_datetime = datetime.datetime.fromtimestamp(uploaded_timestamp).strftime('%Y-%m-%d %H:%M:%S')
 
-            file_record = folder_files.filter(file_name=file).first()  # Get file info if exists in DB
-            file_info = {
-                "file_name": file_record.file_guide  if file_record else "No name",
-                "file_description": file_record.file_description if file_record else "No description",
-                "file_link": file,
-            }
+            # Check if the file exists in folder_files and if uploader_id matches the student_id
+            file_record = next((f for f in folder_files if f.file_name == file and f.uploader_id == student_id), None)
 
-            if file.lower().endswith(PDF_EXTENSION):
-                files["pdfs"].append(file_info)
-            elif file.lower().endswith(IMAGE_EXTENSIONS):
-                files["images"].append(file_info)
-            elif file.lower().endswith(VIDEO_EXTENSIONS):
-                files["videos"].append(file_info)
-            elif file.lower().endswith(TEXT_EXTENSION):
-                files["texts"].append(file_info)
+            if file_record:  # Proceed only if the file exists and uploader_id matches
+                file_info = {
+                    "file_name": file_record.file_guide if file_record else "No name",
+                    "file_description": file_record.file_description if file_record else "No description",
+                    "file_link": file,
+                    "uploaded_at": uploaded_datetime
+                }
 
+                if file.lower().endswith(PDF_EXTENSION):
+                    files["pdfs"].append(file_info)
+                elif file.lower().endswith(IMAGE_EXTENSIONS):
+                    files["images"].append(file_info)
+                elif file.lower().endswith(VIDEO_EXTENSIONS):
+                    files["videos"].append(file_info)
+                elif file.lower().endswith(TEXT_EXTENSION):
+                    files["texts"].append(file_info)
+
+    # Return or render files as needed (not shown here).
 
     if request.method == "POST":
         try:
-            # Debugging: Print request data
-            print("POST Data:", request.POST)
-            print("FILES Data:", request.FILES)
 
-            if "upload_file" not in request.POST:
-                return JsonResponse({"error": "Missing 'upload_file' field"}, status=400)
+            file_links = request.FILES.getlist("file_link[]")  # Get list of files
+            file_names = request.POST.getlist("file_name[]")  # Get list of file names
+            file_descriptions = request.POST.getlist("file_description[]")  # Get list of descriptions
 
-            if "file_link" not in request.FILES:
-                return JsonResponse({"error": "No file uploaded"}, status=400)
+            if not file_links:
+                return JsonResponse({"error": "No files uploaded"}, status=400)
 
-            file = request.FILES["file_link"]
-            file_description = request.POST.get("file_description", "")
-            file_guide = request.POST.get("file_name", "")
-            folder_code = request.POST.get("folder_code", folder_code)  # Ensure folder_code is provided
+            for idx, file in enumerate(file_links):
+                # Get file details
+                file_name = file_names[idx] if idx < len(file_names) else file.name
+                file_description = file_descriptions[idx] if idx < len(file_descriptions) else ""
+                    
+                # Save the file
+                fs = FileSystemStorage(location=folder_path)
+                saved_file_name = fs.save(file.name, file)
 
-            # Define the folder path in the network drive
-            folder_path = os.path.join(settings.MEDIA_ROOT, folder_code)
-            os.makedirs(folder_path, exist_ok=True)  # Create the folder if it doesn't exist
+                    # Store file in database (adjust based on your model)
+                FolderFile.objects.create(
+                    folder_code=folder_code,
+                    file_name=saved_file_name,
+                    file_guide=file_name,
+                    file_description=file_description,
+                    file_link=os.path.join(folder_code, saved_file_name).replace("\\", "/"),
+                    uploader_id=student_id,  # Ensure student_id is correctly retrieved
+                )
 
-            # Save file in the specified folder
-            fs = FileSystemStorage(location=folder_path)
-            file_name = fs.save(file.name, file)
-
-            # Store filename in MySQL
-            FolderFile.objects.create(
-                folder_code=folder_code,
-                file_name=file_name,
-                file_guide=file_guide,
-                file_description=file_description,
-                file_link=os.path.join(folder_code, file_name).replace("\\", "/"),
-                uploader_id=student_id,
-            )
-
-            messages.success(request, f"File Uploaded successfully")
             return redirect("view_folder_s", folder_code=folder_code)
 
 
@@ -1464,12 +1676,17 @@ def view_folder_s(request, folder_code):
         "folder_code": folder_code,
         "students": students,
         "shared_files": shared_files,
-        "files": files
+        "files": files,  # Pass folders without students
+        "total_files": total_files,
+        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": files_today,
+        "files_this_week": files_this_week,
+        "files_this_month": files_this_month,
+        "latest_files": latest_files,
     }
     return render(request, "student/folder_contents.html", context)
-
-
-
 
 
 import os
@@ -1488,6 +1705,71 @@ def view_folder_f(request, folder_code):
     if not faculty_id:
         return redirect(reverse("faculty_login"))
 
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = 0
+
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            total_size_bytes += os.path.getsize(file_path)  # Get file size
+
+            # Get file modification time
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+            if file_mod_time == today:
+                files_today += 1
+            if file_mod_time >= start_of_week:
+                files_this_week += 1
+            if file_mod_time >= start_of_month:
+                files_this_month += 1
+    
+    latest_files = []
+
+    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+        total_folders += len(dirs)
+        total_files += len(files)
+
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_size = os.path.getsize(file_path)  # File size in bytes
+            file_ext = os.path.splitext(file)[1]  # Get file extension
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
+
+            total_size_bytes += file_size
+
+            # Count files uploaded today, this week, and this month
+            file_mod_date = file_mod_time.date()
+            if file_mod_date == today:
+                files_today += 1
+            if file_mod_date >= start_of_week:
+                files_this_week += 1
+            if file_mod_date >= start_of_month:
+                files_this_month += 1
+
+            # Store latest files with details
+            latest_files.append({
+                "name": file,
+                "extension": file_ext,
+                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
+                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
+            })
+
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+          
     folder_files1 = FileOfStudents.objects.filter(folder_code=folder_code)
     folder_files2 = FacultyFiles.objects.filter(folder_code=folder_code)
     students = StudentAccount.objects.all()
@@ -1512,6 +1794,12 @@ def view_folder_f(request, folder_code):
         for file in all_files:
             # Check if the file exists in either folder_files1 or folder_files2
             file_record = next((f for f in all_folder_files if f.file_name == file), None)
+            file_path = os.path.join(folder_path, file)
+            uploaded_timestamp = os.path.getmtime(file_path)
+            uploaded_datetime = datetime.datetime.fromtimestamp(uploaded_timestamp).strftime('%Y-%m-%d %H:%M:%S')
+
+            # Check if the file exists in either folder_files1 or folder_files2
+            file_record = next((f for f in all_folder_files if f.file_name == file), None)
 
             file_info = {
                 "file_id": file_record.file_id if file_record else "No ID",
@@ -1519,6 +1807,7 @@ def view_folder_f(request, folder_code):
                 "file_name": file_record.file_guide if file_record else "No name",
                 "file_description": file_record.file_description if file_record else "No description",
                 "file_link": file,
+                "uploaded_at": uploaded_datetime 
             }
 
             # Sort files into categories
@@ -1555,31 +1844,49 @@ def view_folder_f(request, folder_code):
                     return redirect("view_folder_f", folder_code=folder_code)
                 else:
                     return JsonResponse({"error": "File not found in database"}, status=404)
+            elif "change_fname" in request.POST:
+                file_name = request.POST.get("file_name")
+                file_id = request.POST.get("file_id") 
+                file_record = FolderFile.objects.filter(file_id=file_id).first()
+                
+                if file_record:
+                    file_record.file_guide = file_name  # Update the field
+                    file_record.save()  # Save the changes
+                    messages.success(request, f"File name updated successfully.")
+                    return redirect("view_folder_f", folder_code=folder_code)
+                else:
+                    messages.success(request, f"File record not found.")
+                    return redirect("view_folder_f", folder_code=folder_code)
+                    
+                    
+                
             else:
 
-                if "file_link" not in request.FILES:
-                    return JsonResponse({"error": "No file uploaded"}, status=400)
+                file_links = request.FILES.getlist("file_link[]")  # Get list of files
+                file_names = request.POST.getlist("file_name[]")  # Get list of file names
+                file_descriptions = request.POST.getlist("file_description[]")  # Get list of descriptions
 
-                file = request.FILES["file_link"]
-                file_description = request.POST.get("file_description", "")
-                file_guide = request.POST.get("file_name", "")
-                folder_code = request.POST.get("folder_code", folder_code)
+                if not file_links:
+                    return JsonResponse({"error": "No files uploaded"}, status=400)
 
-                os.makedirs(folder_path, exist_ok=True)  # Ensure the folder exists
+                for idx, file in enumerate(file_links):
+                    # Get file details
+                    file_name = file_names[idx] if idx < len(file_names) else file.name
+                    file_description = file_descriptions[idx] if idx < len(file_descriptions) else ""
+                    
+                    # Save the file
+                    fs = FileSystemStorage(location=folder_path)
+                    saved_file_name = fs.save(file.name, file)
 
-                # Save file in the specified folder
-                fs = FileSystemStorage(location=folder_path)
-                file_name = fs.save(file.name, file)
-
-                # Store filename in MySQL
-                FolderFile.objects.create(
-                    folder_code=folder_code,
-                    file_name=file_name,
-                    file_guide=file_guide,
-                    file_description=file_description,
-                    file_link=os.path.join(folder_code, file_name).replace("\\", "/"),
-                    uploader_id=faculty_id,
-            )
+                    # Store file in database (adjust based on your model)
+                    FolderFile.objects.create(
+                        folder_code=folder_code,
+                        file_name=saved_file_name,
+                        file_guide=file_name,
+                        file_description=file_description,
+                        file_link=os.path.join(folder_code, saved_file_name).replace("\\", "/"),
+                        uploader_id=faculty_id,  # Ensure faculty_id is correctly retrieved
+                    )
 
             messages.success(request, f"File Uploaded successfully")
             return redirect("view_folder_f", folder_code=folder_code)
@@ -1594,7 +1901,15 @@ def view_folder_f(request, folder_code):
         "folder_code": folder_code,
         "students": students,
         "shared_files": shared_files,
-        "files": files
+        "files": files,  # Pass folders without students
+        "total_files": total_files,
+        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": files_today,
+        "files_this_week": files_this_week,
+        "files_this_month": files_this_month,
+        "latest_files": latest_files,
     }
     return render(request, "faculty/folder_contents.html", context)
 

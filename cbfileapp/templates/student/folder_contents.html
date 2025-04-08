@@ -10,7 +10,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>DECE NAS - Folder Contents</title>
+    <title>DEENAS - Folder Contents</title>
 
     <meta name="description" content="" />
 
@@ -61,27 +61,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="row mb-3" >
-              
-                <div class="col-md-12 col-xl-12 file-item" >
-                  <div class="card text-center">
-                  
-                    <div class="card-body">
-                      <h4 class="card-title">Welcome to DECE NAS!</h4>
-                      <p class="card-text">Your secure and reliable TrueNAS-based storage solution is here. Easily upload, access, and manage your files online, ensuring safe and efficient storage on your dedicated hard drive. Whether for personal use or team collaboration, DECE NAS provides seamless file management with powerful features.</p>
-                    </div>
-                 
-                  </div>
-                </div>
-              </div>
-              <h4 class="fw-bold py-3 mb-2">Folder Contents</h4>
-              {% if messages %}
-              <div class="alert alert-danger">
-                  {% for message in messages %}
-                      <p>{{ message }}</p>
-                  {% endfor %}
-              </div>
-          {% endif %}
+              <h4 class="fw-bold py-3 mb-4">Folder Contents</h4>
               <div class="row mb-5">
               <div class="col-md-6">
 <!-- Button trigger modal -->
@@ -104,30 +84,72 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" enctype='multipart/form-data'>
+        <form method="POST" enctype="multipart/form-data" onsubmit="return handleUpload(event)">
           {% csrf_token %}
-          <div class="row">
-            <div class="col mb-3">
+       
+        
+          <div id="file-input-container" class="row g-2">
+            <div class="col mb-0">
               <label for="file_name" class="form-label">File Name</label>
-              <input type="text" id="file_name" name="file_name" class="form-control" placeholder="Enter Name" required />
+              <input type="text" name="file_name[]" class="form-control" placeholder="Enter File Name" required />
             </div>
-          </div>
-          <div class="row g-2">
             <div class="col mb-0">
               <label for="file_description" class="form-label">Description</label>
-              <input type="text" id="file_description" name="file_description" class="form-control" placeholder="Enter Description" />
+              <input type="text" name="file_description[]" class="form-control" placeholder="Enter Description" />
             </div>
             <div class="col mb-0">
               <label for="file_link" class="form-label">File Link</label>
-              <input type="file" id="file_link" name="file_link" class="form-control" 
-              accept=".jpg,.jpeg,.png,.gif,.bmp,.webp,.mp4,.avi,.mov,.mkv,.flv,.pdf,.txt"
-              required />
+              <input type="file" name="file_link[]" class="form-control" required />
+            </div>
+            <div class="col-auto mb-0">
+              <button type="button" class="btn btn-danger remove-file-input" style="margin-top: 2rem;">Delete</button>
             </div>
           </div>
+        
           <div class="modal-footer">
+            <button type="button" id="add-file-btn" class="btn btn-success">Add File</button>
             <button type="submit" name="upload_file" class="btn btn-primary">Upload</button>
           </div>
         </form>
+        
+        <script>
+          // Add file input row
+          document.getElementById('add-file-btn').addEventListener('click', function() {
+            const container = document.getElementById('file-input-container');
+            const newRow = document.createElement('div');
+            newRow.classList.add('row', 'g-2');
+            newRow.innerHTML = `
+              <div class="col mb-0">
+                <label for="file_name" class="form-label">File Name</label>
+                <input type="text" name="file_name[]" class="form-control" placeholder="Enter File Name" required />
+              </div>
+              <div class="col mb-0">
+                <label for="file_description" class="form-label">Description</label>
+                <input type="text" name="file_description[]" class="form-control" placeholder="Enter Description" />
+              </div>
+              <div class="col mb-0">
+                <label for="file_link" class="form-label">File Link</label>
+                <input type="file" name="file_link[]" class="form-control" required />
+              </div>
+              <div class="col-auto mb-0">
+                <button type="button" class="btn btn-danger remove-file-input" style="margin-top: 2rem;">Delete</button>
+              </div>
+            `;
+            container.appendChild(newRow);
+        
+            // Add event listener for the delete button
+            const removeBtn = newRow.querySelector('.remove-file-input');
+            removeBtn.addEventListener('click', function() {
+              newRow.remove();
+            });
+          });
+        
+          // Handle form submission, you can add custom validation or processing here
+          function handleUpload(event) {
+            // Example: perform additional validation before submitting
+            return true; // Proceed with form submission
+          }
+        </script>
       </div>
     </div>
   </div>
@@ -136,27 +158,98 @@
 
 </div>
 </div>
-
-
-
 <p class="card-text">Search for Files:</p>
 
 <input type="text " class="form-control" name="search-value" id="search-val"  placeholder="Search by name or description..." onkeyup="filterFiles()" />
 <hr>
+<select id="sortSelect" onchange="sortFiles()" class="btn btn-primary">
+  <option value="name-asc">Sort by Name (A–Z)</option>
+  <option value="name-desc">Sort by Name (Z–A)</option>
+  <option value="date-desc">Sort by Date (Newest First)</option>
+  <option value="date-asc">Sort by Date (Oldest First)</option>
+</select>
+<hr>
+
+<script>
+  let allItems = [];
+
+  // Initialize on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('folder-contents');
+    allItems = Array.from(container.getElementsByClassName('file-item'));
+    filterAndSort(); // Apply initial state
+  });
+
+  function filterAndSort() {
+    const searchValue = document.getElementById('search-val').value.toLowerCase().trim();
+    const sortValue = document.getElementById('sortSelect').value;
+
+    let filteredItems = allItems.filter(item => {
+      const name = item.querySelector('.file-name').textContent.toLowerCase();
+      const description = item.querySelector('.file-description').textContent.toLowerCase();
+      return name.includes(searchValue) || description.includes(searchValue);
+    });
+
+    filteredItems.sort((a, b) => {
+      if (sortValue === 'name-asc' || sortValue === 'name-desc') {
+        const nameA = a.querySelector('.file-name').textContent.replace('Name: ', '').toLowerCase();
+        const nameB = b.querySelector('.file-name').textContent.replace('Name: ', '').toLowerCase();
+        return sortValue === 'name-asc' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+      }
+
+      if (sortValue === 'date-asc' || sortValue === 'date-desc') {
+        const dateA = getDateFromItem(a);
+        const dateB = getDateFromItem(b);
+        return sortValue === 'date-asc' ? dateA - dateB : dateB - dateA;
+      }
+
+      return 0;
+    });
+
+    const container = document.getElementById('folder-contents');
+    container.innerHTML = '';
+    filteredItems.forEach(item => container.appendChild(item));
+  }
+
+  function getDateFromItem(item) {
+    const paragraphs = item.querySelectorAll('.card-text');
+    for (let p of paragraphs) {
+      if (p.textContent.includes('Date Uploaded:')) {
+        return new Date(p.textContent.replace('Date Uploaded: ', '').trim());
+      }
+    }
+    return new Date(0);
+  }
+
+  function filterFiles() {
+    filterAndSort();
+  }
+
+  function sortFiles() {
+    filterAndSort();
+  }
+</script>
               <div class="row mb-5"   id="folder-contents">
               
                   {% for pdf in files.pdfs %}
                       <div class="col-md-6 col-xl-6 file-item" >
                           <div class="card mb-3">
                               <div class="card-body">
-                                  <h5 class="card-title file-name">Name: {{ pdf.file_name }}</h5>
+                                  <h5  class="card-title file-name d-flex justify-content-between">Name: {{ pdf.file_name }} ({{ pdf.file_link }}) <div class="dropdown ml-auto">
+                                    <button class="btn btn-link " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bx bxs-cog text-danger"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <li><a class="dropdown-item" href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" download> Download</a></li>
+                                      
+                                    </ul>
+                                  </div></h5>
                                   <p class="card-text file-description">Description: {{ pdf.file_description }}</p>
-                                  
+                                  <p class="card-text file-description">Date Uploaded: {{ pdf.uploaded_at }}</p>
                                   <iframe src="{% url 'f_serve_file' folder_code=folder_code filename=pdf.file_link  %}" style="width: 100%;" height="400"></iframe>
 
                               <hr>
-                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" class="btn btn-success" target="_blank" download>Download</a>
-
+          
                               </div>
                           </div>
                       </div>
@@ -166,13 +259,22 @@
                       <div class="col-md-6 col-xl-6 file-item" >
                           <div class="card mb-3">
                               <div class="card-body">
-                                  <h5 class="card-title file-name">Name: {{ text.file_name }}</h5>
+                                  <h5  class="card-title file-name d-flex justify-content-between">Name: {{ text.file_name }} ({{ text.file_link }}) <div class="dropdown ml-auto">
+                                    <button class="btn btn-link " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bx bxs-cog text-danger"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <li><a class="dropdown-item" href="{% url 'f_serve_file'  folder_code=folder_code filename=text.file_link  %}" download> Download</a></li>
+                                      
+                                    </ul>
+                                  </div></h5>
                                   <p class="card-text file-description">Description: {{ text.file_description }}</p>
-                                  <hr>
+                                  <p class="card-text file-description">Date Uploaded: {{ text.uploaded_at }}</p>
                                   <object data="{% url 'f_serve_file' folder_code=folder_code filename=text.file_link  %}" style="width: 100%;" height="400"></object>
 
                               <hr>
-                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=text.file_link  %}" class="btn btn-success" target="_blank" download>Download</a>
+                              
+                              
 
                               </div>
                           </div>
@@ -184,15 +286,23 @@
                       <div class="col-md-6 col-xl-6 file-item" >
                           <div class="card mb-3">
                               <div class="card-body">
-                                  <h5 class="card-title file-name">Name: {{ pdf.file_name }}</h5>
+                                <h5 class="card-title file-name d-flex justify-content-between">
+                                  Name: {{ pdf.file_name }} ({{ pdf.file_link }}) <div class="dropdown ml-auto">
+                                    <button class="btn btn-link " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bx bxs-cog text-danger"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <li><a class="dropdown-item" href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" download> Download</a></li>
+                                      
+                                    </ul>
+                                  </div></h5>
+                                
                                   <p class="card-text file-description">Description: {{ pdf.file_description }}</p>
-                                  
+                                  <p class="card-text file-description">Date Uploaded: {{ pdf.uploaded_at }}</p>
                                   <video width="450" controls>
                                     <source src="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                              <hr>
-                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" target="_blank">{{ video }}</a>
 
                               </div>
                           </div>
@@ -203,14 +313,21 @@
                       <div class="col-md-6 col-xl-6 file-item" >
                           <div class="card mb-3">
                               <div class="card-body">
-                                  <h5 class="card-title file-name">Name: {{ pdf.file_name }}</h5>
+                                  <h5  class="card-title file-name d-flex justify-content-between">Name: {{ pdf.file_name }} ({{ pdf.file_link }}) <div class="dropdown ml-auto">
+                                    <button class="btn btn-link " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="bx bxs-cog text-danger"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <li><a class="dropdown-item" href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" download> Download</a></li>
+                                      
+                                    </ul>
+                                  </div></h5>
                                   <p class="card-text file-description">Description: {{ pdf.file_description }}</p>
-                                  
+                                  <p class="card-text file-description">Date Uploaded: {{ pdf.uploaded_at }}</p>
                                   <img style="width: 100%;"  src="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" width="300" alt="Image Preview">
 
                               <hr>
-                              <a href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" class="btn btn-success" target="_blank" download>Download</a>
-
+                         
                               </div>
                           </div>
                       </div>

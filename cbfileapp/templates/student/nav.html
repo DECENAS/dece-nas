@@ -13,13 +13,7 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
-      <!-- Dashboard -->
-      <li class="menu-item  {% if request.path == '/s_dashboard' %}active{% endif %}">
-        <a href="{% url 's_dashboard' %}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-home-circle"></i>
-          <div data-i18n="Analytics">Dashboard</div>
-        </a>
-      </li>
+     
       <li class="menu-item {% if request.path == '/student_folder/' or request.path == '/view_folder_s/'  %}active{% endif %}">
         <a href="{% url 'student_folder' %}" class="menu-link">
           <i class="menu-icon tf-icons bx bxs-file"></i>
@@ -27,6 +21,83 @@
         </a>
       </li>
      
+      
+      <hr>
+      <h6 class="text-nowrap mb-2"  style="margin-left: 17px; margin-right: 10px;"> NAS Storage Summary </h6>
+      <li class="menu-item">
+    
+   
+          <div style="margin-left: 28px; margin-right: 10px;">
+     
+              
+              <span class="d-block mb-1" style="font-size: 13px" >  <i class="bx bx-data text-danger" ></i>  Space Usage (MB)  <h3 class="card-title mb-0 badge bg-label-danger rounded-pill" style="font-size: 13px;"> {{ total_size_mb }} MBs</h3></span>
+             
+          
+          </div>
+      
+      </li>
+      <li class="menu-item">
+    
+   
+             <div style="margin-left: 28px; margin-right: 10px;">
+              <span class="d-block mb-1" style="font-size: 13px" > <i class="bx bxs-folder-open text-danger" ></i>  Count of Folders <h3 class="card-title mb-0 badge bg-label-danger rounded-pill" style="font-size: 13px;"> {{ total_folders }} Folders</h3></span>
+              
+            
+          
+          </div>
+      
+      </li>
+      <li class="menu-item">
+    
+   
+             <div style="margin-left: 28px; margin-right: 10px;">
+              <span class="d-block mb-1" style="font-size: 13px" > <i class="bx bx-file text-danger" ></i>  Count of Files <h3 class="card-title mb-0 badge bg-label-danger rounded-pill" style="font-size: 13px;"> {{ total_files }} Files</h3></span>
+              
+          
+          </div>
+      
+      </li>
+      <li class="menu-item">
+    
+   
+             <div style="margin-left: 28px; margin-right: 10px;">
+              <span class="d-block mb-1" style="font-size: 13px" >  <i class="bx bxs-data text-danger" ></i>  Storage Use (GB) <h3 class="card-title mb-0 badge bg-label-danger rounded-pill" style="font-size: 13px;"> {{ total_size_gb }} GBs</h3></span>
+              
+          
+          </div>
+      
+      </li>
+      <hr>
+      <h6 class="text-nowrap mb-2"  style="margin-left: 17px; margin-right: 10px;">Files Uploaded</h6>
+      <li class="menu-item">
+    
+   
+             <div style="margin-left: 28px; margin-right: 10px;">
+              <span class="d-block mb-1"> <i class="bx bxs-calendar-event text-danger" ></i> This Day: <span class="badge bg-label-danger rounded-pill">{{ files_today }}</span></span>
+              
+          
+          </div>
+      
+      </li>
+      <li class="menu-item">
+    
+   
+             <div style="margin-left: 28px; margin-right: 10px;">
+              <span class="d-block mb-1"> <i class="bx bxs-calendar-alt text-danger" ></i> This Week: <span class="badge bg-label-danger rounded-pill">{{ files_this_week }}</span></span>
+              
+          
+          </div>
+      
+      </li>
+      <li class="menu-item">
+    
+   
+             <div style="margin-left: 28px; margin-right: 10px;">
+              <span class="d-block mb-1"> <i class="bx bxs-calendar text-danger" ></i> This Month: <span class="badge bg-label-danger rounded-pill">{{ files_this_month }}</span></span>
+              
+          
+          </div>
+      
      
     </ul>
   </aside>
