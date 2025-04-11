@@ -47,10 +47,13 @@ import random  # Random number generation
 import datetime  # Date and time handling
 
 
+from django.db import connection
+from django.http import HttpRequest
+
 def log_action(user_type: str, user_id: str, action: str, request: HttpRequest):
     """
-    A generic logging function to log actions for admin and student.
-
+    A generic logging function to log actions for admin and student using raw SQL.
+    
     :param user_type: 'admin' or 'student' to specify the user type
     :param user_id: The user ID (admin ID or student username)
     :param action: Description of the action performed
@@ -59,22 +62,28 @@ def log_action(user_type: str, user_id: str, action: str, request: HttpRequest):
     ip_address = request.META.get('REMOTE_ADDR', '')
     user_agent = request.META.get('HTTP_USER_AGENT', '')
 
+    table = ''
+    id_field = ''
+
     if user_type == 'admin':
-        # Log the action for admin
-        AdminLogs.objects.create(
-            admin_id=user_id,
-            action=action,
-            ip_address=ip_address,
-            user_agent=user_agent
-        )
+        table = 'admin_logs'
+        id_field = 'admin_id'
     elif user_type == 'student':
-        # Log the action for student
-        StudentLogs.objects.create(
-            student_id=user_id,
-            action=action,
-            ip_address=ip_address,
-            user_agent=user_agent
+        table = 'student_logs'
+        id_field = 'student_id'
+    else:
+        return  # Invalid user type
+
+    with connection.cursor() as cursor:
+        cursor.execute(
+            f"""
+            INSERT INTO {table} ({id_field}, action, ip_address, user_agent, timestamp)
+            VALUES (%s, %s, %s, %s, DATE_ADD(NOW(), INTERVAL 8 HOUR))
+            """,
+            [user_id, action, ip_address, user_agent]
         )
+
+
 
 
 def generate_otp():
