@@ -10,7 +10,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>DEENAS - Folder Contents</title>
+    <title>DECE NAS - Folder Contents</title>
 
     <meta name="description" content="" />
 
@@ -251,7 +251,7 @@
                               <div class="card-body">
                                   <h5 class="card-title file-name d-flex justify-content-between">Name: {{ pdf.file_name }} ({{ pdf.file_link }}) <div class="dropdown ml-auto">
                                     <button class="btn btn-link " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                      <i class="bx bxs-cog text-danger"></i>
+                                      <i class="bx bx-dots-vertical-rounded text-danger"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <li><a class="dropdown-item" href="{% url 'f_serve_file'  folder_code=folder_code filename=pdf.file_link  %}" download> Download</a></li>
@@ -314,7 +314,7 @@
                               <div class="card-body">
                                   <h5 class="card-title file-name d-flex justify-content-between">Name: {{ text.file_name }} ({{ text.file_link }}) <div class="dropdown ml-auto">
                                     <button class="btn btn-link " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                      <i class="bx bxs-cog text-danger"></i>
+                                      <i class="bx bx-dots-vertical-rounded text-danger"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <li><a class="dropdown-item" href="{% url 'f_serve_file'  folder_code=folder_code filename=text.file_link  %}" download> Download</a></li>
@@ -376,7 +376,7 @@
                               <div class="card-body">
                                   <h5 class="card-title file-name d-flex justify-content-between">Name: {{ video.file_name }} ({{ video.file_link }}) <div class="dropdown ml-auto">
                                     <button class="btn btn-link " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                      <i class="bx bxs-cog text-danger"></i>
+                                      <i class="bx bx-dots-vertical-rounded text-danger"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <li><a class="dropdown-item" href="{% url 'f_serve_file'  folder_code=folder_code filename=video.file_link  %}" download> Download</a></li>
@@ -440,7 +440,7 @@
                               <div class="card-body">
                                   <h5 class="card-title file-name d-flex justify-content-between">Name: {{ image.file_name }} ({{ image.file_link }}) <div class="dropdown ml-auto">
                                     <button class="btn btn-link " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                      <i class="bx bxs-cog text-danger"></i>
+                                      <i class="bx bx-dots-vertical-rounded text-danger"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <li><a class="dropdown-item" href="{% url 'f_serve_file'  folder_code=folder_code filename=image.file_link  %}" download> Download</a></li>

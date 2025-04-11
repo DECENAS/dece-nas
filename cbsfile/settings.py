@@ -30,7 +30,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://decenas.net",
 ]
 
-ALLOWED_HOSTS = ["decenas.net", "www.decenas.net"]
+ALLOWED_HOSTS = ["decenas.net", "www.decenas.net", "127.0.0.1"]
 
 
 

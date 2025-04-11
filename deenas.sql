@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2025 at 04:44 AM
+-- Generation Time: Mar 07, 2025 at 02:53 AM
 -- Server version: 11.7.2-MariaDB
 -- PHP Version: 8.2.12
 
@@ -59,98 +59,7 @@ INSERT INTO `admin_logs` (`log_id`, `admin_id`, `action`, `timestamp`, `ip_addre
 (16, 1, 'Logged In', '2025-03-06 00:49:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
 (17, 1, 'Viewed folders he/she created', '2025-03-06 00:49:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
 (18, 1, 'Logged out', '2025-03-06 00:52:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
-(19, 111111, 'Logged In', '2025-03-07 01:51:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(20, 1, 'Logged In', '2025-03-10 01:50:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(21, 1, 'Viewed folders he/she created', '2025-03-10 01:50:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(22, 1, 'Viewed folders he/she created', '2025-03-10 01:51:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(23, 1, 'Viewed folders he/she created', '2025-03-10 01:51:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(24, 1, 'Logged out', '2025-03-10 03:07:39', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(25, 1, 'Logged In', '2025-03-14 01:19:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(26, 1, 'Viewed folders he/she created', '2025-03-14 01:19:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(27, 1, 'Viewed folders he/she created', '2025-03-14 01:27:03', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(28, 1, 'Viewed folders he/she created', '2025-03-14 01:27:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(29, 1, 'Viewed folders he/she created', '2025-03-14 01:27:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(30, 1, 'Viewed folders he/she created', '2025-03-14 01:28:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(31, 1, 'Viewed folders he/she created', '2025-03-14 01:29:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(32, 1, 'Viewed folders he/she created', '2025-03-14 01:29:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(33, 1, 'Viewed folders he/she created', '2025-03-14 01:29:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(34, 1, 'Viewed folders he/she created', '2025-03-14 01:30:07', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(35, 1, 'Viewed folders he/she created', '2025-03-14 01:30:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(36, 1, 'Viewed folders he/she created', '2025-03-14 01:30:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(37, 1, 'Viewed folders he/she created', '2025-03-14 01:30:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(38, 1, 'Viewed folders he/she created', '2025-03-14 01:30:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(39, 1, 'Viewed folders he/she created', '2025-03-14 01:30:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(40, 1, 'Logged out', '2025-03-14 01:42:04', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(41, 111111, 'Logged In', '2025-03-14 02:03:28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(42, 1, 'Logged In', '2025-03-14 02:52:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(43, 1, 'Viewed folders he/she created', '2025-03-14 02:53:32', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(44, 1, 'Viewed folders he/she created', '2025-03-14 02:53:33', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(45, 1, 'Logged In', '2025-03-18 01:11:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(46, 1, 'Viewed folders he/she created', '2025-03-18 01:11:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(47, 1, 'Logged In', '2025-03-25 02:08:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(48, 1, 'Viewed folders he/she created', '2025-03-25 02:27:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(49, 1, 'Logged out', '2025-03-25 02:32:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(50, 1, 'Logged In', '2025-03-25 04:38:10', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(51, 1, 'Viewed folders he/she created', '2025-03-25 04:38:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(52, 1, 'Logged out', '2025-03-25 06:27:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(53, 1, 'Logged In', '2025-04-02 02:34:20', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(54, 1, 'Viewed folders he/she created', '2025-04-02 02:34:50', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(55, 1, 'Logged In', '2025-04-03 02:30:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(56, 1, 'Viewed folders he/she created', '2025-04-03 02:31:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(57, 1, 'Viewed folders he/she created', '2025-04-03 03:09:42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(58, 1, 'Logged out', '2025-04-03 03:14:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(59, 1, 'Logged In', '2025-04-03 03:33:59', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(60, 1, 'Viewed folders he/she created', '2025-04-03 03:34:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(61, 1, 'Viewed folders he/she created', '2025-04-03 03:37:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(62, 1, 'Viewed folders he/she created', '2025-04-03 07:59:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(63, 1, 'Viewed folders he/she created', '2025-04-03 08:03:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(64, 1, 'Viewed folders he/she created', '2025-04-03 08:03:32', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(65, 1, 'Viewed folders he/she created', '2025-04-03 08:04:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(66, 1, 'Viewed folders he/she created', '2025-04-03 08:04:48', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(67, 1, 'Viewed folders he/she created', '2025-04-03 08:04:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(68, 1, 'Viewed folders he/she created', '2025-04-03 08:05:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(69, 1, 'Viewed folders he/she created', '2025-04-03 08:06:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(70, 1, 'Viewed folders he/she created', '2025-04-03 08:12:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(71, 1, 'Viewed folders he/she created', '2025-04-03 08:12:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(72, 1, 'Viewed folders he/she created', '2025-04-03 08:12:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(73, 1, 'Viewed folders he/she created', '2025-04-03 08:13:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(74, 1, 'Viewed folders he/she created', '2025-04-03 08:13:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(75, 1, 'Viewed folders he/she created', '2025-04-03 08:13:48', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(76, 1, 'Viewed folders he/she created', '2025-04-03 08:13:50', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(77, 1, 'Viewed folders he/she created', '2025-04-03 08:14:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(78, 1, 'Viewed folders he/she created', '2025-04-03 08:14:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(79, 1, 'Viewed folders he/she created', '2025-04-03 08:20:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(80, 1, 'Logged In', '2025-04-08 02:32:39', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(81, 1, 'Viewed folders he/she created', '2025-04-08 02:59:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(82, 1, 'Viewed folders he/she created', '2025-04-08 03:02:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(83, 1, 'Viewed folders he/she created', '2025-04-08 03:03:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(84, 1, 'Logged out', '2025-04-08 03:03:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(85, 1, 'Logged In', '2025-04-08 03:03:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(86, 1, 'Viewed folders he/she created', '2025-04-08 03:03:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(87, 1, 'Logged out', '2025-04-08 03:03:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(88, 1, 'Logged In', '2025-04-08 03:06:22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(89, 1, 'Viewed folders he/she created', '2025-04-08 03:06:22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(90, 1, 'Viewed folders he/she created', '2025-04-08 04:46:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(91, 1, 'Viewed folders he/she created', '2025-04-08 04:47:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(92, 1, 'Viewed folders he/she created', '2025-04-08 04:52:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(93, 1, 'Viewed folders he/she created', '2025-04-08 04:53:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(94, 1, 'Viewed folders he/she created', '2025-04-08 04:55:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(95, 1, 'Viewed folders he/she created', '2025-04-08 05:02:01', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(96, 1, 'Viewed folders he/she created', '2025-04-08 05:02:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(97, 1, 'Viewed folders he/she created', '2025-04-08 05:02:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(98, 1, 'Viewed folders he/she created', '2025-04-08 05:02:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(99, 1, 'Viewed folders he/she created', '2025-04-08 05:03:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(100, 1, 'Viewed folders he/she created', '2025-04-08 05:03:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(101, 1, 'Viewed folders he/she created', '2025-04-08 05:04:10', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(102, 1, 'Viewed folders he/she created', '2025-04-08 05:04:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(103, 1, 'Viewed folders he/she created', '2025-04-08 05:04:21', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(104, 1, 'Viewed folders he/she created', '2025-04-08 05:04:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(105, 1, 'Viewed folders he/she created', '2025-04-08 06:46:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(106, 1, 'Logged out', '2025-04-08 07:06:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(107, 1, 'Logged In', '2025-04-08 07:38:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(108, 1, 'Viewed folders he/she created', '2025-04-08 07:38:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(109, 1, 'Viewed folders he/she created', '2025-04-08 14:52:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(110, 1, 'Logged out', '2025-04-08 14:52:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36');
+(19, 111111, 'Logged In', '2025-03-07 01:51:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -280,13 +189,6 @@ CREATE TABLE `captcha_captchastore` (
   `expiration` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `captcha_captchastore`
---
-
-INSERT INTO `captcha_captchastore` (`id`, `challenge`, `response`, `hashkey`, `expiration`) VALUES
-(339, 'WVUWVW', 'wvuwvw', 'c789bf9aad195c27d47310645dddc47dad78a88b', '2025-04-08 14:57:35.360945');
-
 -- --------------------------------------------------------
 
 --
@@ -387,12 +289,7 @@ CREATE TABLE `django_session` (
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('0b4pujfdhibyid6ciezvezg34kgzetqd', '.eJxNjrEOgjAURX-FdNU2rxRRmEBjNE4OLk6k0ieSUCC0TTTGf5cqA297596bnDcx1ilsbVErkhKeUIA1T8iSmOLumqaVGkd-ys_H_SUI8sM2vwY75vNph1rWzVgJORWREJBV7CatsdIidQyVY_1jVjdD2Smc9cess70HccQh_r8FPvt6eHkK4YqCoLC-AE85T8WGiSiOk9UCIAU_l0rX7c-f_25JnMFhMldYImulYeZlLOqs8rqs7DT5fAGLvEog:1tqMsM:f2ooJIIEZcavhJ0-Wciv90k972drgvkZM0NDHk2u_nk', '2025-03-21 01:51:46.365268'),
 ('0e4a7py6xooqyrdjnm5ebk05xjmd4cei', 'eyJzdHVkZW50X2lkIjoiMjEtMDg0MjAiLCJzX2Z1bGxuYW1lIjoiRXJpY2EgTWlzY2hlbGxlIEFyYW5kYSAifQ:1tiNxu:-L2sYH0iie7OSMvbfScNtH89_oJdxjJlidEVZMgHWSM', '2025-02-27 01:24:30.614533'),
-('1hg8ienkxiz4u05ncvzdm7ys7p38lzjq', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1tuLU2:kEw7RbKQoVV0jPsOENx3THhpbVyrcKHBroc1DfnOCjk', '2025-04-01 01:11:06.419350'),
-('2do0ncyrci08klzs67q94hoigy3c0h6t', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1u0BL5:sz3KbJNgjO178yKiu4tb801gm7DvpUx9hqlLebz-5tI', '2025-04-17 03:33:59.205840'),
-('6v19yf9jivs424onyhzjhmrgxvrb7tst', 'eyJzdHVkZW50X2lkIjoiMTktMDAwMzMiLCJzX2Z1bGxuYW1lIjoiUFJFUyBMRUUgQU5OICBNRU5ET1pBIEQuIn0:1u2AJt:ftvkt58r-CNaJeBEg5vx8gC2MxRy9fRqkPPlmt5ASj8', '2025-04-22 14:52:57.916505'),
-('ca4f9zivpgl6fdftqnsy0g8oxzmrguc0', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1tntb2:XKGVfpXsDRIZY-YGpgEAlEzNO0-JSf4xeTmSWmbWGkw', '2025-03-14 06:11:40.064335'),
-('gni9f5z6drjh3bz6h98thuj23swh4lhq', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1tznvo:ikKEYHef3Xyy7BbaEZNShE3JCac43eNXu_K0ulCP5Tw', '2025-04-16 02:34:20.081224'),
-('j8krs054dueklvp2wct3irevhyoj14me', '.eJyrViouKU1JzSuJT81NzMxRslIyMtQ1NjE2NnBI10tKLCkuSSxJ1S3VS00p1SvIUNKBKy8uSs5PSUVSjySXmQIUN7TUNTAwN7QEicenlebk5CXmgtR7OQZ4uIYoKDi6OzlGKjjrKdUCAPFXKBY:1trU7L:j4mPlyS8fiDUu9IRb1K9xxnci-jJGfVUke1EY0dTj7o', '2025-03-24 03:47:51.900449');
+('ca4f9zivpgl6fdftqnsy0g8oxzmrguc0', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1tntb2:XKGVfpXsDRIZY-YGpgEAlEzNO0-JSf4xeTmSWmbWGkw', '2025-03-14 06:11:40.064335');
 
 -- --------------------------------------------------------
 
@@ -477,58 +374,7 @@ CREATE TABLE `faculty_info` (
 INSERT INTO `faculty_info` (`id`, `gsuite`, `first_name`, `middle_name`, `last_name`) VALUES
 (1, 'ralphgerard.sangalang@g.batstate-u.edu.ph', 'Ralph Gerard', '', 'Sangalang'),
 (2, 'joven.dimaculangan@g.batstate-u.edu.ph', 'Joven', '', 'Dimaculangan'),
-(3, 'johncarlo.aggari@g.batstate-u.edu.ph', 'John Carlo', '', 'Aggari'),
-(6, 'ediwawkiki@gmail.com', 'dfgdfg', 'dfgdfg', 'fdgdfgdf');
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `files_of_faculty`
--- (See below for the actual view)
---
-CREATE TABLE `files_of_faculty` (
-`id` bigint(21)
-,`u_id` int(11)
-,`username` varchar(50)
-,`hashed_password` varchar(255)
-,`faculty_id` int(11)
-,`gsuite` varchar(100)
-,`first_name` varchar(50)
-,`middle_name` varchar(50)
-,`last_name` varchar(50)
-,`file_id` int(11)
-,`folder_code` varchar(255)
-,`file_name` varchar(255)
-,`file_guide` varchar(200)
-,`file_description` text
-,`file_link` varchar(255)
-,`uploader_id` varchar(20)
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `file_of_students`
--- (See below for the actual view)
---
-CREATE TABLE `file_of_students` (
-`id` bigint(21)
-,`u_id` int(11)
-,`username` varchar(50)
-,`hashed_password` varchar(255)
-,`student_id` varchar(10)
-,`email_verified` enum('no','yes')
-,`first_name` varchar(50)
-,`middle_name` varchar(50)
-,`last_name` varchar(50)
-,`file_id` int(11)
-,`folder_code` varchar(255)
-,`file_name` varchar(255)
-,`file_guide` varchar(200)
-,`file_description` text
-,`file_link` varchar(255)
-,`uploader_id` varchar(20)
-);
+(3, 'johncarlo.aggari@g.batstate-u.edu.ph', 'John Carlo', '', 'Aggari');
 
 -- --------------------------------------------------------
 
@@ -540,35 +386,10 @@ CREATE TABLE `folder_files` (
   `file_id` int(11) NOT NULL,
   `folder_code` varchar(255) NOT NULL,
   `file_name` varchar(255) NOT NULL,
-  `file_guide` varchar(200) NOT NULL,
   `file_description` text DEFAULT NULL,
   `file_link` varchar(255) NOT NULL,
-  `uploader_id` varchar(20) NOT NULL
+  `uploader_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `folder_files`
---
-
-INSERT INTO `folder_files` (`file_id`, `folder_code`, `file_name`, `file_guide`, `file_description`, `file_link`, `uploader_id`) VALUES
-(5, 'default_folder', 'brave_screenshot_admin.alwaysdata.com.png', 'NA', 'asdasd', 'default_folder/brave_screenshot_admin.alwaysdata.com.png', '1'),
-(12, 'konZnrh2P3', 'textdisplay.txt', 'NA', 'erwerwe', 'konZnrh2P3/textdisplay.txt', '1'),
-(13, 'konZnrh2P3', 'sample.txt', 'NA', 'dummy lang', 'konZnrh2P3/sample.txt', '1'),
-(15, 'konZnrh2P3', 'Screenshot 2025-02-20 135101.png', 'NA', 'werew', 'konZnrh2P3/Screenshot 2025-02-20 135101.png', '19-00100'),
-(29, 'hkJHbu5CVQ', 'Screenshot 2025-03-07 091605.png', 'sdfsd', 'sdfsd', 'hkJHbu5CVQ/Screenshot 2025-03-07 091605.png', '1'),
-(34, 'hkJHbu5CVQ', 'Venice_10_bECqEmM.mp4', 'iutyutyu', 'tyuty', 'hkJHbu5CVQ/Venice_10_bECqEmM.mp4', '19-00033'),
-(35, '', 'new 24.txt', 'w', 'w', 'new 24.txt', '1'),
-(36, '', 'new 26.txt', 't', 't', 'new 26.txt', '1'),
-(37, 'hkJHbu5CVQ', 'new 24.txt', 'w', 'w', 'hkJHbu5CVQ/new 24.txt', '1'),
-(38, 'hkJHbu5CVQ', 'new 26.txt', 't', 't', 'hkJHbu5CVQ/new 26.txt', '1'),
-(39, 'hkJHbu5CVQ', 'new 13.txt', '5', '5', 'hkJHbu5CVQ/new 13.txt', '1'),
-(41, 'hkJHbu5CVQ', 'new 3_DDtSfdp.txt', '77', '77', 'hkJHbu5CVQ/new 3_DDtSfdp.txt', '19-00033'),
-(42, 'hkJHbu5CVQ', 'users (1).sql', '232', '232', 'hkJHbu5CVQ/users (1).sql', '19-00033'),
-(43, 'hkJHbu5CVQ', 'jru_accuracy_new.txt', '888', '888', 'hkJHbu5CVQ/jru_accuracy_new.txt', '19-00033'),
-(44, 'hkJHbu5CVQ', 'top_5_products_ratings.sql', '999', '999', 'hkJHbu5CVQ/top_5_products_ratings.sql', '19-00033'),
-(45, 'hkJHbu5CVQ', 'new 26_31fOiuv.txt', '12345', '90909', 'hkJHbu5CVQ/new 26_31fOiuv.txt', '19-00033'),
-(46, 'hkJHbu5CVQ', '12345', '0000', '0000', 'hkJHbu5CVQ/new 21.txt', '19-00033'),
-(47, 'hkJHbu5CVQ', 'decenas fixes.txt', '454', '454', 'hkJHbu5CVQ/decenas fixes.txt', '1');
 
 -- --------------------------------------------------------
 
@@ -586,14 +407,6 @@ CREATE TABLE `folder_tns` (
   `created_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `folder_tns`
---
-
-INSERT INTO `folder_tns` (`id`, `folder_name`, `description`, `unique_code`, `apicode`, `faculty_id`, `created_at`) VALUES
-(5, 'Ralhp FOlder', 'ALl about my files', 'hkJHbu5CVQ', 'eme', 1, '2025-03-09 17:51:02'),
-(6, 'sdfsd', 'fsdfsdfd', 'konZnrh2P3', 'konZnrh2P3', 1, '2025-03-13 17:30:11');
-
 -- --------------------------------------------------------
 
 --
@@ -605,7 +418,6 @@ CREATE TABLE `student_accounts` (
 ,`username` varchar(50)
 ,`hashed_password` varchar(255)
 ,`student_id` varchar(10)
-,`email_verified` enum('no','yes')
 ,`first_name` varchar(50)
 ,`middle_name` varchar(50)
 ,`last_name` varchar(50)
@@ -643,16 +455,6 @@ CREATE TABLE `student_folder` (
   `folder_id` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `student_folder`
---
-
-INSERT INTO `student_folder` (`id`, `student_id`, `folder_id`, `created_at`) VALUES
-(6, '19-00033', 5, '2025-03-09 19:08:14'),
-(7, '19-00719', 5, '2025-03-09 19:48:40'),
-(8, '19-00719', 6, '2025-03-13 17:55:45'),
-(9, '19-00100', 6, '2025-03-24 18:38:43');
 
 -- --------------------------------------------------------
 
@@ -880,7 +682,7 @@ INSERT INTO `student_info` (`sr_code`, `g_email`, `first_name`, `middle_name`, `
 ('21-09828', '21-09828@g.batstate-u.edu.ph', 'KYLA CRYSHELLE ', 'E.', 'PANALIGAN'),
 ('21-09888', '21-09888@g.batstate-u.edu.ph', 'YVES SPENCER ', 'P.', 'CATUDAY'),
 ('21-09944', '21-09944@g.batstate-u.edu.ph', 'MC SANNDEL ANGELA ', 'M.', 'ACUZAR'),
-('21-34330', '21-34330@g.batstate-u.edu.ph', 'sdfsd', 'sdfsd', 'sdfsd'),
+('21-34330', '21-34330@g.batstate-u.edu.ph', 'sdfsd', 'ewrwe', 'rwerwer'),
 ('22-00016', '22-00016@g.batstate-u.edu.ph', 'CYRAH ', 'M.', 'ALAMAG'),
 ('22-00066', '22-00066@g.batstate-u.edu.ph', 'KENNETH VIRGIL ', 'L.', 'BORBON'),
 ('22-00148', '22-00148@g.batstate-u.edu.ph', 'PIERRE ALLEN ', 'D.', 'VILLARETE'),
@@ -992,64 +794,7 @@ INSERT INTO `student_logs` (`log_id`, `student_id`, `action`, `timestamp`, `ip_a
 (17, '19-00719', 'Viewed folders he/she is joined in', '2025-03-06 06:14:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
 (18, '19-00719', 'Viewed folders he/she is joined in', '2025-03-06 06:14:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
 (19, '21-34311', 'Registered to the system', '2025-03-07 00:56:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(20, '21-34330', 'Registered to the system', '2025-03-07 01:06:38', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(21, '19-00033', 'Logged in', '2025-03-10 03:08:04', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(22, '19-00033', 'Viewed folders he/she is joined in', '2025-03-10 03:08:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(23, '19-00033', 'Viewed folders he/she is joined in', '2025-03-10 03:08:14', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(24, '19-00033', 'Logged out', '2025-03-10 03:34:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(25, '21-34330', 'Registered to the system', '2025-03-10 03:39:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(26, '19-00719', 'Logged in', '2025-03-10 03:47:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(27, '19-00719', 'Viewed folders he/she is joined in', '2025-03-10 03:47:54', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(28, '19-00719', 'Viewed folders he/she is joined in', '2025-03-10 03:48:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(29, '21-34330', 'Registered to the system', '2025-03-14 01:49:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(30, '21-34330', 'Registered to the system', '2025-03-14 01:49:42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(31, '19-00719', 'Logged in', '2025-03-14 01:55:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(32, '19-00719', 'Viewed folders he/she is joined in', '2025-03-14 01:55:24', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(33, '19-00719', 'Viewed folders he/she is joined in', '2025-03-14 01:55:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(34, '19-00719', 'Logged out', '2025-03-14 02:02:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(35, '19-00719', 'Logged in', '2025-03-25 02:35:54', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(36, '19-00719', 'Viewed folders he/she is joined in', '2025-03-25 02:35:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(37, '19-00719', 'Logged out', '2025-03-25 02:36:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(38, '19-00100', 'Logged in', '2025-03-25 02:38:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(39, '19-00100', 'Viewed folders he/she is joined in', '2025-03-25 02:38:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(40, '19-00100', 'Viewed folders he/she is joined in', '2025-03-25 02:38:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(41, '19-00100', 'Logged out', '2025-03-25 02:44:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(42, '19-00100', 'Logged in', '2025-03-25 02:44:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(43, '19-00100', 'Logged out', '2025-03-25 02:46:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(44, '19-00100', 'Logged in', '2025-03-25 02:47:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(45, '19-00100', 'Logged out', '2025-03-25 02:50:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(46, '19-00033', 'Logged in', '2025-03-25 02:50:50', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(47, '19-00033', 'Logged out', '2025-03-25 02:51:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(48, '19-00100', 'Logged in', '2025-03-25 02:52:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(49, '19-00100', 'Logged out', '2025-03-25 02:52:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(50, '19-00033', 'Logged in', '2025-03-25 02:53:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(51, '19-00033', 'Logged out', '2025-03-25 02:59:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(52, '19-00100', 'Logged in', '2025-03-25 03:00:28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(53, '19-00100', 'Viewed folders he/she is joined in', '2025-03-25 04:34:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(54, '19-00100', 'Logged out', '2025-03-25 04:37:53', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(55, '19-00033', 'Logged in', '2025-04-01 04:27:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(56, '19-00033', 'Viewed folders he/she is joined in', '2025-04-01 04:29:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(57, '19-00033', 'Logged in', '2025-04-02 01:59:34', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(58, '19-00033', 'Viewed folders he/she is joined in', '2025-04-02 02:02:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(59, '19-00033', 'Logged out', '2025-04-02 02:16:28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(60, '19-00033', 'Logged in', '2025-04-02 02:19:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(61, '19-00033', 'Viewed folders he/she is joined in', '2025-04-02 02:20:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(62, '19-00033', 'Logged out', '2025-04-02 02:29:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(63, '19-00033', 'Logged in', '2025-04-03 03:14:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(64, '19-00033', 'Viewed folders he/she is joined in', '2025-04-03 03:14:48', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(65, '19-00033', 'Logged out', '2025-04-03 03:33:38', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(66, '19-00033', 'Logged in', '2025-04-08 02:29:18', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(67, '19-00033', 'Logged out', '2025-04-08 02:31:03', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(68, '19-00033', 'Logged in', '2025-04-08 03:04:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(69, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 03:04:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(70, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 03:04:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(71, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 03:05:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(72, '19-00033', 'Logged out', '2025-04-08 03:05:59', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(73, '19-00033', 'Logged in', '2025-04-08 07:06:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(74, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 07:06:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(75, '19-00033', 'Logged out', '2025-04-08 07:38:22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(76, '19-00033', 'Logged in', '2025-04-08 14:52:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
-(77, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 14:52:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36');
+(20, '21-34330', 'Registered to the system', '2025-03-07 01:06:38', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -1063,7 +808,7 @@ CREATE TABLE `user_account` (
   `hashed_password` varchar(255) NOT NULL,
   `faculty_id` int(11) DEFAULT NULL,
   `student_id` varchar(10) DEFAULT NULL,
-  `email_verified` enum('no','yes') NOT NULL DEFAULT 'no'
+  `email_verified` enum('no','yes') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -1071,12 +816,12 @@ CREATE TABLE `user_account` (
 --
 
 INSERT INTO `user_account` (`u_id`, `username`, `hashed_password`, `faculty_id`, `student_id`, `email_verified`) VALUES
-(1, 'ralphs', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 1, NULL, 'yes'),
+(1, 'ralphs', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 1, NULL, 'no'),
 (2, 'jovend', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 2, NULL, 'no'),
 (3, 'johnc', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 3, NULL, 'no'),
 (111111, 'dece.nas.system@gmail.com', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, NULL, 'yes'),
 (111114, '19-00033@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00033', 'yes'),
-(111115, '19-00100@g.batstate-u.edu.ph', 'b2He0s8b09bJmSoMPmcZXKYB05vObb/xAmzNhjMmTnnuxGykrAxquwefKIhl4oZw', NULL, '19-00100', 'yes'),
+(111115, '19-00100@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00100', 'yes'),
 (111116, '19-00719@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00719', 'yes'),
 (111117, '19-00760@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00760', 'yes'),
 (111118, '19-00997@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00997', 'yes'),
@@ -1329,8 +1074,7 @@ INSERT INTO `user_account` (`u_id`, `username`, `hashed_password`, `faculty_id`,
 (111365, '22-09547@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09547', 'yes'),
 (111366, '22-09662@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09662', 'yes'),
 (111367, '23-09118@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '23-09118', 'yes'),
-(111371, '21-34330@g.batstate-u.edu.ph', 'i1mDFRm0MgJXUlCmB2LQ2Drby16ivk66Bx9YB5klOtZB8WDt5xQAbXV+/Jo2h3ZQ', NULL, '21-34330', 'yes'),
-(111374, 'ediwawkiki@gmail.com', 'ao2xz3Fp5TRNuhMYSyUpzaONI7xDezrhNKbtzcywmb5+kj/CyGNvqEni9/3JY38d', 6, NULL, 'yes');
+(111369, '21-34330@g.batstate-u.edu.ph', 'X6wWP0JZzauXD+ZH5xTdjDk1D6hPRs68RIZqbYlAu+aUXBETZ2jDmMXsVxOMOt/Z', NULL, '21-34330', 'yes');
 
 -- --------------------------------------------------------
 
@@ -1362,29 +1106,11 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Structure for view `files_of_faculty`
---
-DROP TABLE IF EXISTS `files_of_faculty`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `files_of_faculty`  AS SELECT row_number() over () AS `id`, `faculty_accounts`.`u_id` AS `u_id`, `faculty_accounts`.`username` AS `username`, `faculty_accounts`.`hashed_password` AS `hashed_password`, `faculty_accounts`.`faculty_id` AS `faculty_id`, `faculty_accounts`.`gsuite` AS `gsuite`, `faculty_accounts`.`first_name` AS `first_name`, `faculty_accounts`.`middle_name` AS `middle_name`, `faculty_accounts`.`last_name` AS `last_name`, `folder_files`.`file_id` AS `file_id`, `folder_files`.`folder_code` AS `folder_code`, `folder_files`.`file_name` AS `file_name`, `folder_files`.`file_guide` AS `file_guide`, `folder_files`.`file_description` AS `file_description`, `folder_files`.`file_link` AS `file_link`, `folder_files`.`uploader_id` AS `uploader_id` FROM (`faculty_accounts` join `folder_files` on(`folder_files`.`uploader_id` = `faculty_accounts`.`faculty_id`)) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `file_of_students`
---
-DROP TABLE IF EXISTS `file_of_students`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `file_of_students`  AS SELECT row_number() over () AS `id`, `student_accounts`.`u_id` AS `u_id`, `student_accounts`.`username` AS `username`, `student_accounts`.`hashed_password` AS `hashed_password`, `student_accounts`.`student_id` AS `student_id`, `student_accounts`.`email_verified` AS `email_verified`, `student_accounts`.`first_name` AS `first_name`, `student_accounts`.`middle_name` AS `middle_name`, `student_accounts`.`last_name` AS `last_name`, `folder_files`.`file_id` AS `file_id`, `folder_files`.`folder_code` AS `folder_code`, `folder_files`.`file_name` AS `file_name`, `folder_files`.`file_guide` AS `file_guide`, `folder_files`.`file_description` AS `file_description`, `folder_files`.`file_link` AS `file_link`, `folder_files`.`uploader_id` AS `uploader_id` FROM (`student_accounts` join `folder_files` on(`folder_files`.`uploader_id` = `student_accounts`.`student_id`)) ;
-
--- --------------------------------------------------------
-
---
 -- Structure for view `student_accounts`
 --
 DROP TABLE IF EXISTS `student_accounts`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `student_accounts`  AS SELECT `ua`.`u_id` AS `u_id`, `ua`.`username` AS `username`, `ua`.`hashed_password` AS `hashed_password`, `si`.`sr_code` AS `student_id`, `ua`.`email_verified` AS `email_verified`, `si`.`first_name` AS `first_name`, `si`.`middle_name` AS `middle_name`, `si`.`last_name` AS `last_name` FROM (`user_account` `ua` join `student_info` `si` on(`ua`.`student_id` = `si`.`sr_code`)) WHERE `ua`.`student_id` is not null ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `student_accounts`  AS SELECT `ua`.`u_id` AS `u_id`, `ua`.`username` AS `username`, `ua`.`hashed_password` AS `hashed_password`, `si`.`sr_code` AS `student_id`, `si`.`first_name` AS `first_name`, `si`.`middle_name` AS `middle_name`, `si`.`last_name` AS `last_name` FROM (`user_account` `ua` join `student_info` `si` on(`ua`.`student_id` = `si`.`sr_code`)) WHERE `ua`.`student_id` is not null ;
 
 -- --------------------------------------------------------
 
@@ -1550,7 +1276,7 @@ ALTER TABLE `user_account`
 -- AUTO_INCREMENT for table `admin_logs`
 --
 ALTER TABLE `admin_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `auth_group`
@@ -1592,7 +1318,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `captcha_captchastore`
 --
 ALTER TABLE `captcha_captchastore`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=341;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=238;
 
 --
 -- AUTO_INCREMENT for table `django_admin_log`
@@ -1616,37 +1342,37 @@ ALTER TABLE `django_migrations`
 -- AUTO_INCREMENT for table `faculty_info`
 --
 ALTER TABLE `faculty_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `folder_files`
 --
 ALTER TABLE `folder_files`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `folder_tns`
 --
 ALTER TABLE `folder_tns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `student_folder`
 --
 ALTER TABLE `student_folder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `student_logs`
 --
 ALTER TABLE `student_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user_account`
 --
 ALTER TABLE `user_account`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111375;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111370;
 
 --
 -- Constraints for dumped tables
