@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2025 at 02:53 AM
+-- Generation Time: Apr 24, 2025 at 05:46 PM
 -- Server version: 11.7.2-MariaDB
 -- PHP Version: 8.2.12
 
@@ -59,7 +59,189 @@ INSERT INTO `admin_logs` (`log_id`, `admin_id`, `action`, `timestamp`, `ip_addre
 (16, 1, 'Logged In', '2025-03-06 00:49:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
 (17, 1, 'Viewed folders he/she created', '2025-03-06 00:49:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
 (18, 1, 'Logged out', '2025-03-06 00:52:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
-(19, 111111, 'Logged In', '2025-03-07 01:51:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36');
+(19, 111111, 'Logged In', '2025-03-07 01:51:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(20, 1, 'Logged In', '2025-03-10 01:50:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(21, 1, 'Viewed folders he/she created', '2025-03-10 01:50:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(22, 1, 'Viewed folders he/she created', '2025-03-10 01:51:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(23, 1, 'Viewed folders he/she created', '2025-03-10 01:51:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(24, 1, 'Logged out', '2025-03-10 03:07:39', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(25, 1, 'Logged In', '2025-03-14 01:19:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(26, 1, 'Viewed folders he/she created', '2025-03-14 01:19:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(27, 1, 'Viewed folders he/she created', '2025-03-14 01:27:03', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(28, 1, 'Viewed folders he/she created', '2025-03-14 01:27:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(29, 1, 'Viewed folders he/she created', '2025-03-14 01:27:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(30, 1, 'Viewed folders he/she created', '2025-03-14 01:28:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(31, 1, 'Viewed folders he/she created', '2025-03-14 01:29:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(32, 1, 'Viewed folders he/she created', '2025-03-14 01:29:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(33, 1, 'Viewed folders he/she created', '2025-03-14 01:29:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(34, 1, 'Viewed folders he/she created', '2025-03-14 01:30:07', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(35, 1, 'Viewed folders he/she created', '2025-03-14 01:30:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(36, 1, 'Viewed folders he/she created', '2025-03-14 01:30:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(37, 1, 'Viewed folders he/she created', '2025-03-14 01:30:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(38, 1, 'Viewed folders he/she created', '2025-03-14 01:30:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(39, 1, 'Viewed folders he/she created', '2025-03-14 01:30:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(40, 1, 'Logged out', '2025-03-14 01:42:04', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(41, 111111, 'Logged In', '2025-03-14 02:03:28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(42, 1, 'Logged In', '2025-03-14 02:52:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(43, 1, 'Viewed folders he/she created', '2025-03-14 02:53:32', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(44, 1, 'Viewed folders he/she created', '2025-03-14 02:53:33', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(45, 1, 'Logged In', '2025-03-18 01:11:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(46, 1, 'Viewed folders he/she created', '2025-03-18 01:11:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(47, 1, 'Logged In', '2025-03-25 02:08:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(48, 1, 'Viewed folders he/she created', '2025-03-25 02:27:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(49, 1, 'Logged out', '2025-03-25 02:32:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(50, 1, 'Logged In', '2025-03-25 04:38:10', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(51, 1, 'Viewed folders he/she created', '2025-03-25 04:38:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(52, 1, 'Logged out', '2025-03-25 06:27:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(53, 1, 'Logged In', '2025-04-02 02:34:20', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(54, 1, 'Viewed folders he/she created', '2025-04-02 02:34:50', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(55, 1, 'Logged In', '2025-04-03 02:30:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(56, 1, 'Viewed folders he/she created', '2025-04-03 02:31:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(57, 1, 'Viewed folders he/she created', '2025-04-03 03:09:42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(58, 1, 'Logged out', '2025-04-03 03:14:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(59, 1, 'Logged In', '2025-04-03 03:33:59', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(60, 1, 'Viewed folders he/she created', '2025-04-03 03:34:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(61, 1, 'Viewed folders he/she created', '2025-04-03 03:37:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(62, 1, 'Viewed folders he/she created', '2025-04-03 07:59:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(63, 1, 'Viewed folders he/she created', '2025-04-03 08:03:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(64, 1, 'Viewed folders he/she created', '2025-04-03 08:03:32', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(65, 1, 'Viewed folders he/she created', '2025-04-03 08:04:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(66, 1, 'Viewed folders he/she created', '2025-04-03 08:04:48', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(67, 1, 'Viewed folders he/she created', '2025-04-03 08:04:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(68, 1, 'Viewed folders he/she created', '2025-04-03 08:05:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(69, 1, 'Viewed folders he/she created', '2025-04-03 08:06:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(70, 1, 'Viewed folders he/she created', '2025-04-03 08:12:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(71, 1, 'Viewed folders he/she created', '2025-04-03 08:12:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(72, 1, 'Viewed folders he/she created', '2025-04-03 08:12:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(73, 1, 'Viewed folders he/she created', '2025-04-03 08:13:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(74, 1, 'Viewed folders he/she created', '2025-04-03 08:13:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(75, 1, 'Viewed folders he/she created', '2025-04-03 08:13:48', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(76, 1, 'Viewed folders he/she created', '2025-04-03 08:13:50', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(77, 1, 'Viewed folders he/she created', '2025-04-03 08:14:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(78, 1, 'Viewed folders he/she created', '2025-04-03 08:14:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(79, 1, 'Viewed folders he/she created', '2025-04-03 08:20:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(80, 1, 'Logged In', '2025-04-08 02:32:39', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(81, 1, 'Viewed folders he/she created', '2025-04-08 02:59:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(82, 1, 'Viewed folders he/she created', '2025-04-08 03:02:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(83, 1, 'Viewed folders he/she created', '2025-04-08 03:03:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(84, 1, 'Logged out', '2025-04-08 03:03:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(85, 1, 'Logged In', '2025-04-08 03:03:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(86, 1, 'Viewed folders he/she created', '2025-04-08 03:03:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(87, 1, 'Logged out', '2025-04-08 03:03:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(88, 1, 'Logged In', '2025-04-08 03:06:22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(89, 1, 'Viewed folders he/she created', '2025-04-08 03:06:22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(90, 1, 'Viewed folders he/she created', '2025-04-08 04:46:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(91, 1, 'Viewed folders he/she created', '2025-04-08 04:47:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(92, 1, 'Viewed folders he/she created', '2025-04-08 04:52:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(93, 1, 'Viewed folders he/she created', '2025-04-08 04:53:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(94, 1, 'Viewed folders he/she created', '2025-04-08 04:55:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(95, 1, 'Viewed folders he/she created', '2025-04-08 05:02:01', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(96, 1, 'Viewed folders he/she created', '2025-04-08 05:02:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(97, 1, 'Viewed folders he/she created', '2025-04-08 05:02:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(98, 1, 'Viewed folders he/she created', '2025-04-08 05:02:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(99, 1, 'Viewed folders he/she created', '2025-04-08 05:03:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(100, 1, 'Viewed folders he/she created', '2025-04-08 05:03:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(101, 1, 'Viewed folders he/she created', '2025-04-08 05:04:10', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(102, 1, 'Viewed folders he/she created', '2025-04-08 05:04:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(103, 1, 'Viewed folders he/she created', '2025-04-08 05:04:21', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(104, 1, 'Viewed folders he/she created', '2025-04-08 05:04:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(105, 1, 'Viewed folders he/she created', '2025-04-08 06:46:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(106, 1, 'Logged out', '2025-04-08 07:06:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(107, 1, 'Logged In', '2025-04-08 07:38:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(108, 1, 'Viewed folders he/she created', '2025-04-08 07:38:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(109, 1, 'Viewed folders he/she created', '2025-04-08 14:52:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(110, 1, 'Logged out', '2025-04-08 14:52:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(112, 2, '2', '2025-04-10 22:56:20', '1', '1'),
+(113, 11, '1', '2025-04-10 21:57:52', '1', '1'),
+(114, 111111, 'Logged In', '2025-04-11 17:08:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(115, 111111, 'Logged In', '2025-04-22 06:29:07', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(116, 111111, 'Logged In', '2025-04-22 06:30:20', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(117, 111111, 'Admin added a student to the system', '2025-04-22 07:01:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(118, 1, 'Logged In', '2025-04-24 16:25:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(119, 1, 'Viewed folders he/she created', '2025-04-24 16:25:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(120, 1, 'Logged out', '2025-04-24 17:00:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(121, 1, 'Logged In', '2025-04-24 21:14:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(122, 1, 'Viewed folders he/she created', '2025-04-24 21:14:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(123, 1, 'Viewed folders he/she created', '2025-04-24 21:14:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(124, 1, 'Viewed folders he/she created', '2025-04-24 21:17:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(125, 1, 'Logged out', '2025-04-24 21:18:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(126, 111111, 'Logged In', '2025-04-24 21:58:34', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(127, 111111, 'Logged In', '2025-04-24 22:00:38', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(128, 111111, 'Logged In', '2025-04-24 22:02:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(129, 111111, 'Admin added a student to the system', '2025-04-24 22:06:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(130, 1, 'Logged In', '2025-04-24 23:05:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(131, 1, 'Viewed folders he/she created', '2025-04-24 23:05:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(132, 1, 'Viewed folders he/she created', '2025-04-24 23:12:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(133, 1, 'Viewed folders he/she created', '2025-04-24 23:14:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(134, 1, 'Viewed folders he/she created', '2025-04-24 23:15:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(135, 1, 'Logged out', '2025-04-24 23:16:07', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(136, 1, 'Logged In', '2025-04-25 04:23:14', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(137, 1, 'Viewed folders he/she created', '2025-04-25 04:23:14', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(138, 1, 'Viewed folders he/she created', '2025-04-25 04:25:01', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(139, 1, 'Viewed folders he/she created', '2025-04-25 04:32:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(140, 1, 'Viewed folders he/she created', '2025-04-25 04:34:01', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(141, 1, 'Viewed folders he/she created', '2025-04-25 04:34:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(142, 1, 'Viewed folders he/she created', '2025-04-25 04:35:01', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(143, 1, 'Viewed folders he/she created', '2025-04-25 04:35:24', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(144, 1, 'Viewed folders he/she created', '2025-04-25 04:38:42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(145, 1, 'Viewed folders he/she created', '2025-04-25 04:39:39', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(146, 1, 'Viewed folders he/she created', '2025-04-25 04:40:09', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(147, 1, 'Viewed folders he/she created', '2025-04-25 04:40:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(148, 1, 'Viewed folders he/she created', '2025-04-25 04:40:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(149, 1, 'Viewed folders he/she created', '2025-04-25 04:40:28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(150, 1, 'Viewed folders he/she created', '2025-04-25 04:42:01', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(151, 1, 'Viewed folders he/she created', '2025-04-25 04:45:33', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(152, 1, 'Viewed folders he/she created', '2025-04-25 04:47:24', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(153, 1, 'Viewed folders he/she created', '2025-04-25 04:55:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(154, 1, 'Viewed folders he/she created', '2025-04-25 04:56:16', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(155, 1, 'Viewed folders he/she created', '2025-04-25 04:57:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(156, 1, 'Viewed folders he/she created', '2025-04-25 05:00:16', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(157, 1, 'Viewed folders he/she created', '2025-04-25 05:00:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(158, 1, 'Viewed folders he/she created', '2025-04-25 05:03:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(159, 1, 'Viewed folders he/she created', '2025-04-25 05:04:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(160, 1, 'Viewed folders he/she created', '2025-04-25 05:04:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(161, 1, 'Viewed folders he/she created', '2025-04-25 05:05:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(162, 1, 'Viewed folders he/she created', '2025-04-25 05:06:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(163, 1, 'Viewed folders he/she created', '2025-04-25 05:07:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(164, 1, 'Viewed folders he/she created', '2025-04-25 05:07:21', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(165, 1, 'Viewed folders he/she created', '2025-04-25 05:08:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(166, 1, 'Viewed folders he/she created', '2025-04-25 05:09:32', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(167, 1, 'Viewed folders he/she created', '2025-04-25 05:09:42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(168, 1, 'Viewed folders he/she created', '2025-04-25 05:10:29', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(169, 1, 'Viewed folders he/she created', '2025-04-25 05:10:58', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(170, 1, 'Viewed folders he/she created', '2025-04-25 05:11:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(171, 1, 'Viewed folders he/she created', '2025-04-25 05:11:50', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(172, 1, 'Viewed folders he/she created', '2025-04-25 05:15:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(173, 1, 'Viewed folders he/she created', '2025-04-25 05:15:24', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(174, 1, 'Viewed folders he/she created', '2025-04-25 05:16:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(175, 1, 'Viewed folders he/she created', '2025-04-25 05:16:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(176, 1, 'Viewed folders he/she created', '2025-04-25 05:16:39', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(177, 1, 'Viewed folders he/she created', '2025-04-25 05:17:32', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(178, 1, 'Viewed folders he/she created', '2025-04-25 05:19:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(179, 1, 'Viewed folders he/she created', '2025-04-25 05:20:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(180, 1, 'Viewed folders he/she created', '2025-04-25 05:25:29', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(181, 1, 'Viewed folders he/she created', '2025-04-25 05:28:28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(182, 1, 'Viewed folders he/she created', '2025-04-25 05:30:04', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(183, 1, 'Viewed folders he/she created', '2025-04-25 05:30:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(184, 1, 'Viewed folders he/she created', '2025-04-25 05:31:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(185, 1, 'Viewed folders he/she created', '2025-04-25 05:37:09', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(186, 1, 'Viewed folders he/she created', '2025-04-25 05:41:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(187, 1, 'Viewed folders he/she created', '2025-04-25 05:41:22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(188, 1, 'Viewed folders he/she created', '2025-04-25 05:42:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(189, 1, 'Viewed folders he/she created', '2025-04-25 06:12:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(190, 1, 'Viewed folders he/she created', '2025-04-25 06:15:59', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(191, 1, 'Viewed folders he/she created', '2025-04-25 06:17:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(192, 1, 'Viewed folders he/she created', '2025-04-25 06:25:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(193, 1, 'Viewed folders he/she created', '2025-04-25 06:25:18', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(194, 1, 'Viewed folders he/she created', '2025-04-25 06:25:59', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(195, 1, 'Viewed folders he/she created', '2025-04-25 06:26:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(196, 1, 'Viewed folders he/she created', '2025-04-25 06:26:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(197, 1, 'Viewed folders he/she created', '2025-04-25 06:27:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(198, 1, 'Viewed folders he/she created', '2025-04-25 06:27:53', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(199, 1, 'Viewed folders he/she created', '2025-04-25 06:28:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(200, 1, 'Logged out', '2025-04-25 06:28:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(201, 111111, 'Logged In', '2025-04-25 06:35:59', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(202, 111111, 'Logged In', '2025-04-25 07:08:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -189,6 +371,13 @@ CREATE TABLE `captcha_captchastore` (
   `expiration` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `captcha_captchastore`
+--
+
+INSERT INTO `captcha_captchastore` (`id`, `challenge`, `response`, `hashkey`, `expiration`) VALUES
+(386, 'TPETYX', 'tpetyx', '6f529e789f5698beee965b4833848bc5caa17cfc', '2025-04-24 15:13:01.339984');
+
 -- --------------------------------------------------------
 
 --
@@ -289,7 +478,16 @@ CREATE TABLE `django_session` (
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('0b4pujfdhibyid6ciezvezg34kgzetqd', '.eJxNjrEOgjAURX-FdNU2rxRRmEBjNE4OLk6k0ieSUCC0TTTGf5cqA297596bnDcx1ilsbVErkhKeUIA1T8iSmOLumqaVGkd-ys_H_SUI8sM2vwY75vNph1rWzVgJORWREJBV7CatsdIidQyVY_1jVjdD2Smc9cess70HccQh_r8FPvt6eHkK4YqCoLC-AE85T8WGiSiOk9UCIAU_l0rX7c-f_25JnMFhMldYImulYeZlLOqs8rqs7DT5fAGLvEog:1tqMsM:f2ooJIIEZcavhJ0-Wciv90k972drgvkZM0NDHk2u_nk', '2025-03-21 01:51:46.365268'),
 ('0e4a7py6xooqyrdjnm5ebk05xjmd4cei', 'eyJzdHVkZW50X2lkIjoiMjEtMDg0MjAiLCJzX2Z1bGxuYW1lIjoiRXJpY2EgTWlzY2hlbGxlIEFyYW5kYSAifQ:1tiNxu:-L2sYH0iie7OSMvbfScNtH89_oJdxjJlidEVZMgHWSM', '2025-02-27 01:24:30.614533'),
-('ca4f9zivpgl6fdftqnsy0g8oxzmrguc0', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1tntb2:XKGVfpXsDRIZY-YGpgEAlEzNO0-JSf4xeTmSWmbWGkw', '2025-03-14 06:11:40.064335');
+('1hg8ienkxiz4u05ncvzdm7ys7p38lzjq', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1tuLU2:kEw7RbKQoVV0jPsOENx3THhpbVyrcKHBroc1DfnOCjk', '2025-04-01 01:11:06.419350'),
+('2do0ncyrci08klzs67q94hoigy3c0h6t', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1u0BL5:sz3KbJNgjO178yKiu4tb801gm7DvpUx9hqlLebz-5tI', '2025-04-17 03:33:59.205840'),
+('6v19yf9jivs424onyhzjhmrgxvrb7tst', 'eyJzdHVkZW50X2lkIjoiMTktMDAwMzMiLCJzX2Z1bGxuYW1lIjoiUFJFUyBMRUUgQU5OICBNRU5ET1pBIEQuIn0:1u2AJt:ftvkt58r-CNaJeBEg5vx8gC2MxRy9fRqkPPlmt5ASj8', '2025-04-22 14:52:57.916505'),
+('ca4f9zivpgl6fdftqnsy0g8oxzmrguc0', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1tntb2:XKGVfpXsDRIZY-YGpgEAlEzNO0-JSf4xeTmSWmbWGkw', '2025-03-14 06:11:40.064335'),
+('gni9f5z6drjh3bz6h98thuj23swh4lhq', 'eyJmYWN1bHR5X2lkIjoxLCJhX2Z1bGxuYW1lIjoiUmFscGggR2VyYXJkIFNhbmdhbGFuZyAifQ:1tznvo:ikKEYHef3Xyy7BbaEZNShE3JCac43eNXu_K0ulCP5Tw', '2025-04-16 02:34:20.081224'),
+('gzp7ibrdwvw6f9t0gi3nmm2vk3khvrsy', 'eyJzdHVkZW50X2lkIjoiMTktMDA3MTkiLCJzX2Z1bGxuYW1lIjoiSkFQSEVUICBBR0JBWSBDLiJ9:1u7xNk:Vwd5aG_veL-yX2gRiEXMo4V6QKIjgzoYjCb7rWK97_8', '2025-05-08 14:16:52.816535'),
+('ijyqyn77qhnu0uwr2os5ecu484jvukp6', 'eyJhZG1pbl9pZCI6MTExMTExLCJhX2Z1bGxuYW1lIjoiZGVjZS5uYXMuc3lzdGVtQGdtYWlsLmNvbSJ9:1u7yBe:3mVBl4UdDpQfaFZFpeArrRyIyt55HESvwVUiw__h8U4', '2025-05-08 15:08:26.869261'),
+('j8krs054dueklvp2wct3irevhyoj14me', '.eJyrViouKU1JzSuJT81NzMxRslIyMtQ1NjE2NnBI10tKLCkuSSxJ1S3VS00p1SvIUNKBKy8uSs5PSUVSjySXmQIUN7TUNTAwN7QEicenlebk5CXmgtR7OQZ4uIYoKDi6OzlGKjjrKdUCAPFXKBY:1trU7L:j4mPlyS8fiDUu9IRb1K9xxnci-jJGfVUke1EY0dTj7o', '2025-03-24 03:47:51.900449'),
+('tvuwfe2pxybzn5ym7tqn4l0fkyqdex7y', 'eyJzdHVkZW50X2lkIjoiMTktMDAwMzMiLCJzX2Z1bGxuYW1lIjoiUFJFUyBMRUUgQU5OICBNRU5ET1pBIEQuIn0:1u32w1:xtnKYEwdbkuhBoXpMZyCky-3HVWGZXfhT1PKiAp3wfE', '2025-04-25 01:11:57.957961'),
+('zkekoinxnlpwmpwbyx3un7t0212mtkx7', 'eyJhZG1pbl9pZCI6MTExMTExLCJ1c2VybmFtZSI6ImRlY2UubmFzLnN5c3RlbUBnbWFpbC5jb20ifQ:1u6sA8:I8_ufvttiwt6QIVf8rFoM3aPhNVqOb0qoNVfERYANlM', '2025-05-05 14:30:20.367755');
 
 -- --------------------------------------------------------
 
@@ -305,7 +503,9 @@ CREATE TABLE `faculty_accounts` (
 ,`gsuite` varchar(100)
 ,`first_name` varchar(50)
 ,`middle_name` varchar(50)
+,`mb_limit` int(20)
 ,`last_name` varchar(50)
+,`email_verified` enum('no','yes')
 );
 
 -- --------------------------------------------------------
@@ -379,6 +579,56 @@ INSERT INTO `faculty_info` (`id`, `gsuite`, `first_name`, `middle_name`, `last_n
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `files_of_faculty`
+-- (See below for the actual view)
+--
+CREATE TABLE `files_of_faculty` (
+`id` bigint(21)
+,`u_id` int(11)
+,`username` varchar(50)
+,`hashed_password` varchar(255)
+,`faculty_id` int(11)
+,`gsuite` varchar(100)
+,`first_name` varchar(50)
+,`middle_name` varchar(50)
+,`last_name` varchar(50)
+,`file_id` int(11)
+,`folder_code` varchar(255)
+,`file_name` varchar(255)
+,`file_guide` varchar(200)
+,`file_description` text
+,`file_link` varchar(255)
+,`uploader_id` varchar(20)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `file_of_students`
+-- (See below for the actual view)
+--
+CREATE TABLE `file_of_students` (
+`id` bigint(21)
+,`u_id` int(11)
+,`username` varchar(50)
+,`hashed_password` varchar(255)
+,`student_id` varchar(10)
+,`email_verified` enum('no','yes')
+,`first_name` varchar(50)
+,`middle_name` varchar(50)
+,`last_name` varchar(50)
+,`file_id` int(11)
+,`folder_code` varchar(255)
+,`file_name` varchar(255)
+,`file_guide` varchar(200)
+,`file_description` text
+,`file_link` varchar(255)
+,`uploader_id` varchar(20)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `folder_files`
 --
 
@@ -386,9 +636,10 @@ CREATE TABLE `folder_files` (
   `file_id` int(11) NOT NULL,
   `folder_code` varchar(255) NOT NULL,
   `file_name` varchar(255) NOT NULL,
+  `file_guide` varchar(200) NOT NULL,
   `file_description` text DEFAULT NULL,
   `file_link` varchar(255) NOT NULL,
-  `uploader_id` int(11) NOT NULL
+  `uploader_id` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -418,6 +669,8 @@ CREATE TABLE `student_accounts` (
 ,`username` varchar(50)
 ,`hashed_password` varchar(255)
 ,`student_id` varchar(10)
+,`mb_limit` int(20)
+,`email_verified` enum('no','yes')
 ,`first_name` varchar(50)
 ,`middle_name` varchar(50)
 ,`last_name` varchar(50)
@@ -682,7 +935,6 @@ INSERT INTO `student_info` (`sr_code`, `g_email`, `first_name`, `middle_name`, `
 ('21-09828', '21-09828@g.batstate-u.edu.ph', 'KYLA CRYSHELLE ', 'E.', 'PANALIGAN'),
 ('21-09888', '21-09888@g.batstate-u.edu.ph', 'YVES SPENCER ', 'P.', 'CATUDAY'),
 ('21-09944', '21-09944@g.batstate-u.edu.ph', 'MC SANNDEL ANGELA ', 'M.', 'ACUZAR'),
-('21-34330', '21-34330@g.batstate-u.edu.ph', 'sdfsd', 'ewrwe', 'rwerwer'),
 ('22-00016', '22-00016@g.batstate-u.edu.ph', 'CYRAH ', 'M.', 'ALAMAG'),
 ('22-00066', '22-00066@g.batstate-u.edu.ph', 'KENNETH VIRGIL ', 'L.', 'BORBON'),
 ('22-00148', '22-00148@g.batstate-u.edu.ph', 'PIERRE ALLEN ', 'D.', 'VILLARETE'),
@@ -794,7 +1046,138 @@ INSERT INTO `student_logs` (`log_id`, `student_id`, `action`, `timestamp`, `ip_a
 (17, '19-00719', 'Viewed folders he/she is joined in', '2025-03-06 06:14:47', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
 (18, '19-00719', 'Viewed folders he/she is joined in', '2025-03-06 06:14:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'),
 (19, '21-34311', 'Registered to the system', '2025-03-07 00:56:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
-(20, '21-34330', 'Registered to the system', '2025-03-07 01:06:38', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36');
+(20, '21-34330', 'Registered to the system', '2025-03-07 01:06:38', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(21, '19-00033', 'Logged in', '2025-03-10 03:08:04', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(22, '19-00033', 'Viewed folders he/she is joined in', '2025-03-10 03:08:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(23, '19-00033', 'Viewed folders he/she is joined in', '2025-03-10 03:08:14', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(24, '19-00033', 'Logged out', '2025-03-10 03:34:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(25, '21-34330', 'Registered to the system', '2025-03-10 03:39:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(26, '19-00719', 'Logged in', '2025-03-10 03:47:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(27, '19-00719', 'Viewed folders he/she is joined in', '2025-03-10 03:47:54', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(28, '19-00719', 'Viewed folders he/she is joined in', '2025-03-10 03:48:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(29, '21-34330', 'Registered to the system', '2025-03-14 01:49:15', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(30, '21-34330', 'Registered to the system', '2025-03-14 01:49:42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(31, '19-00719', 'Logged in', '2025-03-14 01:55:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(32, '19-00719', 'Viewed folders he/she is joined in', '2025-03-14 01:55:24', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(33, '19-00719', 'Viewed folders he/she is joined in', '2025-03-14 01:55:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(34, '19-00719', 'Logged out', '2025-03-14 02:02:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(35, '19-00719', 'Logged in', '2025-03-25 02:35:54', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(36, '19-00719', 'Viewed folders he/she is joined in', '2025-03-25 02:35:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(37, '19-00719', 'Logged out', '2025-03-25 02:36:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(38, '19-00100', 'Logged in', '2025-03-25 02:38:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(39, '19-00100', 'Viewed folders he/she is joined in', '2025-03-25 02:38:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(40, '19-00100', 'Viewed folders he/she is joined in', '2025-03-25 02:38:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(41, '19-00100', 'Logged out', '2025-03-25 02:44:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(42, '19-00100', 'Logged in', '2025-03-25 02:44:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(43, '19-00100', 'Logged out', '2025-03-25 02:46:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(44, '19-00100', 'Logged in', '2025-03-25 02:47:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(45, '19-00100', 'Logged out', '2025-03-25 02:50:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(46, '19-00033', 'Logged in', '2025-03-25 02:50:50', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(47, '19-00033', 'Logged out', '2025-03-25 02:51:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(48, '19-00100', 'Logged in', '2025-03-25 02:52:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(49, '19-00100', 'Logged out', '2025-03-25 02:52:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(50, '19-00033', 'Logged in', '2025-03-25 02:53:02', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(51, '19-00033', 'Logged out', '2025-03-25 02:59:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(52, '19-00100', 'Logged in', '2025-03-25 03:00:28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(53, '19-00100', 'Viewed folders he/she is joined in', '2025-03-25 04:34:35', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(54, '19-00100', 'Logged out', '2025-03-25 04:37:53', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(55, '19-00033', 'Logged in', '2025-04-01 04:27:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(56, '19-00033', 'Viewed folders he/she is joined in', '2025-04-01 04:29:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(57, '19-00033', 'Logged in', '2025-04-02 01:59:34', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(58, '19-00033', 'Viewed folders he/she is joined in', '2025-04-02 02:02:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(59, '19-00033', 'Logged out', '2025-04-02 02:16:28', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(60, '19-00033', 'Logged in', '2025-04-02 02:19:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(61, '19-00033', 'Viewed folders he/she is joined in', '2025-04-02 02:20:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(62, '19-00033', 'Logged out', '2025-04-02 02:29:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(63, '19-00033', 'Logged in', '2025-04-03 03:14:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(64, '19-00033', 'Viewed folders he/she is joined in', '2025-04-03 03:14:48', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(65, '19-00033', 'Logged out', '2025-04-03 03:33:38', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'),
+(66, '19-00033', 'Logged in', '2025-04-08 02:29:18', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(67, '19-00033', 'Logged out', '2025-04-08 02:31:03', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(68, '19-00033', 'Logged in', '2025-04-08 03:04:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(69, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 03:04:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(70, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 03:04:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(71, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 03:05:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(72, '19-00033', 'Logged out', '2025-04-08 03:05:59', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(73, '19-00033', 'Logged in', '2025-04-08 07:06:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(74, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 07:06:43', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(75, '19-00033', 'Logged out', '2025-04-08 07:38:22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(76, '19-00033', 'Logged in', '2025-04-08 14:52:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(77, '19-00033', 'Viewed folders he/she is joined in', '2025-04-08 14:52:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(78, '19-00033', 'Logged in', '2025-04-10 07:13:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(79, '19-00033', 'Viewed folders he/she is joined in', '2025-04-10 07:13:49', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(80, '19-00033', 'Viewed folders he/she is joined in', '2025-04-11 17:06:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(81, '19-00033', 'Logged out', '2025-04-11 17:08:22', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(82, '19-00033', 'Logged in', '2025-04-11 17:11:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(83, '19-00033', 'Viewed folders he/she is joined in', '2025-04-11 17:11:57', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(84, '19-00033', 'Viewed folders he/she is joined in', '2025-04-11 17:14:54', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(85, '19-00033', 'Viewed folders he/she is joined in', '2025-04-11 17:15:29', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(86, '19-00719', 'Logged in', '2025-04-24 16:19:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(87, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 16:19:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(88, '19-00719', 'Logged out', '2025-04-24 16:25:10', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(89, '19-00719', 'Logged in', '2025-04-24 17:02:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(90, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 17:02:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(91, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 21:11:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(92, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 21:12:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(93, '19-00719', 'Logged out', '2025-04-24 21:13:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(94, '19-00719', 'Logged in', '2025-04-24 22:37:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(95, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:37:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(96, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:42:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(97, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:42:48', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(98, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:42:51', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(99, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:43:00', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(100, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:43:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(101, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:44:07', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(102, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:45:59', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(103, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:46:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(104, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:47:29', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(105, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:47:39', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(106, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:53:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(107, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:59:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(108, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 22:59:33', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(109, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:01:48', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(110, '19-00719', 'Logged out', '2025-04-24 23:03:16', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(111, '19-00719', 'Logged in', '2025-04-24 23:16:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(112, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:16:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(113, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:17:56', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(114, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:18:33', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(115, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:20:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(116, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:21:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(117, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:21:45', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(118, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:26:10', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(119, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:26:41', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(120, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:29:24', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(121, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:30:42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(122, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:32:14', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(123, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:33:21', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(124, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:38:44', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(125, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:39:04', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(126, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:39:05', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(127, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:39:58', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(128, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:40:32', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(129, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:43:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(130, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:48:46', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(131, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:49:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(132, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:49:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(133, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:50:36', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(134, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:51:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(135, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:52:07', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(136, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:52:09', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(137, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:52:23', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(138, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:52:37', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(139, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:53:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(140, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:53:40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(141, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:53:42', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(142, '19-00719', 'Viewed folders he/she is joined in', '2025-04-24 23:55:17', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(143, '19-00719', 'Viewed folders he/she is joined in', '2025-04-25 04:22:32', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(144, '19-00719', 'Logged out', '2025-04-25 04:22:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(145, '19-00719', 'Logged in', '2025-04-25 06:16:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(146, '19-00719', 'Viewed folders he/she is joined in', '2025-04-25 06:16:52', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(147, '19-00719', 'Logged in', '2025-04-25 06:29:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(148, '19-00719', 'Viewed folders he/she is joined in', '2025-04-25 06:29:06', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(149, '19-00719', 'Viewed folders he/she is joined in', '2025-04-25 06:29:25', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(150, '19-00719', 'Viewed folders he/she is joined in', '2025-04-25 06:30:19', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36'),
+(151, '19-00719', 'Logged out', '2025-04-25 06:34:16', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -808,273 +1191,273 @@ CREATE TABLE `user_account` (
   `hashed_password` varchar(255) NOT NULL,
   `faculty_id` int(11) DEFAULT NULL,
   `student_id` varchar(10) DEFAULT NULL,
-  `email_verified` enum('no','yes') NOT NULL
+  `email_verified` enum('no','yes') NOT NULL DEFAULT 'no',
+  `mb_limit` int(20) NOT NULL DEFAULT 500
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_account`
 --
 
-INSERT INTO `user_account` (`u_id`, `username`, `hashed_password`, `faculty_id`, `student_id`, `email_verified`) VALUES
-(1, 'ralphs', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 1, NULL, 'no'),
-(2, 'jovend', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 2, NULL, 'no'),
-(3, 'johnc', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 3, NULL, 'no'),
-(111111, 'dece.nas.system@gmail.com', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, NULL, 'yes'),
-(111114, '19-00033@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00033', 'yes'),
-(111115, '19-00100@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00100', 'yes'),
-(111116, '19-00719@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00719', 'yes'),
-(111117, '19-00760@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00760', 'yes'),
-(111118, '19-00997@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00997', 'yes'),
-(111119, '19-01013@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-01013', 'yes'),
-(111120, '19-02078@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-02078', 'yes'),
-(111121, '19-03201@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-03201', 'yes'),
-(111122, '19-04457@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-04457', 'yes'),
-(111123, '19-04590@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-04590', 'yes'),
-(111124, '19-06162@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-06162', 'yes'),
-(111125, '19-07723@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-07723', 'yes'),
-(111126, '19-08054@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-08054', 'yes'),
-(111127, '19-09028@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-09028', 'yes'),
-(111128, '19-09164@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-09164', 'yes'),
-(111129, '20-00366@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-00366', 'yes'),
-(111130, '20-00648@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-00648', 'yes'),
-(111131, '20-00733@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-00733', 'yes'),
-(111132, '20-01236@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01236', 'yes'),
-(111133, '20-01514@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01514', 'yes'),
-(111134, '20-01592@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01592', 'yes'),
-(111135, '20-01686@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01686', 'yes'),
-(111136, '20-01775@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01775', 'yes'),
-(111137, '20-02304@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-02304', 'yes'),
-(111138, '20-02414@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-02414', 'yes'),
-(111139, '20-02726@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-02726', 'yes'),
-(111140, '20-02935@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-02935', 'yes'),
-(111141, '20-03252@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03252', 'yes'),
-(111142, '20-03326@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03326', 'yes'),
-(111143, '20-03346@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03346', 'yes'),
-(111144, '20-03350@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03350', 'yes'),
-(111145, '20-03804@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03804', 'yes'),
-(111146, '20-04274@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-04274', 'yes'),
-(111147, '20-04463@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-04463', 'yes'),
-(111148, '20-04719@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-04719', 'yes'),
-(111149, '20-05095@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-05095', 'yes'),
-(111150, '20-05204@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-05204', 'yes'),
-(111151, '20-05332@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-05332', 'yes'),
-(111152, '20-05392@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-05392', 'yes'),
-(111153, '20-06005@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06005', 'yes'),
-(111154, '20-06150@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06150', 'yes'),
-(111155, '20-06254@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06254', 'yes'),
-(111156, '20-06339@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06339', 'yes'),
-(111157, '20-06632@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06632', 'yes'),
-(111158, '20-06695@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06695', 'yes'),
-(111159, '20-06803@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06803', 'yes'),
-(111160, '20-06881@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06881', 'yes'),
-(111161, '20-07086@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07086', 'yes'),
-(111162, '20-07106@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07106', 'yes'),
-(111163, '20-07164@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07164', 'yes'),
-(111164, '20-07427@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07427', 'yes'),
-(111165, '20-07567@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07567', 'yes'),
-(111166, '20-07892@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07892', 'yes'),
-(111167, '20-08269@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-08269', 'yes'),
-(111168, '20-08372@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-08372', 'yes'),
-(111169, '20-09028@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-09028', 'yes'),
-(111170, '20-09702@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-09702', 'yes'),
-(111171, '20-09805@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-09805', 'yes'),
-(111172, '20-09876@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-09876', 'yes'),
-(111173, '21-00043@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00043', 'yes'),
-(111174, '21-00120@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00120', 'yes'),
-(111175, '21-00135@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00135', 'yes'),
-(111176, '21-00161@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00161', 'yes'),
-(111177, '21-00162@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00162', 'yes'),
-(111178, '21-00168@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00168', 'yes'),
-(111179, '21-00201@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00201', 'yes'),
-(111180, '21-00219@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00219', 'yes'),
-(111181, '21-00228@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00228', 'yes'),
-(111182, '21-00298@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00298', 'yes'),
-(111183, '21-00353@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00353', 'yes'),
-(111184, '21-00475@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00475', 'yes'),
-(111185, '21-00611@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00611', 'yes'),
-(111186, '21-00623@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00623', 'yes'),
-(111187, '21-00629@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00629', 'yes'),
-(111188, '21-00838@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00838', 'yes'),
-(111189, '21-00860@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00860', 'yes'),
-(111190, '21-00866@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00866', 'yes'),
-(111191, '21-00924@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00924', 'yes'),
-(111192, '21-01057@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01057', 'yes'),
-(111193, '21-01209@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01209', 'yes'),
-(111194, '21-01244@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01244', 'yes'),
-(111195, '21-01283@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01283', 'yes'),
-(111196, '21-01439@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01439', 'yes'),
-(111197, '21-01457@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01457', 'yes'),
-(111198, '21-01600@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01600', 'yes'),
-(111199, '21-01617@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01617', 'yes'),
-(111200, '21-01642@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01642', 'yes'),
-(111201, '21-01806@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01806', 'yes'),
-(111202, '21-01836@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01836', 'yes'),
-(111203, '21-02046@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02046', 'yes'),
-(111204, '21-02055@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02055', 'yes'),
-(111205, '21-02084@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02084', 'yes'),
-(111206, '21-02093@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02093', 'yes'),
-(111207, '21-02107@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02107', 'yes'),
-(111208, '21-02272@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02272', 'yes'),
-(111209, '21-02359@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02359', 'yes'),
-(111210, '21-02493@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02493', 'yes'),
-(111211, '21-02508@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02508', 'yes'),
-(111212, '21-02539@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02539', 'yes'),
-(111213, '21-02630@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02630', 'yes'),
-(111214, '21-02637@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02637', 'yes'),
-(111215, '21-02806@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02806', 'yes'),
-(111216, '21-02811@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02811', 'yes'),
-(111217, '21-02863@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02863', 'yes'),
-(111218, '21-02864@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02864', 'yes'),
-(111219, '21-03001@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03001', 'yes'),
-(111220, '21-03012@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03012', 'yes'),
-(111221, '21-03036@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03036', 'yes'),
-(111222, '21-03129@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03129', 'yes'),
-(111223, '21-03142@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03142', 'yes'),
-(111224, '21-03214@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03214', 'yes'),
-(111225, '21-03287@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03287', 'yes'),
-(111226, '21-03338@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03338', 'yes'),
-(111227, '21-03396@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03396', 'yes'),
-(111228, '21-03583@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03583', 'yes'),
-(111229, '21-03659@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03659', 'yes'),
-(111230, '21-03685@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03685', 'yes'),
-(111231, '21-03740@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03740', 'yes'),
-(111232, '21-03822@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03822', 'yes'),
-(111233, '21-03878@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03878', 'yes'),
-(111234, '21-03898@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03898', 'yes'),
-(111235, '21-03939@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03939', 'yes'),
-(111236, '21-04034@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04034', 'yes'),
-(111237, '21-04098@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04098', 'yes'),
-(111238, '21-04111@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04111', 'yes'),
-(111239, '21-04139@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04139', 'yes'),
-(111240, '21-04164@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04164', 'yes'),
-(111241, '21-04208@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04208', 'yes'),
-(111242, '21-04310@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04310', 'yes'),
-(111243, '21-04761@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04761', 'yes'),
-(111244, '21-04822@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04822', 'yes'),
-(111245, '21-05066@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05066', 'yes'),
-(111246, '21-05084@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05084', 'yes'),
-(111247, '21-05346@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05346', 'yes'),
-(111248, '21-05371@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05371', 'yes'),
-(111249, '21-05373@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05373', 'yes'),
-(111250, '21-05730@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05730', 'yes'),
-(111251, '21-05740@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05740', 'yes'),
-(111252, '21-05798@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05798', 'yes'),
-(111253, '21-05896@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05896', 'yes'),
-(111254, '21-05929@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05929', 'yes'),
-(111255, '21-06067@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06067', 'yes'),
-(111256, '21-06234@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06234', 'yes'),
-(111257, '21-06284@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06284', 'yes'),
-(111258, '21-06329@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06329', 'yes'),
-(111259, '21-06356@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06356', 'yes'),
-(111260, '21-06451@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06451', 'yes'),
-(111261, '21-06482@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06482', 'yes'),
-(111262, '21-06489@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06489', 'yes'),
-(111263, '21-06569@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06569', 'yes'),
-(111264, '21-06595@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06595', 'yes'),
-(111265, '21-06877@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06877', 'yes'),
-(111266, '21-06962@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06962', 'yes'),
-(111267, '21-07187@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07187', 'yes'),
-(111268, '21-07192@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07192', 'yes'),
-(111269, '21-07260@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07260', 'yes'),
-(111270, '21-07493@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07493', 'yes'),
-(111271, '21-07583@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07583', 'yes'),
-(111272, '21-07629@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07629', 'yes'),
-(111273, '21-07863@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07863', 'yes'),
-(111274, '21-07874@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07874', 'yes'),
-(111275, '21-08070@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08070', 'yes'),
-(111276, '21-08103@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08103', 'yes'),
-(111277, '21-08115@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08115', 'yes'),
-(111278, '21-08136@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08136', 'yes'),
-(111279, '21-08307@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08307', 'yes'),
-(111280, '21-08523@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08523', 'yes'),
-(111281, '21-08567@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08567', 'yes'),
-(111282, '21-08620@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08620', 'yes'),
-(111283, '21-08688@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08688', 'yes'),
-(111284, '21-08694@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08694', 'yes'),
-(111285, '21-08775@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08775', 'yes'),
-(111286, '21-08812@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08812', 'yes'),
-(111287, '21-08841@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08841', 'yes'),
-(111288, '21-09292@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09292', 'yes'),
-(111289, '21-09299@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09299', 'yes'),
-(111290, '21-09313@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09313', 'yes'),
-(111291, '21-09336@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09336', 'yes'),
-(111292, '21-09624@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09624', 'yes'),
-(111293, '21-09742@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09742', 'yes'),
-(111294, '21-09828@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09828', 'yes'),
-(111295, '21-09888@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09888', 'yes'),
-(111296, '21-09944@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09944', 'yes'),
-(111297, '22-00016@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00016', 'yes'),
-(111298, '22-00066@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00066', 'yes'),
-(111299, '22-00148@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00148', 'yes'),
-(111300, '22-00283@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00283', 'yes'),
-(111301, '22-00393@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00393', 'yes'),
-(111302, '22-00766@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00766', 'yes'),
-(111303, '22-00865@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00865', 'yes'),
-(111304, '22-01079@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01079', 'yes'),
-(111305, '22-01180@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01180', 'yes'),
-(111306, '22-01207@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01207', 'yes'),
-(111307, '22-01281@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01281', 'yes'),
-(111308, '22-01308@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01308', 'yes'),
-(111309, '22-01514@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01514', 'yes'),
-(111310, '22-01560@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01560', 'yes'),
-(111311, '22-01822@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01822', 'yes'),
-(111312, '22-01885@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01885', 'yes'),
-(111313, '22-01899@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01899', 'yes'),
-(111314, '22-01920@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01920', 'yes'),
-(111315, '22-02167@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02167', 'yes'),
-(111316, '22-02400@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02400', 'yes'),
-(111317, '22-02430@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02430', 'yes'),
-(111318, '22-02515@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02515', 'yes'),
-(111319, '22-02699@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02699', 'yes'),
-(111320, '22-02793@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02793', 'yes'),
-(111321, '22-02802@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02802', 'yes'),
-(111322, '22-02930@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02930', 'yes'),
-(111323, '22-02963@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02963', 'yes'),
-(111324, '22-03001@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-03001', 'yes'),
-(111325, '22-03121@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-03121', 'yes'),
-(111326, '22-03316@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-03316', 'yes'),
-(111327, '22-03874@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-03874', 'yes'),
-(111328, '22-04273@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04273', 'yes'),
-(111329, '22-04291@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04291', 'yes'),
-(111330, '22-04312@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04312', 'yes'),
-(111331, '22-04366@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04366', 'yes'),
-(111332, '22-04436@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04436', 'yes'),
-(111333, '22-04613@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04613', 'yes'),
-(111334, '22-04919@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04919', 'yes'),
-(111335, '22-05316@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-05316', 'yes'),
-(111336, '22-05606@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-05606', 'yes'),
-(111337, '22-05888@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-05888', 'yes'),
-(111338, '22-05940@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-05940', 'yes'),
-(111339, '22-06316@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06316', 'yes'),
-(111340, '22-06550@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06550', 'yes'),
-(111341, '22-06553@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06553', 'yes'),
-(111342, '22-06686@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06686', 'yes'),
-(111343, '22-06716@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06716', 'yes'),
-(111344, '22-06726@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06726', 'yes'),
-(111345, '22-07325@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07325', 'yes'),
-(111346, '22-07365@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07365', 'yes'),
-(111347, '22-07551@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07551', 'yes'),
-(111348, '22-07604@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07604', 'yes'),
-(111349, '22-07716@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07716', 'yes'),
-(111350, '22-07801@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07801', 'yes'),
-(111351, '22-08028@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08028', 'yes'),
-(111352, '22-08097@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08097', 'yes'),
-(111353, '22-08131@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08131', 'yes'),
-(111354, '22-08165@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08165', 'yes'),
-(111355, '22-08323@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08323', 'yes'),
-(111356, '22-08366@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08366', 'yes'),
-(111357, '22-08451@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08451', 'yes'),
-(111358, '22-08569@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08569', 'yes'),
-(111359, '22-08587@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08587', 'yes'),
-(111360, '22-08793@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08793', 'yes'),
-(111361, '22-08870@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08870', 'yes'),
-(111362, '22-08978@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08978', 'yes'),
-(111363, '22-09012@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09012', 'yes'),
-(111364, '22-09493@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09493', 'yes'),
-(111365, '22-09547@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09547', 'yes'),
-(111366, '22-09662@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09662', 'yes'),
-(111367, '23-09118@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '23-09118', 'yes'),
-(111369, '21-34330@g.batstate-u.edu.ph', 'X6wWP0JZzauXD+ZH5xTdjDk1D6hPRs68RIZqbYlAu+aUXBETZ2jDmMXsVxOMOt/Z', NULL, '21-34330', 'yes');
+INSERT INTO `user_account` (`u_id`, `username`, `hashed_password`, `faculty_id`, `student_id`, `email_verified`, `mb_limit`) VALUES
+(1, 'ralphs', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 1, NULL, 'yes', 500),
+(2, 'jovend', 'QXLCEB+EPqDsGRAOtccbeatrm+Ri6mgwLR1mJkNKIkHI7xOHYwm3vR051tOFmJqO', 2, NULL, 'no', 501),
+(3, 'johnc', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', 3, NULL, 'no', 500),
+(111111, 'dece.nas.system@gmail.com', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, NULL, 'yes', 500),
+(111114, '19-00033@g.batstate-u.edu.ph', 'cxshHSpzblnBcyMakS8U4l1gG0IhRtoDAREqR00oNTdsJh9X8pyx/rI4hWDLEwNh', NULL, '19-00033', 'yes', 17),
+(111115, '19-00100@g.batstate-u.edu.ph', 'ekaAysVB77q8vhL6G/87JWnuGNu4gBHMZkq6zwIQ/If4MMCPzAkRj3AtG//Z9tek', NULL, '19-00100', 'yes', 500),
+(111116, '19-00719@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00719', 'yes', 3),
+(111117, '19-00760@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00760', 'yes', 500),
+(111118, '19-00997@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-00997', 'yes', 500),
+(111119, '19-01013@g.batstate-u.edu.ph', 'FpKHlqeX76+XeIXIbaLGqtrUdh4qt0aak4HEGLn148l84UbPbsXqvMhqcbpvlIGM', NULL, '19-01013', 'yes', 500),
+(111120, '19-02078@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-02078', 'yes', 500),
+(111121, '19-03201@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-03201', 'yes', 500),
+(111122, '19-04457@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-04457', 'yes', 500),
+(111123, '19-04590@g.batstate-u.edu.ph', 'HOKEz2+m5ELW7tFX909si/y3vde11Wkh+Gr4OYdM171obv+PQDug9QwmOk9ySzEG', NULL, '19-04590', 'yes', 500),
+(111124, '19-06162@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-06162', 'yes', 500),
+(111125, '19-07723@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-07723', 'yes', 500),
+(111126, '19-08054@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-08054', 'yes', 500),
+(111127, '19-09028@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-09028', 'yes', 500),
+(111128, '19-09164@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '19-09164', 'yes', 500),
+(111129, '20-00366@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-00366', 'yes', 500),
+(111130, '20-00648@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-00648', 'yes', 500),
+(111131, '20-00733@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-00733', 'yes', 500),
+(111132, '20-01236@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01236', 'yes', 500),
+(111133, '20-01514@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01514', 'yes', 500),
+(111134, '20-01592@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01592', 'yes', 500),
+(111135, '20-01686@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01686', 'yes', 500),
+(111136, '20-01775@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-01775', 'yes', 500),
+(111137, '20-02304@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-02304', 'yes', 500),
+(111138, '20-02414@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-02414', 'yes', 500),
+(111139, '20-02726@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-02726', 'yes', 500),
+(111140, '20-02935@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-02935', 'yes', 500),
+(111141, '20-03252@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03252', 'yes', 500),
+(111142, '20-03326@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03326', 'yes', 500),
+(111143, '20-03346@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03346', 'yes', 500),
+(111144, '20-03350@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03350', 'yes', 500),
+(111145, '20-03804@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-03804', 'yes', 500),
+(111146, '20-04274@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-04274', 'yes', 500),
+(111147, '20-04463@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-04463', 'yes', 500),
+(111148, '20-04719@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-04719', 'yes', 500),
+(111149, '20-05095@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-05095', 'yes', 500),
+(111150, '20-05204@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-05204', 'yes', 500),
+(111151, '20-05332@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-05332', 'yes', 500),
+(111152, '20-05392@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-05392', 'yes', 500),
+(111153, '20-06005@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06005', 'yes', 500),
+(111154, '20-06150@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06150', 'yes', 500),
+(111155, '20-06254@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06254', 'yes', 500),
+(111156, '20-06339@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06339', 'yes', 500),
+(111157, '20-06632@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06632', 'yes', 500),
+(111158, '20-06695@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06695', 'yes', 500),
+(111159, '20-06803@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06803', 'yes', 500),
+(111160, '20-06881@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-06881', 'yes', 500),
+(111161, '20-07086@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07086', 'yes', 500),
+(111162, '20-07106@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07106', 'yes', 500),
+(111163, '20-07164@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07164', 'yes', 500),
+(111164, '20-07427@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07427', 'yes', 500),
+(111165, '20-07567@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07567', 'yes', 500),
+(111166, '20-07892@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-07892', 'yes', 500),
+(111167, '20-08269@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-08269', 'yes', 500),
+(111168, '20-08372@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-08372', 'yes', 500),
+(111169, '20-09028@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-09028', 'yes', 500),
+(111170, '20-09702@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-09702', 'yes', 500),
+(111171, '20-09805@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-09805', 'yes', 500),
+(111172, '20-09876@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '20-09876', 'yes', 500),
+(111173, '21-00043@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00043', 'yes', 500),
+(111174, '21-00120@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00120', 'yes', 500),
+(111175, '21-00135@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00135', 'yes', 500),
+(111176, '21-00161@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00161', 'yes', 500),
+(111177, '21-00162@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00162', 'yes', 500),
+(111178, '21-00168@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00168', 'yes', 500),
+(111179, '21-00201@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00201', 'yes', 500),
+(111180, '21-00219@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00219', 'yes', 500),
+(111181, '21-00228@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00228', 'yes', 500),
+(111182, '21-00298@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00298', 'yes', 500),
+(111183, '21-00353@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00353', 'yes', 500),
+(111184, '21-00475@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00475', 'yes', 500),
+(111185, '21-00611@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00611', 'yes', 500),
+(111186, '21-00623@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00623', 'yes', 500),
+(111187, '21-00629@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00629', 'yes', 500),
+(111188, '21-00838@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00838', 'yes', 500),
+(111189, '21-00860@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00860', 'yes', 500),
+(111190, '21-00866@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00866', 'yes', 500),
+(111191, '21-00924@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-00924', 'yes', 500),
+(111192, '21-01057@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01057', 'yes', 500),
+(111193, '21-01209@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01209', 'yes', 500),
+(111194, '21-01244@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01244', 'yes', 500),
+(111195, '21-01283@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01283', 'yes', 500),
+(111196, '21-01439@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01439', 'yes', 500),
+(111197, '21-01457@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01457', 'yes', 500),
+(111198, '21-01600@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01600', 'yes', 500),
+(111199, '21-01617@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01617', 'yes', 500),
+(111200, '21-01642@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01642', 'yes', 500),
+(111201, '21-01806@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01806', 'yes', 500),
+(111202, '21-01836@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-01836', 'yes', 500),
+(111203, '21-02046@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02046', 'yes', 500),
+(111204, '21-02055@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02055', 'yes', 500),
+(111205, '21-02084@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02084', 'yes', 500),
+(111206, '21-02093@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02093', 'yes', 500),
+(111207, '21-02107@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02107', 'yes', 500),
+(111208, '21-02272@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02272', 'yes', 500),
+(111209, '21-02359@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02359', 'yes', 500),
+(111210, '21-02493@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02493', 'yes', 500),
+(111211, '21-02508@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02508', 'yes', 500),
+(111212, '21-02539@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02539', 'yes', 500),
+(111213, '21-02630@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02630', 'yes', 500),
+(111214, '21-02637@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02637', 'yes', 500),
+(111215, '21-02806@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02806', 'yes', 500),
+(111216, '21-02811@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02811', 'yes', 500),
+(111217, '21-02863@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02863', 'yes', 500),
+(111218, '21-02864@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-02864', 'yes', 500),
+(111219, '21-03001@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03001', 'yes', 500),
+(111220, '21-03012@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03012', 'yes', 500),
+(111221, '21-03036@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03036', 'yes', 500),
+(111222, '21-03129@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03129', 'yes', 500),
+(111223, '21-03142@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03142', 'yes', 500),
+(111224, '21-03214@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03214', 'yes', 500),
+(111225, '21-03287@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03287', 'yes', 500),
+(111226, '21-03338@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03338', 'yes', 500),
+(111227, '21-03396@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03396', 'yes', 500),
+(111228, '21-03583@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03583', 'yes', 500),
+(111229, '21-03659@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03659', 'yes', 500),
+(111230, '21-03685@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03685', 'yes', 500),
+(111231, '21-03740@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03740', 'yes', 500),
+(111232, '21-03822@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03822', 'yes', 500),
+(111233, '21-03878@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03878', 'yes', 500),
+(111234, '21-03898@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03898', 'yes', 500),
+(111235, '21-03939@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-03939', 'yes', 500),
+(111236, '21-04034@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04034', 'yes', 500),
+(111237, '21-04098@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04098', 'yes', 500),
+(111238, '21-04111@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04111', 'yes', 500),
+(111239, '21-04139@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04139', 'yes', 500),
+(111240, '21-04164@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04164', 'yes', 500),
+(111241, '21-04208@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04208', 'yes', 500),
+(111242, '21-04310@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04310', 'yes', 500),
+(111243, '21-04761@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04761', 'yes', 500),
+(111244, '21-04822@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-04822', 'yes', 500),
+(111245, '21-05066@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05066', 'yes', 500),
+(111246, '21-05084@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05084', 'yes', 500),
+(111247, '21-05346@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05346', 'yes', 500),
+(111248, '21-05371@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05371', 'yes', 500),
+(111249, '21-05373@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05373', 'yes', 500),
+(111250, '21-05730@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05730', 'yes', 500),
+(111251, '21-05740@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05740', 'yes', 500),
+(111252, '21-05798@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05798', 'yes', 500),
+(111253, '21-05896@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05896', 'yes', 500),
+(111254, '21-05929@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-05929', 'yes', 500),
+(111255, '21-06067@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06067', 'yes', 500),
+(111256, '21-06234@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06234', 'yes', 500),
+(111257, '21-06284@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06284', 'yes', 500),
+(111258, '21-06329@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06329', 'yes', 500),
+(111259, '21-06356@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06356', 'yes', 500),
+(111260, '21-06451@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06451', 'yes', 500),
+(111261, '21-06482@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06482', 'yes', 500),
+(111262, '21-06489@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06489', 'yes', 500),
+(111263, '21-06569@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06569', 'yes', 500),
+(111264, '21-06595@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06595', 'yes', 500),
+(111265, '21-06877@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06877', 'yes', 500),
+(111266, '21-06962@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-06962', 'yes', 500),
+(111267, '21-07187@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07187', 'yes', 500),
+(111268, '21-07192@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07192', 'yes', 500),
+(111269, '21-07260@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07260', 'yes', 500),
+(111270, '21-07493@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07493', 'yes', 500),
+(111271, '21-07583@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07583', 'yes', 500),
+(111272, '21-07629@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07629', 'yes', 500),
+(111273, '21-07863@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07863', 'yes', 500),
+(111274, '21-07874@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-07874', 'yes', 500),
+(111275, '21-08070@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08070', 'yes', 500),
+(111276, '21-08103@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08103', 'yes', 500),
+(111277, '21-08115@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08115', 'yes', 500),
+(111278, '21-08136@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08136', 'yes', 500),
+(111279, '21-08307@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08307', 'yes', 500),
+(111280, '21-08523@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08523', 'yes', 500),
+(111281, '21-08567@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08567', 'yes', 500),
+(111282, '21-08620@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08620', 'yes', 500),
+(111283, '21-08688@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08688', 'yes', 500),
+(111284, '21-08694@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08694', 'yes', 500),
+(111285, '21-08775@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08775', 'yes', 500),
+(111286, '21-08812@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08812', 'yes', 500),
+(111287, '21-08841@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-08841', 'yes', 500),
+(111288, '21-09292@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09292', 'yes', 500),
+(111289, '21-09299@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09299', 'yes', 500),
+(111290, '21-09313@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09313', 'yes', 500),
+(111291, '21-09336@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09336', 'yes', 500),
+(111292, '21-09624@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09624', 'yes', 500),
+(111293, '21-09742@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09742', 'yes', 500),
+(111294, '21-09828@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09828', 'yes', 500),
+(111295, '21-09888@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09888', 'yes', 500),
+(111296, '21-09944@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '21-09944', 'yes', 500),
+(111297, '22-00016@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00016', 'yes', 500),
+(111298, '22-00066@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00066', 'yes', 500),
+(111299, '22-00148@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00148', 'yes', 500),
+(111300, '22-00283@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00283', 'yes', 500),
+(111301, '22-00393@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00393', 'yes', 500),
+(111302, '22-00766@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00766', 'yes', 500),
+(111303, '22-00865@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-00865', 'yes', 500),
+(111304, '22-01079@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01079', 'yes', 500),
+(111305, '22-01180@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01180', 'yes', 500),
+(111306, '22-01207@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01207', 'yes', 500),
+(111307, '22-01281@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01281', 'yes', 500),
+(111308, '22-01308@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01308', 'yes', 500),
+(111309, '22-01514@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01514', 'yes', 500),
+(111310, '22-01560@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01560', 'yes', 500),
+(111311, '22-01822@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01822', 'yes', 500),
+(111312, '22-01885@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01885', 'yes', 500),
+(111313, '22-01899@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01899', 'yes', 500),
+(111314, '22-01920@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-01920', 'yes', 500),
+(111315, '22-02167@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02167', 'yes', 500),
+(111316, '22-02400@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02400', 'yes', 500),
+(111317, '22-02430@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02430', 'yes', 500),
+(111318, '22-02515@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02515', 'yes', 500),
+(111319, '22-02699@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02699', 'yes', 500),
+(111320, '22-02793@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02793', 'yes', 500),
+(111321, '22-02802@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02802', 'yes', 500),
+(111322, '22-02930@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02930', 'yes', 500),
+(111323, '22-02963@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-02963', 'yes', 500),
+(111324, '22-03001@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-03001', 'yes', 500),
+(111325, '22-03121@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-03121', 'yes', 500),
+(111326, '22-03316@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-03316', 'yes', 500),
+(111327, '22-03874@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-03874', 'yes', 500),
+(111328, '22-04273@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04273', 'yes', 500),
+(111329, '22-04291@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04291', 'yes', 500),
+(111330, '22-04312@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04312', 'yes', 500),
+(111331, '22-04366@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04366', 'yes', 500),
+(111332, '22-04436@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04436', 'yes', 500),
+(111333, '22-04613@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04613', 'yes', 500),
+(111334, '22-04919@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-04919', 'yes', 500),
+(111335, '22-05316@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-05316', 'yes', 500),
+(111336, '22-05606@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-05606', 'yes', 500),
+(111337, '22-05888@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-05888', 'yes', 500),
+(111338, '22-05940@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-05940', 'yes', 500),
+(111339, '22-06316@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06316', 'yes', 500),
+(111340, '22-06550@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06550', 'yes', 500),
+(111341, '22-06553@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06553', 'yes', 500),
+(111342, '22-06686@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06686', 'yes', 500),
+(111343, '22-06716@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06716', 'yes', 500),
+(111344, '22-06726@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-06726', 'yes', 500),
+(111345, '22-07325@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07325', 'yes', 500),
+(111346, '22-07365@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07365', 'yes', 500),
+(111347, '22-07551@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07551', 'yes', 500),
+(111348, '22-07604@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07604', 'yes', 500),
+(111349, '22-07716@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07716', 'yes', 500),
+(111350, '22-07801@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-07801', 'yes', 500),
+(111351, '22-08028@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08028', 'yes', 500),
+(111352, '22-08097@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08097', 'yes', 500),
+(111353, '22-08131@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08131', 'yes', 500),
+(111354, '22-08165@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08165', 'yes', 500),
+(111355, '22-08323@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08323', 'yes', 500),
+(111356, '22-08366@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08366', 'yes', 500),
+(111357, '22-08451@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08451', 'yes', 500),
+(111358, '22-08569@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08569', 'yes', 500),
+(111359, '22-08587@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08587', 'yes', 500),
+(111360, '22-08793@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08793', 'yes', 500),
+(111361, '22-08870@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08870', 'yes', 500),
+(111362, '22-08978@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-08978', 'yes', 500),
+(111363, '22-09012@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09012', 'yes', 500),
+(111364, '22-09493@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09493', 'yes', 500),
+(111365, '22-09547@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09547', 'yes', 500),
+(111366, '22-09662@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '22-09662', 'yes', 500),
+(111367, '23-09118@g.batstate-u.edu.ph', 'MsiQs2M8oleD4BALHYk97U9PO7HO1oGsKk/6E2caWqbOiTiECGTxQ+TwuDEIJtJR', NULL, '23-09118', 'yes', 500);
 
 -- --------------------------------------------------------
 
@@ -1083,7 +1466,7 @@ INSERT INTO `user_account` (`u_id`, `username`, `hashed_password`, `faculty_id`,
 --
 DROP TABLE IF EXISTS `faculty_accounts`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `faculty_accounts`  AS SELECT `ua`.`u_id` AS `u_id`, `ua`.`username` AS `username`, `ua`.`hashed_password` AS `hashed_password`, `fi`.`id` AS `faculty_id`, `fi`.`gsuite` AS `gsuite`, `fi`.`first_name` AS `first_name`, `fi`.`middle_name` AS `middle_name`, `fi`.`last_name` AS `last_name` FROM (`user_account` `ua` join `faculty_info` `fi` on(`ua`.`faculty_id` = `fi`.`id`)) WHERE `ua`.`faculty_id` is not null ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `faculty_accounts`  AS SELECT `ua`.`u_id` AS `u_id`, `ua`.`username` AS `username`, `ua`.`hashed_password` AS `hashed_password`, `fi`.`id` AS `faculty_id`, `fi`.`gsuite` AS `gsuite`, `fi`.`first_name` AS `first_name`, `fi`.`middle_name` AS `middle_name`, `ua`.`mb_limit` AS `mb_limit`, `fi`.`last_name` AS `last_name`, `ua`.`email_verified` AS `email_verified` FROM (`user_account` `ua` join `faculty_info` `fi` on(`ua`.`faculty_id` = `fi`.`id`)) WHERE `ua`.`faculty_id` is not null ;
 
 -- --------------------------------------------------------
 
@@ -1106,11 +1489,29 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Structure for view `files_of_faculty`
+--
+DROP TABLE IF EXISTS `files_of_faculty`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `files_of_faculty`  AS SELECT row_number() over () AS `id`, `faculty_accounts`.`u_id` AS `u_id`, `faculty_accounts`.`username` AS `username`, `faculty_accounts`.`hashed_password` AS `hashed_password`, `faculty_accounts`.`faculty_id` AS `faculty_id`, `faculty_accounts`.`gsuite` AS `gsuite`, `faculty_accounts`.`first_name` AS `first_name`, `faculty_accounts`.`middle_name` AS `middle_name`, `faculty_accounts`.`last_name` AS `last_name`, `folder_files`.`file_id` AS `file_id`, `folder_files`.`folder_code` AS `folder_code`, `folder_files`.`file_name` AS `file_name`, `folder_files`.`file_guide` AS `file_guide`, `folder_files`.`file_description` AS `file_description`, `folder_files`.`file_link` AS `file_link`, `folder_files`.`uploader_id` AS `uploader_id` FROM (`faculty_accounts` join `folder_files` on(`folder_files`.`uploader_id` = `faculty_accounts`.`faculty_id`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `file_of_students`
+--
+DROP TABLE IF EXISTS `file_of_students`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `file_of_students`  AS SELECT row_number() over () AS `id`, `student_accounts`.`u_id` AS `u_id`, `student_accounts`.`username` AS `username`, `student_accounts`.`hashed_password` AS `hashed_password`, `student_accounts`.`student_id` AS `student_id`, `student_accounts`.`email_verified` AS `email_verified`, `student_accounts`.`first_name` AS `first_name`, `student_accounts`.`middle_name` AS `middle_name`, `student_accounts`.`last_name` AS `last_name`, `folder_files`.`file_id` AS `file_id`, `folder_files`.`folder_code` AS `folder_code`, `folder_files`.`file_name` AS `file_name`, `folder_files`.`file_guide` AS `file_guide`, `folder_files`.`file_description` AS `file_description`, `folder_files`.`file_link` AS `file_link`, `folder_files`.`uploader_id` AS `uploader_id` FROM (`student_accounts` join `folder_files` on(`folder_files`.`uploader_id` = `student_accounts`.`student_id`)) ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `student_accounts`
 --
 DROP TABLE IF EXISTS `student_accounts`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `student_accounts`  AS SELECT `ua`.`u_id` AS `u_id`, `ua`.`username` AS `username`, `ua`.`hashed_password` AS `hashed_password`, `si`.`sr_code` AS `student_id`, `si`.`first_name` AS `first_name`, `si`.`middle_name` AS `middle_name`, `si`.`last_name` AS `last_name` FROM (`user_account` `ua` join `student_info` `si` on(`ua`.`student_id` = `si`.`sr_code`)) WHERE `ua`.`student_id` is not null ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `student_accounts`  AS SELECT `ua`.`u_id` AS `u_id`, `ua`.`username` AS `username`, `ua`.`hashed_password` AS `hashed_password`, `si`.`sr_code` AS `student_id`, `ua`.`mb_limit` AS `mb_limit`, `ua`.`email_verified` AS `email_verified`, `si`.`first_name` AS `first_name`, `si`.`middle_name` AS `middle_name`, `si`.`last_name` AS `last_name` FROM (`user_account` `ua` join `student_info` `si` on(`ua`.`student_id` = `si`.`sr_code`)) WHERE `ua`.`student_id` is not null ;
 
 -- --------------------------------------------------------
 
@@ -1276,7 +1677,7 @@ ALTER TABLE `user_account`
 -- AUTO_INCREMENT for table `admin_logs`
 --
 ALTER TABLE `admin_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=203;
 
 --
 -- AUTO_INCREMENT for table `auth_group`
@@ -1318,7 +1719,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `captcha_captchastore`
 --
 ALTER TABLE `captcha_captchastore`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=238;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=388;
 
 --
 -- AUTO_INCREMENT for table `django_admin_log`
@@ -1342,37 +1743,37 @@ ALTER TABLE `django_migrations`
 -- AUTO_INCREMENT for table `faculty_info`
 --
 ALTER TABLE `faculty_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `folder_files`
 --
 ALTER TABLE `folder_files`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `folder_tns`
 --
 ALTER TABLE `folder_tns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student_folder`
 --
 ALTER TABLE `student_folder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student_logs`
 --
 ALTER TABLE `student_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 
 --
 -- AUTO_INCREMENT for table `user_account`
 --
 ALTER TABLE `user_account`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111370;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111380;
 
 --
 -- Constraints for dumped tables
