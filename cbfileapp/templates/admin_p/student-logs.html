@@ -49,6 +49,15 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{% static 'assets/js/config.js' %}"></script>
+            <!-- jQuery CDN -->
+            <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+            <!-- DataTables JS CDN -->
+            <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+        
+            <!-- DataTables CSS CDN -->
+            <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css">
+        
   </head>
 
   <body>
@@ -66,12 +75,12 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Administrator Logs</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Student Logs</h4>
 
               <!-- Basic Bootstrap Table -->
               <div class="card">
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                  <table class="table" id="table_data">
                     <thead>
                       <tr>
                         <th>G-suite</th>  <!-- Replace with actual field names like 'field1', 'field2' -->
@@ -118,7 +127,11 @@
     <!-- / Layout wrapper -->
 
  
-
+    <script>
+      new DataTable('#table_data');
+    
+     </script>
+    
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>

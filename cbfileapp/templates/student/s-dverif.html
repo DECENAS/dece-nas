@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>DECE NAS- Student Login</title>
+    <title>DECE NAS- Account Verification</title>
 
     <meta name="description" content="" />
 
@@ -54,65 +54,51 @@
 
   <body>
     <!-- Content -->
- 
+
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
-              <!-- Register -->
+          <!-- Register -->
           <div class="card">
             <div class="card-body">
               <!-- Logo -->
-               <div class="row">
+              <div class="row">
                 <div class="col-md-6">
-    <a href="{% url 'home' %}" class="btn btn-danger "><i class="bx bx-left-arrow-circle" style="font-size: 25px;"></i> &nbsp; Back to Home Page</a>
-             <img src="{% static 'assets/img/favicon/BatStateU-NEU-Logo.png' %}" style="width: 100%;">
-              <!-- /Logo -->
-               </div>
-               <div class="col-md-6  text-left">
-              <h2 class="mb-3 mt-3">LOGIN NOW TO NASTECH DRIVE </h2>
-                   <i class="bx bxs-user-circle" style="font-size: 120px;  color: #b00404;"></i>
-                   <h4 class="mb-2">Welcome  Student </h4>
-              <p class="mb-4">Please sign-in to your account and start managing your files</p>
-
-              <form id="formAuthentication" class="mb-3" method="POST">
-                {% csrf_token %}
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email or Username</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="email"
-                    name="email-username"
-                    placeholder="Enter your email or username"
-                    required
-                  />
+               
+                <!-- Logo -->
+      <a href="{% url 'home' %}" class="btn btn-danger "><i class="bx bx-left-arrow-circle" style="font-size: 25px"></i> &nbsp; Back to Home Page</a>
+                <img src="{% static 'assets/img/favicon/BatStateU-NEU-Logo.png' %}" style="width: 100%; ">
                 </div>
+                <!-- /Logo -->
+                <div class="col-md-6">
+              <h4 class="mb-2">Verify Your Email Here </h4>
+
+              <form id="formAuthentication" class="mb-3"  method="POST">
+                {% csrf_token %}
+           
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Password</label>
-                    <a href="{% url 'send_otp' %}">
-                      <small>Forgot Password?</small>
-                    </a>
+                    <label class="form-label" for="password">GSuite</label>
+                  
                   </div>
                   <div class="input-group input-group-merge">
                     <input
-                      type="password"
-                      id="password"
+                      type="email"
+                      id="g_email"
                       class="form-control"
-                      name="password"
-                      placeholder="••••••••"
+                      name="g_email"
+                      placeholder="_ _- _ _ _ _ _ @g.batstate-u.edu.ph"
                       required
                     />
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-              
-               <hr>
+                <hr>
                 {% csrf_token %}
                 {{ form.as_p }}  <!-- This will include the CAPTCHA image -->
             
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" id="loginBtn" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit">Send OTP to Activate Account</button>
                 </div>
               </form>
               {% if messages %}
@@ -124,54 +110,19 @@
 {% endif %}
 
 
-              <p class="text-center">
-                <span>New on our platform? {{locked_out}}</span>
-                <a href="{% url 'student_reg' %}">
-                  <span>Create an account</span>
-                </a>
-              </p>
-              <hr>
-              <p class="text-center">
-                <span>Have an unactivated account? {{locked_out}}</span>
-                <a href="{% url 'student_dverif' %}">
-                  <span>Verify my Account</span>
-                </a>
               </p>
             </div>
           </div>
           <!-- /Register -->
         </div>
       </div>
-        </div>
-      </div>
     </div>
+    </div>
+  </div>
 
     <!-- / Content -->
 
-    {% if locked_out %}
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            disableInputs();
-
-            // Re-enable inputs after 5 minutes
-            setTimeout(() => {
-                enableInputs();
-            }, 300000); // 5 minutes (300000 ms)
-        });
-
-        function disableInputs() {
-            document.getElementById('email').disabled = true;
-            document.getElementById('password').disabled = true;
-            document.getElementById('loginBtn').disabled = true;
-        }
-
-        function enableInputs() {
-            document.getElementById('email').disabled = false;
-            document.getElementById('password').disabled = false;
-            document.getElementById('loginBtn').disabled = false;
-        }
-    </script>
-{% endif %}
+ 
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

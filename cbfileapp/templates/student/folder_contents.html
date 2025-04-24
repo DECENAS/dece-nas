@@ -10,7 +10,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>DECE NAS - Folder Contents</title>
+    <title>DECENAS - Folder Contents</title>
 
     <meta name="description" content="" />
 
@@ -61,15 +61,117 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4">Folder Contents</h4>
+
+              <h6 class="alert alert-danger">{{ notification }}</h6>
+
+              <h4 class="fw-bold py-3 mb-4">Folders Inside this folder</h4>
               <div class="row mb-5">
-              <div class="col-md-6">
+              <div class="col-md-12">
+
+                
+
+<div class="row">
+  {% for folder in grouped_folders %}
+  <div class="col-xl-4 col-md-4">
+    
+    <div class="nav-align-top mb-4">
+      <ul class="nav nav-tabs nav-fill" role="tablist">
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link active"
+            role="tab"
+            data-bs-toggle="tab"
+            data-bs-target="#navs-justified-home{{ folder.unique_code }}"
+            aria-controls="navs-justified-home"
+            aria-selected="true"
+          >
+            <i class="tf-icons bx bx-file"></i>Folder Code: {{ folder.folder_name }}
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link"
+            role="tab"
+            data-bs-toggle="tab"
+            data-bs-target="#navs-justified-profile{{folder.unique_code }}"
+            aria-controls="navs-justified-profile"
+            aria-selected="false"
+          >
+            <i class="tf-icons bx bx-user"></i> Creator
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link"
+            role="tab"
+            data-bs-toggle="tab"
+            data-bs-target="#navs-justified-messages{{folder.unique_code }}"
+            aria-controls="navs-justified-messages"
+            aria-selected="false"
+          >
+            <i class="tf-icons bx bxs-user-account"></i> Students
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="navs-justified-home{{folder.unique_code }}" role="tabpanel">
+          <div class="row">
+             
+            <div class="col-md-4">
+          <a class="btn btn-success" href="{% url 'view_folder_s' folder_code=folder.unique_code %}">Enter Folder</a>
+          </div>
+          <div class="col-md-6">
+      
+            <form method="post" onsubmit="return confirmDelete()">
+            {% csrf_token %}
+              
+              <input type="text" name="folder_code_delete" value="{{folder.unique_code }}" style="display: none">
+              <button class="btn btn-danger" type="submit">Delete Folder</button>
+          </form>
+        </div>
+      </div>
+          <hr>
+          <p>
+            Unique Code:  {{ folder.unique_code }}
+            <br>
+          </p>
+          <p class="mb-0">
+            {{ folder.description }}
+          </p>
+        </div>
+        <div class="tab-pane fade" id="navs-justified-profile{{folder.unique_code }}" role="tabpanel">
+          <p>
+            {{ folder.faculty_gsuite }}
+          </p>
+          
+        </div>
+        <div class="tab-pane fade" id="navs-justified-messages{{folder.unique_code }}" role="tabpanel">
+          <p>
+            {% for student in folder.students %}
+            <li>{{ student }}</li>
+          {% endfor %}
+          </p>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {% endfor %}
+  
+  </div>
+  <hr>
 <!-- Button trigger modal -->
+<h4 class="fw-bold py-3 mb-4">Folder Contents</h4>
 <button
   href="#basicModal"
   class="btn btn-primary"
   data-bs-toggle="modal"
   data-bs-target="#basicModal"
+  {% if limit == "yes" %} disabled {% endif %}
 >
 <i class="bx bx-cloud-upload me-2" style="color: white; font-size: 22px; margin-top: -4px;"></i> Upload File
 </button>

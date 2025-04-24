@@ -6,16 +6,22 @@ class FacultyInfo(models.Model):
     first_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     class Meta:
         managed = False
+        db_table = 'faculty_info'
+
 class StudentInfo(models.Model):
     sr_code = models.CharField(max_length=10, primary_key=True)
     first_name = models.CharField(max_length=50)
     g_email = models.EmailField(unique=True)
     middle_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50)
+    
     class Meta:
         managed = False
+        db_table = 'student_info'
+
 class UserAccount(models.Model):
     u_id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=50, unique=True)
@@ -27,10 +33,23 @@ class UserAccount(models.Model):
         ('yes', 'Yes'),
     ]
     email_verified = models.CharField(max_length=3, choices=EMAIL_VERIFIED_CHOICES, default='no')
+    mb_limit = models.IntegerField()
 
     class Meta:
         managed = False
         db_table = 'user_account'
+        
+    def get_storage_notification(self, used_mb):
+        threshold = 0.9 * self.mb_limit
+        if used_mb >= threshold:
+            return f"⚠️ Your storage usage has reached {used_mb}MB / {self.mb_limit}MB. Please free up space."
+        return None
+    def get_storage_limit(self, used_mb):
+        threshold = 0.9 * self.mb_limit
+        if used_mb >= threshold:
+            return "yes"
+        return None
+
         
 
 
@@ -105,6 +124,7 @@ class StudentAccount(models.Model):
     first_name = models.CharField(max_length=50, null=True, blank=True)
     middle_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
+    mb_limit = models.IntegerField()
 
     class Meta:
         managed = False
@@ -268,6 +288,7 @@ class FacultyAccount(models.Model):
     first_name = models.CharField(max_length=50, null=True, blank=True)
     middle_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
+    mb_limit = models.IntegerField()
 
     class Meta:
         managed = False

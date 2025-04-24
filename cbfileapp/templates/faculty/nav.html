@@ -154,6 +154,12 @@
                 <div class="dropdown-divider"></div>
               </li>
               <li>
+                <a class="dropdown-item" href="{% url 'faculty_folders' %}" target="_blank">
+                  <i class="bx bx-lock-open me-2"></i>
+                  <span class="align-middle">My Profile</span>
+                </a>
+              </li>
+              <li>
                 <a class="dropdown-item" href="#">
                   <i class="bx bx-user me-2"></i>
                   <span class="align-middle">Change Password</span>
@@ -175,30 +181,3 @@
         </ul>
       </div>
     </nav>
-    <script>
-      // Set the key and duration
-      const storageKey = 'featureStartTime';
-      const maxUsageTime = 30 * 60 * 1000; // 30 minutes in milliseconds
-    
-      // Check if the time is already stored
-      let startTime = localStorage.getItem(storageKey);
-    
-      if (!startTime) {
-        // If not set, store the current timestamp
-        startTime = Date.now();
-        localStorage.setItem(storageKey, startTime);
-      }
-    
-      // Check time difference every second (you can adjust this)
-      setInterval(function () {
-        const now = Date.now();
-        const elapsed = now - parseInt(localStorage.getItem(storageKey));
-    
-        if (elapsed >= maxUsageTime) {
-          alert('Your 30 minutes are up. You will be redirected.');
-          localStorage.removeItem(storageKey); // Optional: clear the key
-          window.location.href = "{% url 'faculty_logout' %}"; // Change to your actual redirect URL
-        }
-      }, 1000);
-    </script>
-    

@@ -22,13 +22,19 @@ from django.urls import reverse
 from .models import FolderFile, StudentAccount, FilesShared
 # Django ORM imports
 from django.db.models import Prefetch, Q, OuterRef, Subquery, Exists  # Query optimization and filtering
+import os
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+from .models import FolderFile, StudentAccount, FilesShared, FileOfStudents, FacultyFiles
 
 # Models
 from .models import (
-    AdminLogs, StudentLogs, FilesShared, SharedFilesView,
-    FacultyAccount, StudentFolderView, FacultyAdminLogs,
-    StudentActivityLogs, StudentAccount, UserAccount,
-    FolderTns, FacultyFoldersView, StudentFolder, FolderFile
+    AdminLogs, StudentLogs, FilesShared, SharedFilesView, 
+    FacultyAccount, StudentFolderView, FacultyAdminLogs, 
+    StudentActivityLogs, StudentAccount, UserAccount, 
+    FolderTns, FacultyFoldersView, StudentFolder, FolderFile, StudentInfo
 )
 
 # Forms
@@ -47,12 +53,9 @@ import random  # Random number generation
 import datetime  # Date and time handling
 
 
-from django.db import connection
-from django.http import HttpRequest
-
 def log_action(user_type: str, user_id: str, action: str, request: HttpRequest):
     """
-    A generic logging function to log actions for admin and student using raw SQL.
+    A generic logging function to log actions for admin and student.
     
     :param user_type: 'admin' or 'student' to specify the user type
     :param user_id: The user ID (admin ID or student username)
@@ -62,28 +65,22 @@ def log_action(user_type: str, user_id: str, action: str, request: HttpRequest):
     ip_address = request.META.get('REMOTE_ADDR', '')
     user_agent = request.META.get('HTTP_USER_AGENT', '')
 
-    table = ''
-    id_field = ''
-
     if user_type == 'admin':
-        table = 'admin_logs'
-        id_field = 'admin_id'
-    elif user_type == 'student':
-        table = 'student_logs'
-        id_field = 'student_id'
-    else:
-        return  # Invalid user type
-
-    with connection.cursor() as cursor:
-        cursor.execute(
-            f"""
-            INSERT INTO {table} ({id_field}, action, ip_address, user_agent, timestamp)
-            VALUES (%s, %s, %s, %s, DATE_ADD(NOW(), INTERVAL 8 HOUR))
-            """,
-            [user_id, action, ip_address, user_agent]
+        # Log the action for admin
+        AdminLogs.objects.create(
+            admin_id=user_id,
+            action=action,
+            ip_address=ip_address,
+            user_agent=user_agent
         )
-
-
+    elif user_type == 'student':
+        # Log the action for student
+        StudentLogs.objects.create(
+            student_id=user_id,
+            action=action,
+            ip_address=ip_address,
+            user_agent=user_agent
+        )
 
 
 def generate_otp():
@@ -96,7 +93,7 @@ def send_email(otp, send_to):
     message = f"Your OTP is {otp}. It is valid for 5 minutes."
     from_email = "dece.nas.system@gmail.com"
     recipient_list = [send_to]
-
+    
     send_mail(subject, message, from_email, recipient_list)
 
 
@@ -122,14 +119,14 @@ def send_otp_pass(request):
             messages.error(request, "No account found with this email address.")
             return redirect("send_otp")  # Redirect back to the OTP request page
 
-    return render(request, "forgot_password.html")  # Render the OTP request page
+    return render(request, "forgot_password.html")  # Render the OTP request page 
 
 
 
 def enter_otp_online(request):
     otp = request.session.get('otp', None)
     if not otp:
-        return redirect(reverse('home'))
+        return redirect(reverse('home'))  
 
     """Allow the user to enter OTP for verification"""
     if request.method == "POST":
@@ -172,14 +169,14 @@ def send_otp_pass_online(request):
             messages.error(request, "No account found with this email address.")
             return redirect("change_password_online")  # Redirect back to the OTP request page
 
-    return render(request, "change_password_online.html")  # Render the OTP request page
+    return render(request, "change_password_online.html")  # Render the OTP request page 
 
 
 
 def enter_otp(request):
     otp = request.session.get('otp', None)
     if not otp:
-        return redirect(reverse('home'))
+        return redirect(reverse('home'))  
 
     """Allow the user to enter OTP for verification"""
     if request.method == "POST":
@@ -201,11 +198,38 @@ def enter_otp(request):
     return render(request, "enter_otp.html")  # Render OTP input page
 
 
-def change_password(request):
 
+def default_password_user_one(request, user_id):
+    admin_id = request.session.get('admin_id', None)
+
+    if not admin_id:
+        return redirect(reverse('admin_login'))  # 'faculty_login' should be the name of your login URL
+    else:
+        password = "user123"
+        user = UserAccount.objects.get(u_id=user_id)
+        user.hashed_password = encrypt(password, passwordUnique)  # You should hash the password before saving
+        user.save()
+        return redirect(request.get_full_path())  # 'faculty_login' should be the name of your login URL
+
+def default_password_all_users(request):
+    admin_id = request.session.get('admin_id', None)
+
+    if not admin_id:
+        return redirect(reverse('admin_login'))  # 'faculty_login' should be the name of your login URL
+    else:
+        password = "user123"
+        all_users = UserAccount.objects.all()
+        for user in all_users:
+            user.hashed_password = encrypt(password, passwordUnique)  # Make sure `encrypt` is defined properly
+            user.save()
+        return redirect(request.get_full_path())  # 'faculty_login' should be the name of your login URL
+
+
+def change_password(request):
+    
     otp = request.session.get('otp', None)
     if not otp:
-        return redirect(reverse('home'))
+        return redirect(reverse('home'))  
     """Allow the user to change their password after OTP verification"""
     if request.method == "POST":
         password = request.POST.get("password")
@@ -237,7 +261,7 @@ def require_faculty_login(view_func):
         if not faculty_id:
             return redirect(reverse('admin_login'))  # Replace 'admin_login' with the actual login URL name
         return view_func(request, *args, **kwargs)
-
+    
     return wrapper
 
 # Generate a key from a password
@@ -258,30 +282,30 @@ def encrypt(plaintext: str, password: str) -> str:
     iv = os.urandom(16)  # AES requires a 16-byte IV
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
     encryptor = cipher.encryptor()
-
+    
     # PKCS7 Padding
     padding_length = 16 - (len(plaintext) % 16)
     padded_plaintext = plaintext + (chr(padding_length) * padding_length)
 
     ciphertext = encryptor.update(padded_plaintext.encode()) + encryptor.finalize()
-
+    
     # Store salt, iv, and ciphertext together
     return base64.b64encode(salt + iv + ciphertext).decode()
 
 # Decrypt function
 def decrypt(encrypted_text: str, password: str) -> str:
     encrypted_data = base64.b64decode(encrypted_text)
-
+    
     salt = encrypted_data[:16]  # Extract the salt
     iv = encrypted_data[16:32]  # Extract the IV
     ciphertext = encrypted_data[32:]  # Extract the actual ciphertext
-
+    
     key = derive_key(password, salt)
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
     decryptor = cipher.decryptor()
-
+    
     decrypted_padded = decryptor.update(ciphertext) + decryptor.finalize()
-
+    
     # Remove PKCS7 padding
     padding_length = ord(decrypted_padded[-1:])
     return decrypted_padded[:-padding_length].decode()
@@ -319,7 +343,7 @@ def login_admin(request):
 
             with connection.cursor() as cursor:
                 cursor.execute("""
-                    SELECT u_id, username, hashed_password FROM user_account
+                    SELECT u_id, username, hashed_password FROM user_account 
                     WHERE username = %s AND u_id = 111111
                 """, [username_or_email])
                 faculty = cursor.fetchone()
@@ -328,13 +352,13 @@ def login_admin(request):
                 u_id, username, hashed_password = faculty
 
                 if decrypt(hashed_password, passwordUnique) == password:
-                    request.session['admin_id'] = u_id
-                    request.session['username'] = username
+                    request.session['admin_id'] = u_id  
+                    request.session['a_fullname'] = username  
                     request.session.pop('admin_login_attempts', None)  # Reset attempts on success
                     request.session.pop('admin_lockout_time', None)  # Remove lockout if present
                     log_action('admin', u_id, 'Logged In', request)
 
-                    return redirect('a_dashboard')
+                    return redirect('a_dashboard')  
                 else:
                     messages.error(request, "Invalid password!")
             else:
@@ -378,8 +402,8 @@ def login_faculty(request):
 
             with connection.cursor() as cursor:
                 cursor.execute("""
-                    SELECT u_id, username, hashed_password, first_name, last_name, middle_name, faculty_id
-                    FROM faculty_accounts
+                    SELECT u_id, username, hashed_password, first_name, last_name, middle_name, faculty_id  
+                    FROM faculty_accounts 
                     WHERE (username = %s OR gsuite = %s) AND email_verified = 'yes'
                 """, [username_or_email, username_or_email])
                 faculty = cursor.fetchone()
@@ -388,14 +412,14 @@ def login_faculty(request):
                 u_id, username, hashed_password, first_name, middle_name, last_name, faculty_id = faculty
 
                 if decrypt(hashed_password, passwordUnique) == password:
-                    request.session['faculty_id'] = u_id
-                    request.session['a_fullname'] = f"{first_name} {middle_name} {last_name}"
+                    request.session['faculty_id'] = u_id  
+                    request.session['a_fullname'] = f"{first_name} {middle_name} {last_name}"  
                     request.session.pop('faculty_login_attempts', None)  # Reset attempts on success
                     request.session.pop('faculty_lockout_time', None)  # Remove lockout if present
                     log_action('admin', u_id, 'Logged In', request)
 
-
-                    return redirect('faculty_folders')
+                    
+                    return redirect('faculty_folders')  
                 else:
                     messages.error(request, "Invalid password!")
             else:
@@ -423,14 +447,14 @@ def home(request):
     return render(request, 'landing.html')
 
 def read_html(request):
-
+   
     admin_id = request.session.get('admin_id', None)
     full_name = request.session.get('a_fullname', None)
 
     # If there is no faculty_id in the session, redirect to the admin login page
     if not admin_id:
         return redirect(reverse('admin_login'))  # 'faculty_login' should be the name of your login URL
-
+        
     total_size_bytes = 0
     total_files = 0
     total_folders = 0
@@ -460,7 +484,7 @@ def read_html(request):
                 files_this_week += 1
             if file_mod_time >= start_of_month:
                 files_this_month += 1
-
+    
     latest_files = []
 
     for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
@@ -475,7 +499,7 @@ def read_html(request):
 
             total_size_bytes += file_size
 
-
+            
 
             # Store latest files with details
             latest_files.append({
@@ -488,6 +512,33 @@ def read_html(request):
 
     # Sort by modification time (latest first) and get the latest 5
     latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+
+    all_users = UserAccount.objects.all()
+    flagged_users = []
+
+    for user in all_users:
+        user_files = []
+        if user.faculty:
+            user_files = FolderFile.objects.filter(uploader_id=user.faculty.id)
+        elif user.student:
+            user_files = FolderFile.objects.filter(uploader_id=user.student.sr_code)
+
+        used_bytes = 0
+        for file in user_files:
+            file_path = os.path.join(NETWORK_DRIVE_PATH, file.folder_code , file.file_name)
+            if os.path.exists(file_path):
+                used_bytes += os.path.getsize(file_path)
+
+        used_mb = round(used_bytes / (1024**2), 2)
+
+        if user.get_storage_limit(used_mb) != None:
+            flagged_users.append({
+                "username": user.username,
+                "used_mb": used_mb,
+                "limit_mb": user.mb_limit,
+                "alert": user.get_storage_notification(used_mb)
+            })
+
 
 
     # Pass the session data to the template
@@ -502,16 +553,17 @@ def read_html(request):
         "files_this_week": files_this_week,
         "files_this_month": files_this_month,
         "latest_files": latest_files,
-
+        "flagged_users": flagged_users
+      
     }
 
     return render(request, 'admin_p/index.html', context)
 
 def read_html_f(request):
-
+   
     faculty_id = request.session.get('faculty_id', None)
     full_name = request.session.get('a_fullname', None)
-
+        
     total_size_bytes = 0
     total_files = 0
     total_folders = 0
@@ -541,7 +593,7 @@ def read_html_f(request):
                 files_this_week += 1
             if file_mod_time >= start_of_month:
                 files_this_month += 1
-
+    
     latest_files = []
 
     for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
@@ -556,7 +608,7 @@ def read_html_f(request):
 
             total_size_bytes += file_size
 
-
+            
 
             # Store latest files with details
             latest_files.append({
@@ -583,9 +635,9 @@ def read_html_f(request):
         "files_this_week": files_this_week,
         "files_this_month": files_this_month,
         "latest_files": latest_files,
-
+      
     }
-
+    
 
     return render(request, 'faculty/index.html', context)
 
@@ -597,7 +649,7 @@ def read_html_s(request):
     if not student_id:
         return redirect(reverse('student_login'))  # 'admin_login' should be the name of your login URL
 
-
+        
     total_size_bytes = 0
     total_files = 0
     total_folders = 0
@@ -627,7 +679,7 @@ def read_html_s(request):
                 files_this_week += 1
             if file_mod_time >= start_of_month:
                 files_this_month += 1
-
+    
     latest_files = []
 
     for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
@@ -642,7 +694,7 @@ def read_html_s(request):
 
             total_size_bytes += file_size
 
-
+            
 
             # Store latest files with details
             latest_files.append({
@@ -669,9 +721,9 @@ def read_html_s(request):
         "files_this_week": files_this_week,
         "files_this_month": files_this_month,
         "latest_files": latest_files,
-
+      
     }
-
+ 
 
     return render(request, 'student/index.html', context)
 
@@ -718,6 +770,16 @@ def admin_accounts(request):
     if not admin_id:
         return redirect(reverse('faculty_login'))  # 'faculty_login' should be the name of your login URL
 
+    if request.method == 'POST':
+        if 'limit' in request.POST:
+            user_id = request.POST.get("user_id")
+            mb_limit = request.POST.get("mb_limit")
+            user = get_object_or_404(UserAccount, u_id=user_id)
+                
+                # Update the user's password
+            user.mb_limit = mb_limit
+            user.save()
+            return redirect("admin_accounts") 
 
     data = FacultyAccount.objects.all()
     return render(request, 'admin_p/admin-accounts.html', {'admin_id': admin_id,'full_name': full_name,'data': data})
@@ -729,6 +791,60 @@ def student_accounts(request):
     # If there is no faculty_id in the session, redirect to the admin login page
     if not admin_id:
         return redirect(reverse('faculty_login'))  # 'faculty_login' should be the name of your login URL
+    
+        
+    if request.method == 'POST':
+        if 'limit' in request.POST:
+            user_id = request.POST.get("user_id")
+            mb_limit = request.POST.get("mb_limit")
+            user = get_object_or_404(UserAccount, u_id=user_id)
+            
+            # Update the user's password
+            user.mb_limit = mb_limit
+            user.save()
+            return redirect("student_accounts")  # Redirect to email verification page
+
+        else:
+            first_name = request.POST.get("first_name")
+            middle_name = request.POST.get("middle_name")
+            last_name = request.POST.get("last_name")
+            sr_code = request.POST.get("sr_code")
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+
+            hashed_password = encrypt(password, passwordUnique)  # Hash the password before storing
+            student_email = f"{sr_code}@g.batstate-u.edu.ph"
+
+            try:
+                with connection.cursor() as cursor:
+                        # Check if the student already exists in student_info
+                    cursor.execute("SELECT COUNT(*) FROM student_info WHERE sr_code = %s", [sr_code])
+                    student_exists = cursor.fetchone()[0] > 0
+
+                        # Check if the user already exists in user_account
+                    cursor.execute("SELECT COUNT(*) FROM user_account WHERE username = %s", [student_email])
+                    user_exists = cursor.fetchone()[0] > 0
+
+                    if not student_exists:
+                            # Insert into student_info if not exists
+                        cursor.execute(
+                            "INSERT INTO student_info (sr_code, g_email, first_name, middle_name, last_name) VALUES (%s, %s, %s, %s, %s)",
+                            (sr_code, student_email, first_name, middle_name, last_name),
+                        )
+
+                    if not user_exists:
+                            # Insert into user_account if not exists
+                        cursor.execute(
+                            "INSERT INTO user_account (username, hashed_password, student_id, email_verified) VALUES (%s, %s, %s, %s)",
+                            (student_email, hashed_password, sr_code, 'no'),
+                        )
+                    log_action('admin', admin_id, 'Admin added a student to the system', request)
+
+                    messages.error(request, "Student registered success, verification of student in progress")
+                    return redirect("student_accounts")  # Redirect to email verification page
+
+            except Exception as e:
+                messages.error(request, f"Error: {e}")
 
     data = StudentAccount.objects.all()
     return render(request, 'admin_p/student-accounts.html', {'admin_id': admin_id, 'full_name': full_name,'data': data})
@@ -773,8 +889,8 @@ def login_student(request):
 
             with connection.cursor() as cursor:
                 cursor.execute("""
-                    SELECT u_id, username, hashed_password, first_name, middle_name, last_name, student_id
-                    FROM student_accounts
+                    SELECT u_id, username, hashed_password, first_name, middle_name, last_name, student_id  
+                    FROM student_accounts 
                     WHERE username = %s  AND email_verified = 'yes'
                 """, [username_or_email])
                 faculty = cursor.fetchone()
@@ -783,13 +899,13 @@ def login_student(request):
                 u_id, username, hashed_password, first_name, middle_name, last_name, student_id = faculty
 
                 if decrypt(hashed_password, passwordUnique) == password:
-                    request.session['student_id'] = student_id
+                    request.session['student_id'] = student_id  
                     request.session['s_fullname'] = f"{first_name} {middle_name} {last_name}"
                     request.session.pop('login_attempts', None)  # Reset attempts on success
                     request.session.pop('lockout_time', None)  # Remove lockout if present
                     log_action('student', student_id, 'Logged in', request)
 
-
+                    
                     return redirect('student_folder')
                 else:
                     messages.error(request, "Invalid password!")
@@ -837,7 +953,7 @@ def verify_otp_f(request):
             if user:
                 user.email_verified = "yes"
                 user.save()
-
+            
             messages.success(request, "Email verified successfully!")
             return redirect("faculty_login")
 
@@ -896,7 +1012,7 @@ def reg_faculty(request):
                             "INSERT INTO faculty_info (gsuite, first_name, middle_name, last_name) VALUES (%s, %s, %s, %s)",
                             (gsuite, first_name, middle_name, last_name),
                         )
-
+                        
                         # Retrieve the inserted faculty ID
                         cursor.execute("SELECT id FROM faculty_info WHERE gsuite = %s", [gsuite])
                         faculty_id = cursor.fetchone()[0]
@@ -1016,263 +1132,21 @@ def admin_folders(request):
     return render(request, 'admin_p/folders.html', context)
 
 
-def faculty_folders(request):
-    faculty_id = request.session.get('faculty_id', None)
-    full_name = request.session.get('a_fullname', None)
-    log_action('admin', faculty_id, 'Viewed folders he/she created', request)
 
-    if not faculty_id:
-        return redirect(reverse('faculty_login'))
-
-    total_size_bytes = 0
-    total_files = 0
-    total_folders = 0
-
-    today = datetime.date.today()
-    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
-    start_of_month = today.replace(day=1)  # First day of the current month
-
-    files_today = 0
-    files_this_week = 0
-    files_this_month = 0
-
-    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
-        total_folders += len(dirs)
-        total_files += len(files)
-
-        for file in files:
-            file_path = os.path.join(root, file)
-            total_size_bytes += os.path.getsize(file_path)  # Get file size
-
-            # Get file modification time
-            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
-
-            if file_mod_time == today:
-                files_today += 1
-            if file_mod_time >= start_of_week:
-                files_this_week += 1
-            if file_mod_time >= start_of_month:
-                files_this_month += 1
-
-    latest_files = []
-
-    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
-        total_folders += len(dirs)
-        total_files += len(files)
-
-        for file in files:
-            file_path = os.path.join(root, file)
-            file_size = os.path.getsize(file_path)  # File size in bytes
-            file_ext = os.path.splitext(file)[1]  # Get file extension
-            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
-
-            total_size_bytes += file_size
-
-
-
-            # Store latest files with details
-            latest_files.append({
-                "name": file,
-                "extension": file_ext,
-                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
-                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
-                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
-            })
-
-    # Sort by modification time (latest first) and get the latest 5
-    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
-
-    # Handle Folder Creation
-    if request.method == "POST":
-        if "create" in request.POST:
-            folder_name = request.POST.get('folder_name', '').strip()
-            description = request.POST.get('description', '').strip()
-            apicode = request.POST.get('apicode', '').strip()
-
-            if folder_name and description and apicode:
-                unique_code = get_random_string(10)  # Generate a unique code
-
-                FolderTns.objects.create(
-                    folder_name=folder_name,
-                    description=description,
-                    unique_code=unique_code,
-                    apicode=unique_code,
-                    faculty_id=faculty_id
-                )
-
-                messages.success(request, "Folder created successfully!")
-                return redirect('faculty_folders')  # Redirect to refresh the page
-
-            else:
-                messages.error(request, "All fields are required!")
-        else:
-            if "folder_code_delete" in request.POST:
-                folder_code = request.POST.get("folder_code_delete")
-                folder_whole = FolderTns.objects.filter(unique_code=folder_code).first()
-                folder_whole.delete()
-
-    # Fetch folders linked to students
-    student_folders = StudentFolderView.objects.filter(faculty_id=faculty_id).values(
-        'unique_code', 'folder_name', 'description', 'apicode', 'faculty_gsuite',
-        'student_first_name', 'student_last_name'
-    )
-
-    # Group student-associated folders
-    grouped_folders = {}
-    for folder in student_folders:
-        unique_code = folder['unique_code']
-        if unique_code not in grouped_folders:
-            grouped_folders[unique_code] = {
-                'folder_name': folder['folder_name'],
-                'description': folder['description'],
-                'apicode': folder['apicode'],
-                'faculty_gsuite': folder['faculty_gsuite'],
-                'students': []
-            }
-        student_name = f"{folder['student_first_name']} {folder['student_last_name']}"
-        grouped_folders[unique_code]['students'].append(student_name)
-
-    # Fetch folders with no associated students
-    student_folders_subquery = StudentFolderView.objects.filter(
-        faculty_id=faculty_id, unique_code=OuterRef('unique_code')
-    ).values('unique_code')
-
-    empty_folders = FacultyFoldersView.objects.filter(
-        faculty_id=faculty_id
-    ).exclude(
-        unique_code__in=Subquery(student_folders_subquery)
-    ).values('unique_code', 'folder_name', 'description', 'apicode', 'faculty_email')
-
-
-    context = {
-        'faculty_id': faculty_id,
-        'full_name': full_name,
-        'grouped_folders': grouped_folders,
-        'empty_folders': empty_folders,  # Pass folders without students
-        "total_files": total_files,
-        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
-        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
-        "total_folders": total_folders,
-        "files_today": files_today,
-        "files_this_week": files_this_week,
-        "files_this_month": files_this_month,
-        "latest_files": latest_files,
-    }
-
-    return render(request, 'faculty/folders.html', context)
-
-
-
-def student_folders(request):
-    student_id = request.session.get('student_id', None)
-    full_name = request.session.get('s_fullname', None)
-    log_action('student', student_id, 'Viewed folders he/she is joined in', request)
-
-    # If there is no student_id in the session, redirect to the student login page
-    if not student_id:
-        return redirect(reverse('student_login'))
-    total_size_bytes = 0
-    total_files = 0
-    total_folders = 0
-
-    today = datetime.date.today()
-    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
-    start_of_month = today.replace(day=1)  # First day of the current month
-
-    files_today = 0
-    files_this_week = 0
-    files_this_month = 0
-
-    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
-        total_folders += len(dirs)
-        total_files += len(files)
-
-        for file in files:
-            file_path = os.path.join(root, file)
-            total_size_bytes += os.path.getsize(file_path)  # Get file size
-
-            # Get file modification time
-            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
-
-            if file_mod_time == today:
-                files_today += 1
-            if file_mod_time >= start_of_week:
-                files_this_week += 1
-            if file_mod_time >= start_of_month:
-                files_this_month += 1
-
-    latest_files = []
-
-    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
-        total_folders += len(dirs)
-        total_files += len(files)
-
-        for file in files:
-            file_path = os.path.join(root, file)
-            file_size = os.path.getsize(file_path)  # File size in bytes
-            file_ext = os.path.splitext(file)[1]  # Get file extension
-            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
-
-            total_size_bytes += file_size
-
-
-
-            # Store latest files with details
-            latest_files.append({
-                "name": file,
-                "extension": file_ext,
-                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
-                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
-                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
-            })
-
-    # Sort by modification time (latest first) and get the latest 5
-    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
-
-    # Get folders that the student has joined (for viewing)
-    student_folders = StudentFolder.objects.filter(student_id=student_id) \
-        .values('id', 'folder__unique_code', 'folder__folder_name', 'folder__description', 'folder__apicode')
-
-    # Group folders by unique_code
-    grouped_folders = {}
-    for folder in student_folders:
-        unique_code = folder['folder__unique_code']
-        if unique_code not in grouped_folders:
-            grouped_folders[unique_code] = {
-                'folder_name': folder['folder__folder_name'],
-                'description': folder['folder__description'],
-                'apicode': folder['folder__apicode']
-            }
-
-    context = {
-        'student_id': student_id,
-        'full_name': full_name,
-        'grouped_folders': grouped_folders,
-        "total_files": total_files,
-        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
-        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
-        "total_folders": total_folders,
-        "files_today": files_today,
-        "files_this_week": files_this_week,
-        "files_this_month": files_this_month,
-        "latest_files": latest_files,
-    }
-
-    return render(request, 'student/folders.html', context)
 
 def join_folder(request):
     student_id = request.session.get('student_id', None)
-
+    
     if request.method == 'POST' and student_id:
         unique_code = request.POST.get('unique_code')
         # Find folder by unique_code
         try:
             folder = FolderTns.objects.get(unique_code=unique_code)
-
+            
             # Check if the student has already joined this folder
             if StudentFolder.objects.filter(student_id=student_id, folder=folder).exists():
                 return redirect('student_folder')  # or show a message: "Already joined this folder"
-
+            
             # Add student to the folder
             StudentFolder.objects.create(student_id=student_id, folder=folder)
             return redirect('student_folder')
@@ -1282,23 +1156,61 @@ def join_folder(request):
     return redirect('student_folder')
 
 
+
+def student_direct_verif(request):
+    """Handle OTP verification"""
+    if request.method == 'POST':
+        g_email = request.POST.get('g_email')
+        try:
+            if UserAccount.objects.filter(username=g_email, email_verified='no').exists():
+                student = StudentInfo.objects.get(g_email=g_email)
+                request.session['student_email'] = student.g_email
+                request.session['student_srcode'] = student.sr_code
+                otp = generate_otp()
+                request.session["otp"] = otp
+                request.session["otp_expiry"] = (now() + datetime.timedelta(minutes=5)).isoformat()
+                send_email(otp, student.g_email)
+                return redirect("student_everif")
+            else:
+                messages.error(request, "Email is already verified or does not exist.")
+        except StudentInfo.DoesNotExist:
+            messages.error(request, "Student with this email does not exist.")
+        
+    return render(request, "student/s-dverif.html")
+
+
+def get_user_storage_usage(user):
+    # For example, files might be stored under a folder named after the user's ID
+    user_folder = os.path.join(settings.MEDIA_ROOT, f'user_uploads/{user.u_id}')
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(user_folder):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            total_size += os.path.getsize(fp)
+    return round(total_size / (1024 * 1024), 2)  # Convert bytes to MB
+
+
 def student_everif(request):
     """Handle OTP verification"""
     student_email = request.session.get("student_email", None)
     student_srcode = request.session.get("student_srcode", None)
+    if request.method == "POST":
+        
 
-    if not student_email:
-        return redirect("student_reg")  # Redirect if no email in session
+        if not student_email:
+            return redirect("student_reg")  # Redirect if no email in session
 
-    # Generate OTP and store in session
-    otp = generate_otp()
-    request.session["otp"] = otp
-    request.session["otp_expiry"] = (now() + datetime.timedelta(minutes=5)).isoformat()
+        # Generate OTP and store in session
+        otp = generate_otp()
+        request.session["otp"] = otp
+        request.session["otp_expiry"] = (now() + datetime.timedelta(minutes=5)).isoformat()
 
-    send_email(otp, student_email)
-    messages.success(request, "An OTP has been sent to your email.")
+        send_email(otp, student_email)
+        messages.success(request, "An OTP has been sent to your email.")
+        return render(request, "student/s-everif.html", {"student_email": student_email, "student_srcode": student_srcode})
 
     return render(request, "student/s-everif.html", {"student_email": student_email, "student_srcode": student_srcode})
+
 
 
 
@@ -1324,7 +1236,7 @@ def verify_otp(request):
             if user:
                 user.email_verified = "yes"
                 user.save()
-
+            
             messages.success(request, "Email verified successfully!")
             return redirect("student_login")
 
@@ -1347,14 +1259,14 @@ def map_network_drive():
     password = network_drive.get("password")
     drive_letter = network_drive["drive_letter"]
     network_path = network_drive["network_path"]
-
+    
     try:
         # Check if the network drive is already mapped
         result = run(["net", "use"], capture_output=True, text=True)
         if drive_letter in result.stdout:
             # Unmount the drive if already mapped
             run(["net", "use", drive_letter, "/delete", "/y"], check=True)
-
+        
         # Map the network drive with authentication
         run([
             "net", "use", drive_letter, network_path, password, "/user:" + username, "/persistent:yes"
@@ -1379,15 +1291,15 @@ PDF_EXTENSION = ".pdf"
 
 def list_network_files(request):
     """ List all folders and files in the network drive, categorizing files by type. """
-
+    
     admin_id = request.session.get('admin_id', None)
     full_name = request.session.get('a_fullname', None)
 
     # If there is no faculty_id in the session, redirect to the admin login page
     if not admin_id:
         return redirect(reverse('admin_login'))  # 'faculty_login' should be the name of your login URL
-
-
+        
+    
     data = {
         "folders": {},  # Dictionary to hold folders and their respective files
         "pdfs": [],
@@ -1489,7 +1401,6 @@ def serve_folder_file(request, filename, folder_code):
 
 TEXT_EXTENSION = ".txt"
 
-
 def view_folder_s(request, folder_code):
     """ Faculty view of folder with file listing. """
     student_id = request.session.get("student_id")
@@ -1498,82 +1409,98 @@ def view_folder_s(request, folder_code):
     if not student_id:
         return redirect(reverse("student_login"))
 
-    total_size_bytes = 0
-    total_files = 0
-    total_folders = 0
-
-    today = datetime.date.today()
-    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
-    start_of_month = today.replace(day=1)  # First day of the current month
-
-    files_today = 0
-    files_this_week = 0
-    files_this_month = 0
-
-    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
-        total_folders += len(dirs)
-        total_files += len(files)
-
-        for file in files:
-            file_path = os.path.join(root, file)
-            total_size_bytes += os.path.getsize(file_path)  # Get file size
-
-            # Get file modification time
-            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
-
-            if file_mod_time == today:
-                files_today += 1
-            if file_mod_time >= start_of_week:
-                files_this_week += 1
-            if file_mod_time >= start_of_month:
-                files_this_month += 1
-
-    latest_files = []
-
-    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
-        total_folders += len(dirs)
-        total_files += len(files)
-
-        for file in files:
-            file_path = os.path.join(root, file)
-            file_size = os.path.getsize(file_path)  # File size in bytes
-            file_ext = os.path.splitext(file)[1]  # Get file extension
-            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
-
-            total_size_bytes += file_size
-
-
-
-            # Store latest files with details
-            latest_files.append({
-                "name": file,
-                "extension": file_ext,
-                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
-                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
-                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
-            })
-
-    # Sort by modification time (latest first) and get the latest 5
-    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
-
+    matching_folders = FolderTns.objects.filter(
+        Q(unique_code__startswith=f"{folder_code}_")
+    ).values(
+        'unique_code',
+        'folder_name',
+        'description',
+        'apicode'
+    )
+            
+    # Get the student's folder files
     folder_files1 = FolderFile.objects.filter(folder_code=folder_code, uploader_id=student_id)
-    students = StudentAccount.objects.all()
-    shared_files = FilesShared.objects.filter(folder_code=folder_code)
     folder_files2 = FacultyFiles.objects.filter(folder_code=folder_code)
+    shared_files = FilesShared.objects.filter(folder_code=folder_code)
     students = StudentAccount.objects.all()
 
     # Combine both folder files into one queryset
     all_folder_files = list(folder_files1) + list(folder_files2)
 
+    # Initialize counters
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = 0
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+    latest_files = []
+
+    # Get current date info for filtering
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    # Get folder path
+    folder_path = os.path.join(NETWORK_DRIVE_PATH, *folder_code.split('_'))
+
+    # Check if folder exists
+    if os.path.exists(folder_path):
+        # Get all folder files uploaded by the student (across all folders)
+        all_student_uploaded_files = FolderFile.objects.filter(uploader_id=student_id)
+
+        # Build a dictionary: { folder_path: [file1, file2, ...] }
+        student_files_map = {}
+        for f in all_student_uploaded_files:
+            folder_path = os.path.join(NETWORK_DRIVE_PATH, *f.folder_code.split('_'))
+            student_files_map.setdefault(folder_path, []).append(f.file_name)
+
+
+        # Traverse the whole network drive to calculate student's total file data
+        for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+            # Optionally, count folders if they belong to the student's uploads
+            if root in student_files_map:
+                student_folders = StudentFolder.objects.filter(student_id=student_id).values_list("folder_id", flat=True).distinct()
+                total_folders = student_folders.count()
+
+
+            for file in files:
+                # Check if this file is one the student uploaded in this folder
+                if file in student_files_map.get(root, []):
+                    file_path = os.path.join(root, file)
+                    file_size = os.path.getsize(file_path)
+                    total_size_bytes += file_size
+                    total_files += 1
+
+                    file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+                    if file_mod_time == today:
+                        files_today += 1
+                    if file_mod_time >= start_of_week:
+                        files_this_week += 1
+                    if file_mod_time >= start_of_month:
+                        files_this_month += 1
+
+
+                    latest_files.append({
+                        "name": file,
+                        "extension": os.path.splitext(file)[1],
+                        "size_mb": round(file_size / (1024 ** 2), 2),
+                        "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                        "modified_time": datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).strftime("%Y-%m-%d %H:%M:%S"),
+                    })
+
+
+    # Sort latest files and get top 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+
+    # Prepare file categorization
     files = {
         "texts": [],
         "pdfs": [],
         "images": [],
         "videos": []
     }
-
-    folder_path = os.path.join(NETWORK_DRIVE_PATH, folder_code)
-    print(folder_path)
 
     if os.path.exists(folder_path):
         all_files = os.listdir(folder_path)
@@ -1604,8 +1531,7 @@ def view_folder_s(request, folder_code):
                 elif file.lower().endswith(TEXT_EXTENSION):
                     files["texts"].append(file_info)
 
-    # Return or render files as needed (not shown here).
-
+    # Handle POST requests
     if request.method == "POST":
         try:
             if "change_fname" in request.POST:
@@ -1621,8 +1547,6 @@ def view_folder_s(request, folder_code):
                 else:
                     messages.success(request, f"File record not found.")
                     return redirect("view_folder_s", folder_code=folder_code)
-
-
 
             else:
                 file_links = request.FILES.getlist("file_link[]")  # Get list of files
@@ -1641,7 +1565,7 @@ def view_folder_s(request, folder_code):
                     fs = FileSystemStorage(location=folder_path)
                     saved_file_name = fs.save(file.name, file)
 
-                        # Store file in database (adjust based on your model)
+                    # Store file in database (adjust based on your model)
                     FolderFile.objects.create(
                         folder_code=folder_code,
                         file_name=saved_file_name,
@@ -1653,10 +1577,13 @@ def view_folder_s(request, folder_code):
 
             return redirect("view_folder_s", folder_code=folder_code)
 
-
         except Exception as e:
             return JsonResponse({"error": "File upload failed", "details": str(e)}, status=500)
 
+    
+    user = UserAccount.objects.get(student_id=student_id)
+    notification = user.get_storage_notification(round(total_size_bytes / (1024**2), 2))
+    limit = user.get_storage_limit(round(total_size_bytes / (1024**2), 2))
 
     context = {
         "student_id": student_id,
@@ -1665,7 +1592,7 @@ def view_folder_s(request, folder_code):
         "folder_code": folder_code,
         "students": students,
         "shared_files": shared_files,
-        "files": files,  # Pass folders without students
+        "files": files,
         "total_files": total_files,
         "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
         "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
@@ -1674,16 +1601,11 @@ def view_folder_s(request, folder_code):
         "files_this_week": files_this_week,
         "files_this_month": files_this_month,
         "latest_files": latest_files,
+        'grouped_folders': matching_folders,
+        'notification':notification if notification else f"✅ Storage usage is within limit. {round(total_size_bytes / (1024**2), 2)} / {user.mb_limit} MBs used",
+        'limit': limit if limit else "no",
     }
     return render(request, "student/folder_contents.html", context)
-
-
-import os
-from django.shortcuts import render, redirect
-from django.http import JsonResponse
-from django.core.files.storage import FileSystemStorage
-from django.conf import settings
-from .models import FolderFile, StudentAccount, FilesShared, FileOfStudents, FacultyFiles
 
 
 def view_folder_f(request, folder_code):
@@ -1693,73 +1615,114 @@ def view_folder_f(request, folder_code):
 
     if not faculty_id:
         return redirect(reverse("faculty_login"))
+    
+    # Get folders matching exact folder_code or folder_code with underscore
+    matching_folders = FolderTns.objects.filter(
+        faculty_id=faculty_id
+    ).filter(
+        Q(unique_code__startswith=f"{folder_code}_")
+    ).values('unique_code', 'folder_name', 'description', 'apicode')
 
-    total_size_bytes = 0
-    total_files = 0
-    total_folders = 0
+    # Fetch student-linked folders from StudentFolderView using the same logic
+    student_folders = StudentFolderView.objects.filter(
+        faculty_id=faculty_id,
+        unique_code__in=[f['unique_code'] for f in matching_folders]
+    ).values(
+        'unique_code', 'folder_name', 'description', 'apicode', 'faculty_gsuite',
+        'student_first_name', 'student_last_name'
+    )
 
-    today = datetime.date.today()
-    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
-    start_of_month = today.replace(day=1)  # First day of the current month
+    # Group student folders
+    grouped_folders = {}
+    for folder in student_folders:
+        code = folder['unique_code']
+        if code not in grouped_folders:
+            grouped_folders[code] = {
+                'folder_name': folder['folder_name'],
+                'description': folder['description'],
+                'apicode': folder['apicode'],
+                'faculty_gsuite': folder['faculty_gsuite'],
+                'students': []
+            }
+        student_name = f"{folder['student_first_name']} {folder['student_last_name']}"
+        grouped_folders[code]['students'].append(student_name)
 
-    files_today = 0
-    files_this_week = 0
-    files_this_month = 0
+    # Prepare subquery to identify student-linked folders
+    student_subquery = StudentFolderView.objects.filter(
+        faculty_id=faculty_id,
+        unique_code=OuterRef('unique_code')
+    ).values('unique_code')
 
-    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
-        total_folders += len(dirs)
-        total_files += len(files)
+    # Get folders with no students (empty folders)
+    empty_folders = FacultyFoldersView.objects.filter(
+        faculty_id=faculty_id,
+        unique_code__in=[f['unique_code'] for f in matching_folders]
+    ).exclude(
+        unique_code__in=Subquery(student_subquery)
+    ).values('unique_code', 'folder_name', 'description', 'apicode', 'faculty_email')
 
-        for file in files:
-            file_path = os.path.join(root, file)
-            total_size_bytes += os.path.getsize(file_path)  # Get file size
-
-            # Get file modification time
-            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
-
-            if file_mod_time == today:
-                files_today += 1
-            if file_mod_time >= start_of_week:
-                files_this_week += 1
-            if file_mod_time >= start_of_month:
-                files_this_month += 1
-
-    latest_files = []
-
-    for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
-        total_folders += len(dirs)
-        total_files += len(files)
-
-        for file in files:
-            file_path = os.path.join(root, file)
-            file_size = os.path.getsize(file_path)  # File size in bytes
-            file_ext = os.path.splitext(file)[1]  # Get file extension
-            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))  # Modification time
-
-            total_size_bytes += file_size
-
-
-
-            # Store latest files with details
-            latest_files.append({
-                "name": file,
-                "extension": file_ext,
-                "size_mb": round(file_size / (1024 ** 2), 2),  # Convert to MB
-                "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
-                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
-            })
-
-    # Sort by modification time (latest first) and get the latest 5
-    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
-
+    # Get faculty files
     folder_files1 = FileOfStudents.objects.filter(folder_code=folder_code)
-    folder_files2 = FacultyFiles.objects.filter(folder_code=folder_code)
+    folder_files2 = FacultyFiles.objects.filter(folder_code=folder_code, uploader_id=faculty_id)
     students = StudentAccount.objects.all()
     shared_files = FilesShared.objects.filter(folder_code=folder_code)
 
     # Combine both folder files into one queryset
     all_folder_files = list(folder_files1) + list(folder_files2)
+    
+    # Get faculty file names for filtering
+    faculty_file_names = [f.file_name for f in folder_files2]
+    
+    # Initialize counters
+    total_size_bytes = 0
+    f_files = FolderFile.objects.filter(uploader_id=faculty_id)
+    total_files = f_files.count()
+    total_folders = 0
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+    latest_files = []
 
+    # Get current date info for filtering
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+
+    # Get folder path
+    folder_path = os.path.join(NETWORK_DRIVE_PATH, *folder_code.split('_'))
+
+    # Check if folder exists
+    if os.path.exists(folder_path):
+        # Get all files uploaded by this faculty member (all folders)
+        faculty_uploaded_files = FolderFile.objects.filter(uploader_id=faculty_id)
+
+    # Count total folders the faculty owns
+        total_folders = FolderTns.objects.filter(faculty_id=faculty_id).count()
+
+        # Loop through all uploaded files
+        for file_obj in faculty_uploaded_files:
+            # Build full file path
+            folder_parts = file_obj.folder_code.split('_')
+            file_path = os.path.join(NETWORK_DRIVE_PATH, *folder_parts, file_obj.file_name)
+
+            if os.path.isfile(file_path):  # Make sure it's a file, not a directory
+                file_size = os.path.getsize(file_path)
+                total_size_bytes += file_size
+
+                file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+                if file_mod_time == today:
+                    files_today += 1
+                if file_mod_time >= start_of_week:
+                    files_this_week += 1
+                if file_mod_time >= start_of_month:
+                    files_this_month += 1
+
+
+        # Sort by modification time (latest first) and get the latest 5
+        latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+
+    # Prepare file categorization
     files = {
         "pdfs": [],
         "images": [],
@@ -1767,44 +1730,64 @@ def view_folder_f(request, folder_code):
         "videos": []
     }
 
-    folder_path = os.path.join(settings.MEDIA_ROOT, folder_code)
-    print(folder_path)
-
+    # Process files in the specific folder
     if os.path.exists(folder_path):
         all_files = os.listdir(folder_path)
 
         for file in all_files:
-            # Check if the file exists in either folder_files1 or folder_files2
-            file_record = next((f for f in all_folder_files if f.file_name == file), None)
-            file_path = os.path.join(folder_path, file)
-            uploaded_timestamp = os.path.getmtime(file_path)
-            uploaded_datetime = datetime.datetime.fromtimestamp(uploaded_timestamp).strftime('%Y-%m-%d %H:%M:%S')
+            # Only process files associated with this faculty
+            if file in faculty_file_names:
+                file_path = os.path.join(folder_path, file)
+                uploaded_timestamp = os.path.getmtime(file_path)
+                uploaded_datetime = datetime.datetime.fromtimestamp(uploaded_timestamp).strftime('%Y-%m-%d %H:%M:%S')
 
-            # Check if the file exists in either folder_files1 or folder_files2
-            file_record = next((f for f in all_folder_files if f.file_name == file), None)
+                # Get file record
+                file_record = next((f for f in all_folder_files if f.file_name == file), None)
 
-            file_info = {
-                "file_id": file_record.file_id if file_record else "No ID",
-                "user_name": f"{file_record.first_name} {file_record.middle_name} {file_record.last_name}" if file_record else "No name",
-                "file_name": file_record.file_guide if file_record else "No name",
-                "file_description": file_record.file_description if file_record else "No description",
-                "file_link": file,
-                "uploaded_at": uploaded_datetime
-            }
+                file_info = {
+                    "file_id": file_record.file_id if file_record else "No ID",
+                    "user_name": f"{file_record.first_name} {file_record.middle_name} {file_record.last_name}" if file_record else "No name",
+                    "file_name": file_record.file_guide if file_record else "No name",
+                    "file_description": file_record.file_description if file_record else "No description",
+                    "file_link": file,
+                    "uploaded_at": uploaded_datetime
+                }
 
-            # Sort files into categories
-            if file.lower().endswith(PDF_EXTENSION):
-                files["pdfs"].append(file_info)
-            elif file.lower().endswith(IMAGE_EXTENSIONS):
-                files["images"].append(file_info)
-            elif file.lower().endswith(VIDEO_EXTENSIONS):
-                files["videos"].append(file_info)
-            elif file.lower().endswith(TEXT_EXTENSION):
-                files["texts"].append(file_info)
+                # Sort files into categories
+                if file.lower().endswith(PDF_EXTENSION):
+                    files["pdfs"].append(file_info)
+                elif file.lower().endswith(IMAGE_EXTENSIONS):
+                    files["images"].append(file_info)
+                elif file.lower().endswith(VIDEO_EXTENSIONS):
+                    files["videos"].append(file_info)
+                elif file.lower().endswith(TEXT_EXTENSION):
+                    files["texts"].append(file_info)
 
+    # Handle POST requests
     if request.method == "POST":
         try:
-            if "delete_file" in request.POST:
+            if "create" in request.POST:
+                folder_name = request.POST.get('folder_name', '').strip()
+                description = request.POST.get('description', '').strip()
+                apicode = request.POST.get('apicode', '').strip()
+
+                if folder_name and description and apicode:
+                    unique_code = get_random_string(10)  # Generate a unique code
+
+                    FolderTns.objects.create(
+                        folder_name=folder_name,
+                        description=description,
+                        unique_code=f"{folder_code}_{unique_code}",
+                        apicode=unique_code,
+                        faculty_id=faculty_id 
+                    )
+
+                    messages.success(request, "Folder created successfully!")
+                    return redirect(reverse('view_folder_f', kwargs={'folder_code': f"{folder_code}_{unique_code}"}))  # Redirect to refresh the page
+
+                else:
+                    messages.error(request, "All fields are required!")
+            elif "delete_file" in request.POST:
                 file_name = request.POST.get("file_name")
                 file_id = request.POST.get("file_id")
                 print(f"{file_name} s")
@@ -1822,7 +1805,6 @@ def view_folder_f(request, folder_code):
                     file_record.delete()
                     messages.success(request, f"File Deleted successfully")
 
-
                     return redirect("view_folder_f", folder_code=folder_code)
                 else:
                     return JsonResponse({"error": "File not found in database"}, status=404)
@@ -1839,11 +1821,7 @@ def view_folder_f(request, folder_code):
                 else:
                     messages.success(request, f"File record not found.")
                     return redirect("view_folder_f", folder_code=folder_code)
-
-
-
             else:
-
                 file_links = request.FILES.getlist("file_link[]")  # Get list of files
                 file_names = request.POST.getlist("file_name[]")  # Get list of file names
                 file_descriptions = request.POST.getlist("file_description[]")  # Get list of descriptions
@@ -1876,6 +1854,11 @@ def view_folder_f(request, folder_code):
         except Exception as e:
             return JsonResponse({"error": "File operation failed", "details": str(e)}, status=500)
 
+    user = UserAccount.objects.get(faculty_id=faculty_id)
+
+    notification = user.get_storage_notification(round(total_size_bytes / (1024**2)))
+    limit = user.get_storage_limit(round(total_size_bytes / (1024**2)))
+
     context = {
         "faculty_id": faculty_id,
         "full_name": full_name,
@@ -1883,7 +1866,7 @@ def view_folder_f(request, folder_code):
         "folder_code": folder_code,
         "students": students,
         "shared_files": shared_files,
-        "files": files,  # Pass folders without students
+        "files": files,
         "total_files": total_files,
         "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
         "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
@@ -1892,6 +1875,271 @@ def view_folder_f(request, folder_code):
         "files_this_week": files_this_week,
         "files_this_month": files_this_month,
         "latest_files": latest_files,
+        'grouped_folders': grouped_folders,
+        'empty_folders': empty_folders,
+        'notification':notification if notification else f"✅ Storage usage is within limit. {round(total_size_bytes / (1024**2), 2)} / {user.mb_limit} MBs used",
+        'limit': limit if limit else "no",
     }
     return render(request, "faculty/folder_contents.html", context)
 
+
+
+def faculty_folders(request):
+    faculty_id = request.session.get('faculty_id', None)
+    full_name = request.session.get('a_fullname', None)
+    log_action('admin', faculty_id, 'Viewed folders he/she created', request)
+
+    if not faculty_id:
+        return redirect(reverse('faculty_login'))  
+
+    # Handle Folder Creation
+    if request.method == "POST":
+        if "create" in request.POST:
+            folder_name = request.POST.get('folder_name', '').strip()
+            description = request.POST.get('description', '').strip()
+            apicode = request.POST.get('apicode', '').strip()
+
+            if folder_name and description and apicode:
+                unique_code = get_random_string(10)  # Generate a unique code
+
+                FolderTns.objects.create(
+                    folder_name=folder_name,
+                    description=description,
+                    unique_code=unique_code,
+                    apicode=unique_code,
+                    faculty_id=faculty_id 
+                )
+
+                messages.success(request, "Folder created successfully!")
+                return redirect('faculty_folders')  # Redirect to refresh the page
+
+            else:
+                messages.error(request, "All fields are required!")
+        else:
+            if "folder_code_delete" in request.POST:
+                folder_code = request.POST.get("folder_code_delete")
+                folder_whole = FolderTns.objects.filter(unique_code=folder_code).first()
+                folder_whole.delete()
+
+    # Fetch folders linked to students
+    student_folders = StudentFolderView.objects.filter(faculty_id=faculty_id).values(
+        'unique_code', 'folder_name', 'description', 'apicode', 'faculty_gsuite', 
+        'student_first_name', 'student_last_name'
+    ).distinct()
+
+    # Group student-associated folders
+    grouped_folders = {}
+    for folder in student_folders:
+        unique_code = folder['unique_code']
+        if unique_code not in grouped_folders:
+            grouped_folders[unique_code] = {
+                'folder_name': folder['folder_name'],
+                'description': folder['description'],
+                'apicode': folder['apicode'],
+                'faculty_gsuite': folder['faculty_gsuite'],
+                'students': []
+            }
+        student_name = f"{folder['student_first_name']} {folder['student_last_name']}"
+        grouped_folders[unique_code]['students'].append(student_name)
+
+    # Fetch folders with no associated students
+    student_folders_subquery = StudentFolderView.objects.filter(
+        faculty_id=faculty_id, unique_code=OuterRef('unique_code')
+    ).values('unique_code')
+
+    empty_folders = FacultyFoldersView.objects.filter(
+        faculty_id=faculty_id
+    ).exclude(
+        unique_code__in=Subquery(student_folders_subquery)
+    ).values('unique_code', 'folder_name', 'description', 'apicode', 'faculty_email')
+
+    # Get all faculty files
+    faculty_files = FolderFile.objects.filter(uploader_id=faculty_id)
+    faculty_file_data = {f.file_name: f.folder_code for f in faculty_files}
+    
+    
+    # Initialize counters
+    total_size_bytes = 0
+    total_files = len(faculty_files)
+    total_folders = len(grouped_folders) + len(empty_folders)
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+    latest_files = []
+
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())
+    start_of_month = today.replace(day=1)
+
+    # Traverse and compute stats
+    for file_name, folder_code in faculty_file_data.items():
+        folder_parts = folder_code.split('_')
+        file_path = os.path.join(NETWORK_DRIVE_PATH, *folder_parts, file_name)
+
+        if os.path.isfile(file_path):
+            file_size = os.path.getsize(file_path)
+            total_size_bytes += file_size
+
+            file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path))
+            file_mod_date = file_mod_time.date()
+
+            if file_mod_date == today:
+                files_today += 1
+            if file_mod_date >= start_of_week:
+                files_this_week += 1
+            if file_mod_date >= start_of_month:
+                files_this_month += 1
+
+            file_ext = os.path.splitext(file_name)[1]
+            latest_files.append({
+                "name": file_name,
+                "extension": file_ext,
+                "size_mb": round(file_size / (1024 ** 2), 2),
+                "folder": folder_code.replace('_', '/'),
+                "modified_time": file_mod_time.strftime("%Y-%m-%d %H:%M:%S"),
+            })
+
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+    user = UserAccount.objects.get(faculty_id=faculty_id)
+    notification = user.get_storage_notification(round(total_size_bytes / (1024**2), 2) )
+    limit = user.get_storage_limit(round(total_size_bytes / (1024**2)))
+
+    context = {
+        'faculty_id': faculty_id,
+        'full_name': full_name,
+        'grouped_folders': grouped_folders,
+        'empty_folders': empty_folders,  # Pass folders without students
+        "total_files": total_files,
+        "total_size_mb": round(total_size_bytes / (1024**2), 2),  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2),  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": files_today,
+        "files_this_week": files_this_week,
+        "files_this_month": files_this_month,
+        "latest_files": latest_files,
+        'notification': notification if notification else f"✅ Storage usage is within limit. {round(total_size_bytes / (1024**2), 2)} / {user.mb_limit} MBs used",
+        'limit': limit if limit else "no",
+    }
+
+    return render(request, 'faculty/folders.html', context)
+
+
+def student_folders(request):
+    student_id = request.session.get('student_id', None)
+    full_name = request.session.get('s_fullname', None)
+    log_action('student', student_id, 'Viewed folders he/she is joined in', request)
+
+
+    # If there is no student_id in the session, redirect to the student login page
+    if not student_id:
+        return redirect(reverse('student_login'))
+    
+    # Get folders that the student has joined (for viewing)
+    student_folders = StudentFolder.objects.filter(student_id=student_id) \
+        .values('id', 'folder__unique_code', 'folder__folder_name', 'folder__description', 'folder__apicode')
+
+    # Group folders by unique_code
+    grouped_folders = {}
+    for folder in student_folders:
+        unique_code = folder['folder__unique_code']
+        if unique_code not in grouped_folders:
+            grouped_folders[unique_code] = {
+                'folder_name': folder['folder__folder_name'],
+                'description': folder['folder__description'],
+                'apicode': folder['folder__apicode']
+            }
+    
+    # Get all files uploaded by this student
+    student_files = FolderFile.objects.filter(uploader_id=student_id)
+    
+    # Initialize counters
+    total_size_bytes = 0
+    total_files = 0
+    total_folders = len(grouped_folders)  # Count student's folders
+    files_today = 0
+    files_this_week = 0
+    files_this_month = 0
+    latest_files = []
+
+    # Get current date info for filtering
+    today = datetime.date.today()
+    start_of_week = today - datetime.timedelta(days=today.weekday())  # Monday of current week
+    start_of_month = today.replace(day=1)  # First day of the current month
+    
+    # Get the list of file names for efficient checking
+    student_file_names = [f.file_name for f in student_files]
+    
+    # Traverse all student's folders to gather statistics
+    for folder_code in grouped_folders.keys():
+        folder_path = os.path.join(NETWORK_DRIVE_PATH, *folder_code.split('_'))
+
+    # Check if folder exists
+        if os.path.exists(folder_path):
+            # Get all folder files uploaded by the student (across all folders)
+            all_student_uploaded_files = FolderFile.objects.filter(uploader_id=student_id)
+
+            # Build a dictionary: { folder_path: [file1, file2, ...] }
+            student_files_map = {}
+            for f in all_student_uploaded_files:
+                folder_path = os.path.join(NETWORK_DRIVE_PATH, *f.folder_code.split('_'))
+                student_files_map.setdefault(folder_path, []).append(f.file_name)
+
+
+            # Traverse the whole network drive to calculate student's total file data
+            for root, dirs, files in os.walk(NETWORK_DRIVE_PATH):
+                # Optionally, count folders if they belong to the student's uploads
+                if root in student_files_map:
+                    student_folders = StudentFolder.objects.filter(student_id=student_id).values_list("folder_id", flat=True).distinct()
+                    total_folders = student_folders.count()
+
+
+                for file in files:
+                    # Check if this file is one the student uploaded in this folder
+                    if file in student_files_map.get(root, []):
+                        file_path = os.path.join(root, file)
+                        file_size = os.path.getsize(file_path)
+                        total_size_bytes += file_size
+                        total_files += 1
+
+                        file_mod_time = datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).date()
+
+                        if file_mod_time == today:
+                            files_today += 1
+                        if file_mod_time >= start_of_week:
+                            files_this_week += 1
+                        if file_mod_time >= start_of_month:
+                            files_this_month += 1
+
+
+                        latest_files.append({
+                            "name": file,
+                            "extension": os.path.splitext(file)[1],
+                            "size_mb": round(file_size / (1024 ** 2), 2),
+                            "folder": root.replace(NETWORK_DRIVE_PATH, "").strip("\\"),
+                            "modified_time": datetime.datetime.fromtimestamp(os.path.getmtime(file_path)).strftime("%Y-%m-%d %H:%M:%S"),
+                        })
+    # Sort by modification time (latest first) and get the latest 5
+    latest_files = sorted(latest_files, key=lambda x: x["modified_time"], reverse=True)[:5]
+
+    user = UserAccount.objects.get(student_id=student_id)
+    notification = user.get_storage_notification(round(total_size_bytes / (1024**2), 2) / 2)
+    limit = user.get_storage_limit(round(total_size_bytes / (1024**2), 2))
+
+    context = {
+        'student_id': student_id,
+        'full_name': full_name,
+        'grouped_folders': grouped_folders,
+        "total_files": int(total_files / 2),
+        "total_size_mb": round(total_size_bytes / (1024**2), 2) / 2,  # Convert to MB
+        "total_size_gb": round(total_size_bytes / (1024**3), 2) / 2,  # Convert to GB
+        "total_folders": total_folders,
+        "files_today": int(files_today / 2),
+        "files_this_week": int(files_this_week / 2),
+        "files_this_month": int(files_this_month / 2),
+        "latest_files": latest_files,
+        'notification':notification if notification else f"✅ Storage usage is within limit. {round(total_size_bytes / (1024**2), 2) / 2} / {user.mb_limit} MBs used",
+        'limit': limit if limit else "no",
+    }
+
+    return render(request, 'student/folders.html', context)

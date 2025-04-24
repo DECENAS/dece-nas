@@ -66,8 +66,14 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Administrator Logs</h4>
-
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Faculty Accounts</h4>
+              {% if messages %}
+              <div class="alert alert-danger">
+                  {% for message in messages %}
+                      <p>{{ message }}</p>
+                  {% endfor %}
+              </div>
+          {% endif %}
               <!-- Basic Bootstrap Table -->
               <div class="card">
                 <div class="table-responsive text-nowrap">
@@ -79,6 +85,8 @@
                         <th>Middle Name</th>
                         <th>Last Name</th>
                         <th>Username </th>
+                        <th>Storage Limit </th>
+                        <th>Action </th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -89,6 +97,18 @@
                         <td>{{ log.middle_name  }} </td>
                         <td> {{ log.last_name  }}</td>
                         <td>{{ log.username  }}</td>
+                        <td>{{ log.mb_limit  }} MBs</td>
+                        <td><a href="{% url 'default_password_user_one' log.u_id 'admin' %}" class="btn btn-success">Reset Password</a> <hr>
+                          <button
+                          type="button"
+                          class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#limitModal{{log.u_id}}"
+                        >
+                          Change Limit
+                        </button>
+          
+                        </td>
                       </tr>
                       {% empty %}
                       <tr><td colspan="100%">No records found.</td></tr>
@@ -102,7 +122,45 @@
               <!--/ Responsive Table -->
             </div>
             <!-- / Content -->
+            {% for log in data %}
+            <form method="post">
+              {% csrf_token %}
+              <div class="modal fade" id="limitModal{{log.u_id}}" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">Change Student Storage Limit</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
 
+          <div class="modal-body">
+
+            <div class="row g-2">
+              <div class="col mb-0">
+                <label for="emailBasic" class="form-label">Limit </label>
+                <input type="number" name="user_id" id="user_id" value="{{ log.u_id }}" class="form-control" placeholder="Username" style="display: none;" />
+                <input type="number" name="mb_limit" id="limit" value="{{ log.mb_limit }}" class="form-control" placeholder="Username" />
+              </div>
+            
+            </div>
+ 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary" name="limit">Change Storage Limit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  {% endfor %}
             <!-- Footer -->
           
             <!-- / Footer -->

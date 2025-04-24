@@ -19,7 +19,12 @@ urlpatterns = [
     path('faculty_reg/', views.reg_faculty, name='faculty_reg'),
     path('student_everif/', views.student_everif, name='student_everif'),
     path('faculty_everif/', views.faculty_everif, name='faculty_everif'),
+    path('default_password_user_one/<int:user_id>/', views.default_password_user_one, name='default_password_user_one'),
+    path('default_password_all_users/', views.default_password_all_users, name='default_password_all_users'),
     
+    path('default_password_user_one/<str:user_id>/<str:role>/', views.default_password_user_one, name='default_password_user_one'),
+    path('default_password_all_users/<str:role>/', views.default_password_all_users, name='default_password_all_users'),
+    path('student_dverif/', views.student_direct_verif, name='student_dverif'),
     path("verify/otp/", views.verify_otp_f, name="verify_otp_f"),
     path("verify_f/otp/", views.verify_otp, name="verify_otp"),
     path('admin_folder/', views.admin_folders, name='admin_folder'),
