@@ -93,9 +93,9 @@
                       {% for log in data %}
                       <tr>
                         <td>{{ log.gsuite  }}</td> <!-- Replace 'field1' with actual model field names -->
-                        <td>{{ log.first_name  }} </td>
                         <td>{{ log.middle_name  }} </td>
                         <td> {{ log.last_name  }}</td>
+                        <td>{{ log.first_name  }} </td>
                         <td>{{ log.username  }}</td>
                         <td>{{ log.mb_limit  }} MBs</td>
                         <td><a href="{% url 'default_password_user_one' log.u_id 'admin' %}" class="btn btn-success">Reset Password</a> <hr>
@@ -144,7 +144,7 @@
               <div class="col mb-0">
                 <label for="emailBasic" class="form-label">Limit </label>
                 <input type="number" name="user_id" id="user_id" value="{{ log.u_id }}" class="form-control" placeholder="Username" style="display: none;" />
-                <input type="number" name="mb_limit" id="limit" value="{{ log.mb_limit }}" class="form-control" placeholder="Username" />
+                <input type="number" name="mb_limit" id="limit" value="{{ log.mb_limit }}" class="form-control" placeholder="500" />
               </div>
             
             </div>
